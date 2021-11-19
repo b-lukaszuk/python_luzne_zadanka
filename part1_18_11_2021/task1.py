@@ -1,16 +1,7 @@
 class Door:
-    def __init__(self, id: int):
+    def __init__(self, id: int) -> None:
         self.__open: bool = False
         self.__id: int = id
-
-    def toggleState(self):
-        self.__open = not self.__open
-
-    def getId(self) -> int:
-        return self.__id
-
-    def isOpen(self) -> bool:
-        return self.__open
 
     def __str__(self) -> str:
         return "door no. %d, state: %s" % (
@@ -21,8 +12,17 @@ class Door:
     def __repr__(self) -> str:
         return self.__str__()
 
+    def toggleState(self) -> None:
+        self.__open = not self.__open
 
-doors = [Door(i) for i in range(1, 101)]
+    def getId(self) -> int:
+        return self.__id
+
+    def isOpen(self) -> bool:
+        return self.__open
+
+
+doors: [Door] = [Door(i) for i in range(1, 101)]
 
 for i in range(100):
     for someDoor in doors:
