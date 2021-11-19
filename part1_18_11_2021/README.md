@@ -4,7 +4,7 @@
 
 1. [Info](#info)
 2. [Task 1](#task-1)
-2. [Task 2](#task-2)
+3. [Task 2](#task-2)
 
 ---
 
