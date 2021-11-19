@@ -5,8 +5,8 @@ class Door:
 
     def __str__(self) -> str:
         return "door no. %d, state: %s" % (
-            self.__id,
-            "open" if self.__open else "closed",
+            self.getId(),
+            "open" if self.isOpen() else "closed",
         )
 
     def __repr__(self) -> str:
