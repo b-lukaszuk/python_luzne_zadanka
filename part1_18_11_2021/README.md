@@ -16,7 +16,7 @@ Tasks from [Rosetta Code. Category: Programming Tasks](https://rosettacode.org/w
 
 [Go to: Table of contents](#table-of-contents)
 
-[100 doors](https://rosettacode.org/wiki/100_doors):
+[100 doors on rosettacode webpage](https://rosettacode.org/wiki/100_doors):
 
 There are 100 doors in a row that are all initially closed.
 
@@ -34,7 +34,7 @@ The third time, visit every 3rd door   (door #3, #6, #9, ...), etc,   until you 
 
 [Go to: Table of contents](#table-of-contents)
 
-[100 prisoners](https://rosettacode.org/wiki/100_prisoners)
+[100 prisoners on rosettacode webpage](https://rosettacode.org/wiki/100_prisoners):
 
 ## The Problem
 
