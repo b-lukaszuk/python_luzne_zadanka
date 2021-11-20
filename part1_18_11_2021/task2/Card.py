@@ -1,6 +1,6 @@
 class Card:
     """
-    Card with a number 0-99 in it
+    Card with a number [id (incl-incl): 0-99] written on in it
     """
 
     def __init__(self, id: int):

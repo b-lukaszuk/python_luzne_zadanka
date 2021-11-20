@@ -3,7 +3,7 @@ import random
 
 class Prisoner:
     """
-    Prisoner - class required by the task
+    Prisoner with a prisoner number [id (incl-incl): 0-99]
     """
 
     def __init__(self, id: int):
