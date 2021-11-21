@@ -23,4 +23,4 @@ class Prisoner:
         return self.__luckyCardFound
 
     def setLuckyCardFound(self, setTo: bool) -> None:
-        self.__luckyCardFound == setTo
+        self.__luckyCardFound = setTo
