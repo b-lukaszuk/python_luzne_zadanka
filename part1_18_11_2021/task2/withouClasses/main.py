@@ -1,4 +1,5 @@
 import numpy as np
+import random
 
 
 def didAllRandGuessesSucceded(
@@ -8,11 +9,10 @@ def didAllRandGuessesSucceded(
 ) -> bool:
     cardsFound: np.ndarray = np.zeros(noOfPrisoners)
     for i in range(noOfPrisoners):  # for every prisoner
-        guesses: np.ndarray = np.random.randint(
-            0, cupboardSize, guessesPerPrisoner
-        )
-        if np.any(guesses == i):
-            cardsFound[i] = 1
+        for j in range(guessesPerPrisoner):
+            guess: np.ndarray = random.randint(0, cupboardSize)
+            if guess == i:
+                cardsFound[i] = 1
     return np.all(cardsFound == 1)
 
 
