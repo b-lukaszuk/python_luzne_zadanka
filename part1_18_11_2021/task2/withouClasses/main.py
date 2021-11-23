@@ -8,11 +8,14 @@ def didAllRandGuessesSucceded(
     guessesPerPrisoner: int = 8,
 ) -> bool:
     cardsFound: np.ndarray = np.zeros(noOfPrisoners)
+    cupboard: np.ndarray = np.arange(cupboardSize)
+    np.random.shuffle(cupboard)
     for i in range(noOfPrisoners):  # for every prisoner
         for j in range(guessesPerPrisoner):
-            guess: np.ndarray = random.randint(0, cupboardSize)
-            if guess == i:
+            guess: int = random.randint(0, cupboardSize - 1)  # incl, incl
+            if cupboard[guess] == i:
                 cardsFound[i] = 1
+                break
     return np.all(cardsFound == 1)
 
 
