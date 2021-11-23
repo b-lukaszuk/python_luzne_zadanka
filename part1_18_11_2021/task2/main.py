@@ -25,19 +25,46 @@ def mkPrisLookForCardRandomly(
     return luckyCardsFound
 
 
+def mkPrisLookForCardMethodically(
+    somePrisoners: [Prisoner],
+    aCupboard: Cupboard,
+    noOfGuessesPerPrisoner: int = 50,
+):
+    upRangeOfGuess: int = len(somePrisoners) - 1
+    luckyCardsFound: [bool] = [False] * (upRangeOfGuess + 1)
+    for aPrisoner in somePrisoners:
+        curGuess: int = aPrisoner.getId()
+        uncoveredCardId: int = 0
+        for _ in range(noOfGuessesPerPrisoner):
+            uncoveredCardId = aCupboard.getCardIdFromDrawer(curGuess)
+            if uncoveredCardId == aPrisoner.getId():
+                luckyCardsFound[aPrisoner.getId()] = True
+                break
+            curGuess = uncoveredCardId
+    return luckyCardsFound
+
+
 def calcProbabilityOf100prisPardoned(
     noOfIterations: int,
     prisList: [Prisoner],
     aCupboard: Cupboard,
     noOfGuessesPerPrisoner: int = 50,
+    searchRandomly: bool = True,
 ) -> float:
     allFoundLuckyCard: [bool] = [False] * noOfIterations
     for i in range(noOfIterations):
-        allFoundLuckyCard[i] = all(
-            mkPrisLookForCardRandomly(
-                prisList, aCupboard, noOfGuessesPerPrisoner
+        if searchRandomly:
+            allFoundLuckyCard[i] = all(
+                mkPrisLookForCardRandomly(
+                    prisList, aCupboard, noOfGuessesPerPrisoner
+                )
             )
-        )
+        else:
+            allFoundLuckyCard[i] = all(
+                mkPrisLookForCardMethodically(
+                    prisList, aCupboard, noOfGuessesPerPrisoner
+                )
+            )
 
     return sum(allFoundLuckyCard) / noOfIterations
 
