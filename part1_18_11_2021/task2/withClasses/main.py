@@ -34,10 +34,8 @@ def mkPrisLookForLuckyCards(
     return luckyCardsFound  # lucky cards found or not
 
 
-def calcProbabilityOfAllPrisPardoned(
-    fn,
-    noOfIterations: int,
-) -> float:
+def calcProbabilityOfAllPrisPardoned(fn, noOfIterations: int) -> float:
+
     allFoundLuckyCard: [bool] = [False] * noOfIterations
 
     for i in range(noOfIterations):
