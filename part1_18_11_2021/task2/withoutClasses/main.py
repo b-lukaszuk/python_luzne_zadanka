@@ -26,6 +26,7 @@ def didAllGuessesSucceded(
                 guess = random.randint(0, cupboardSize - 1)  # incl, incl
             else:
                 guess = cupboard[guess]
+
     return np.all(cardsFound == 1)
 
 
