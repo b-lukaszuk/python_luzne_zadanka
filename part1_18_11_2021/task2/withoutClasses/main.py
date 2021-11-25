@@ -34,3 +34,36 @@ def calcProbability(fn, nIter: int = 2000) -> float:
 
     successes: [bool] = [fn() for _ in range(nIter)]
     return np.mean(successes)
+
+
+def main():
+
+    print("Calculating probability of success for:")
+    print("100 prisoners 100 cards, random strategy, 10k iterations ")
+    print("Please be patient, this may take a while")
+    print(
+        "p =",
+        calcProbability(
+            lambda: didAllGuessesSucceded(100, 100, 50, True), 10000
+        ),
+    )
+
+    print("====")
+    print("Calculating probability of success for:")
+    print(
+        "100 prisoners 100 cards, methodological strategy, 10k iterations: "
+    )
+    print("Please be patient, this may take a while")
+    print(
+        "p = ",
+        calcProbability(
+            lambda: didAllGuessesSucceded(100, 100, 50, False), 10000
+        ),
+    )
+
+    print("\n====")
+    print("That's all. Goodbye.")
+
+
+if __name__ == "__main__":
+    main()
