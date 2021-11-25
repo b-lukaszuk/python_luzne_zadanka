@@ -9,7 +9,6 @@ class Prisoner:
     def __init__(self, id: int):
         if 0 <= id <= 99:
             self.__id: int = id
-            self.__luckyCardFound: bool = False
         else:
             raise IndexError("Id must be between 0 (incl) and 99 (incl)")
 
