@@ -5,6 +5,7 @@
 1. [Info](#info)
 2. [Task 1](#task-1)
 3. [Task 2](#task-2)
+4. [Task 3](#task-3)
 
 ---
 
@@ -60,3 +61,13 @@ Simulate several thousand instances of the game where the prisoners use the opti
 - If the card within has his number then he succeeds otherwise he opens the drawer with the same number as that of the revealed card. (until he opens his maximum).
 
 Show and compare the computed probabilities of success for the two strategies.
+
+# Task 3
+
+[Go to: Table of contents](#table-of-contents)
+
+[15 puzzle game](https://rosettacode.org/wiki/15_puzzle_game):
+
+# What to do
+
+Implement the 15 puzzle game -> description on [wikipedia page](https://en.wikipedia.org/wiki/15_puzzle)
