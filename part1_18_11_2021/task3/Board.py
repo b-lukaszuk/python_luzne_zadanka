@@ -41,5 +41,8 @@ class Board(object):
             result += rowStr + "\n" + rowSep + "\n"
         return result
 
+    def __repr__(self) -> str:
+        return self.__str__()
+
 
 x: Board = Board()
