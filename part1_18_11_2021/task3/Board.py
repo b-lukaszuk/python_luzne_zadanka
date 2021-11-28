@@ -58,7 +58,9 @@ class Board(object):
             for c in range(ncol):
                 rowStr += rightPad(self.__board[r, c], fieldLen, " ")
                 rowStr += colSep
-            result += rowStr + "\n" + rowSep + "\n"
+            result += rowStr + "\n" + rowSep
+            if r != (nrow - 1):
+                result += "\n"
         return result
 
     def __repr__(self) -> str:
@@ -81,10 +83,14 @@ class Board(object):
             locsOfNearbyFields, 0, self.__board.shape[0] - 1
         )
 
-    def getLegalMoves(self) -> [int]:
+    def __getLegalMoves(self) -> [int]:
         locsNearEmpty: [[int]] = self.__getLocsOfFieldsNearEmpty()
         result: [int] = [self.__board[r, c] for (r, c) in locsNearEmpty]
         return result
+
+    def isMoveLegal(self, move: int) -> bool:
+        legMoves: [int] = self.__getLegalMoves()
+        return move in legMoves
 
 
 x: Board = Board()
