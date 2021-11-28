@@ -112,6 +112,30 @@ class Board(object):
             ]
         self.__board = newBoard
 
+    def __moveRight(self, move: int) -> None:
+        locEmpty: [int, int] = self.__getLocOfEmpty()
+        numsOnLeft: [int] = list(range(0, locEmpty[1]))
+        oldColsNums: [int] = [locEmpty[1]] + numsOnLeft
+        newColsNums: [int] = [numsOnLeft[0]] + [i + 1 for i in numsOnLeft]
+        newBoard: np.ndarray = np.copy(self.__board)
+        for i in range(len(newColsNums)):
+            newBoard[locEmpty[0], newColsNums[i]] = self.__board[
+                locEmpty[0], oldColsNums[i]
+            ]
+        self.__board = newBoard
+
+    def __moveLeft(self, move: int) -> None:
+        locEmpty: [int, int] = self.__getLocOfEmpty()
+        numsOnRight: [int] = list(range(locEmpty[1], self.__board.shape[1]))
+        oldColsNums: [int] = numsOnRight + [locEmpty[1]]
+        newColsNums: [int] = [i - 1 for i in numsOnRight] + [numsOnRight[-1]]
+        newBoard: np.ndarray = np.copy(self.__board)
+        for i in range(len(newColsNums)):
+            newBoard[locEmpty[0], newColsNums[i]] = self.__board[
+                locEmpty[0], oldColsNums[i]
+            ]
+        self.__board = newBoard
+
     def __getLegalMoves(self) -> [int]:
         locsNearEmpty: [[int]] = self.__getLocsOfFieldsNearEmpty()
         result: [int] = [self.__board[r, c] for (r, c) in locsNearEmpty]
