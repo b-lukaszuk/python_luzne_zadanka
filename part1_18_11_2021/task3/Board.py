@@ -35,8 +35,9 @@ class Board(object):
     """
 
     def __init__(self) -> None:
-        self.__board = np.reshape(np.arange(1, 17), (4, 4))
+        self.__board = np.arange(1, 17)
         np.random.shuffle(self.__board)
+        self.__board = np.reshape(self.__board, (4, 4))
 
     def __str__(self) -> str:
         fieldLen: int = len(str(self.__board.max())) + 1
