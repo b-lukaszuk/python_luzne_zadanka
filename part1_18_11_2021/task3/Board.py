@@ -69,9 +69,12 @@ class Board(object):
     def getBoard(self) -> np.ndarray:  # for testing
         return self.__board
 
-    def __getLocOfEmpty(self) -> (int, int):  # no 16 is empty field
-        result: (np.ndarray, np.ndarray) = np.where(self.__board == 16)
+    def __getLocOfNum(self, num: int) -> (int, int):
+        result: (np.ndarray, np.ndarray) = np.where(self.__board == num)
         return (result[0][0], result[1][0])
+
+    def __getLocOfEmpty(self) -> (int, int):  # no 16 is empty field
+        return self.__getLocOfNum(16)
 
     def __getLocsOfFieldsNearEmpty(self) -> [[int]]:
         locOfEmpty: (int, int) = self.__getLocOfEmpty()
