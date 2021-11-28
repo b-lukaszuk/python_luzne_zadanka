@@ -74,12 +74,8 @@ class Board(object):
         locOfEmpty: (int, int) = self.__getLocOfEmpty()
         locsOfNearbyFields: [[int]] = []
         nrow, ncol = locOfEmpty
-        for r in range(nrow - 1, nrow + 2):
-            for c in range(ncol - 1, ncol + 2):
-                if r == nrow and c == ncol:
-                    pass
-                else:
-                    locsOfNearbyFields.append([r, c])
+        locsOfNearbyFields.extend([[nrow, ncol - 1], [nrow, ncol + 1]])
+        locsOfNearbyFields.extend([[nrow - 1, ncol], [nrow + 1, ncol]])
         return filterOutLstsWithEltsOutsideRange(
             locsOfNearbyFields, 0, self.__board.shape[0] - 1
         )
