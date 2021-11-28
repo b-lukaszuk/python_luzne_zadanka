@@ -31,7 +31,7 @@ def filterOutLstsWithEltsOutsideRange(
 
 class Board(object):
     """
-    GameBoard for 15 puzzle game (16 fields, cause 1 is empty)
+    GameBoard for 15 puzzle game (16 fields, cause 1 is empty, i.e. no 16)
     """
 
     def __init__(self) -> None:
@@ -94,6 +94,18 @@ class Board(object):
     def isMoveLegal(self, move: int) -> bool:
         legMoves: [int] = self.__getLegalMoves()
         return move in legMoves
+
+    def makeMove(self, move: int) -> None:
+        emptyLoc: (int, int) = self.__getLocOfEmpty()
+        moveLoc: (int, int) = self.__getLocOfNum(move)
+        if emptyLoc[0] == moveLoc[0] and emptyLoc[1] < moveLoc[1]:
+            self.__moveDown(move)
+        elif emptyLoc[0] == moveLoc[0] and emptyLoc[1] > moveLoc[1]:
+            self.__moveUp(move)
+        elif emptyLoc[0] < moveLoc[0] and emptyLoc[1] == moveLoc[1]:
+            self.__moveLeft(move)
+        else:
+            self.__moveRight(move)
 
 
 x: Board = Board()
