@@ -36,6 +36,7 @@ class Board(object):
 
     def __init__(self) -> None:
         self.__board = np.arange(1, 17)
+        self.__solution = np.copy(self.__board)
         np.random.shuffle(self.__board)
         self.__board = np.reshape(self.__board, (4, 4))
 
@@ -156,6 +157,9 @@ class Board(object):
             self.__moveUp(move)
         else:
             self.__moveDown(move)
+
+    def isBoardSolved(self) -> bool:
+        return np.array_equal(self.__board, self.__solution)
 
 
 x: Board = Board()
