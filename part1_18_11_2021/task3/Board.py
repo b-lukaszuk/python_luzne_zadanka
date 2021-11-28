@@ -69,15 +69,15 @@ class Board(object):
     def getBoard(self) -> np.ndarray:  # for testing
         return self.__board
 
-    def __getLocOfNum(self, num: int) -> (int, int):
-        result: (np.ndarray, np.ndarray) = np.where(self.__board == num)
-        return (result[0][0], result[1][0])
+    def __getLocOfNum(self, num: int) -> [int, int]:
+        result: [np.ndarray, np.ndarray] = np.where(self.__board == num)
+        return [result[0][0], result[1][0]]
 
-    def __getLocOfEmpty(self) -> (int, int):  # no 16 is empty field
+    def __getLocOfEmpty(self) -> [int, int]:  # no 16 is empty field
         return self.__getLocOfNum(16)
 
     def __getLocsOfFieldsNearEmpty(self) -> [[int]]:
-        locOfEmpty: (int, int) = self.__getLocOfEmpty()
+        locOfEmpty: [int, int] = self.__getLocOfEmpty()
         locsOfNearbyFields: [[int]] = []
         nrow, ncol = locOfEmpty
         locsOfNearbyFields.extend([[nrow, ncol - 1], [nrow, ncol + 1]])
@@ -85,6 +85,32 @@ class Board(object):
         return filterOutLstsWithEltsOutsideRange(
             locsOfNearbyFields, 0, self.__board.shape[0] - 1
         )
+
+    def __moveDown(self, move: int) -> None:
+        locEmpty: [int, int] = self.__getLocOfEmpty()
+        numsOfRowsAbove: [int] = list(range(0, locEmpty[0]))
+        oldRowsNums: [int] = [locEmpty[0]] + numsOfRowsAbove
+        newRowsNums: [int] = [numsOfRowsAbove[0]] + [
+            i + 1 for i in numsOfRowsAbove
+        ]
+        newBoard: np.ndarray = np.copy(self.__board)
+        for i in range(len(newRowsNums)):
+            newBoard[newRowsNums[i], locEmpty[1]] = self.__board[
+                oldRowsNums[i], locEmpty[1]
+            ]
+        self.__board = newBoard
+
+    def __moveUp(self, move: int) -> None:
+        locEmpty: [int, int] = self.__getLocOfEmpty()
+        numsOfBelow: [int] = list(range(locEmpty[0], self.__board.shape[0]))
+        oldRowsNums: [int] = numsOfBelow + [locEmpty[0]]
+        newRowsNums: [int] = [i - 1 for i in numsOfBelow] + [numsOfBelow[-1]]
+        newBoard: np.ndarray = np.copy(self.__board)
+        for i in range(len(newRowsNums)):
+            newBoard[newRowsNums[i], locEmpty[1]] = self.__board[
+                oldRowsNums[i], locEmpty[1]
+            ]
+        self.__board = newBoard
 
     def __getLegalMoves(self) -> [int]:
         locsNearEmpty: [[int]] = self.__getLocsOfFieldsNearEmpty()
@@ -96,16 +122,16 @@ class Board(object):
         return move in legMoves
 
     def makeMove(self, move: int) -> None:
-        emptyLoc: (int, int) = self.__getLocOfEmpty()
-        moveLoc: (int, int) = self.__getLocOfNum(move)
+        emptyLoc: [int, int] = self.__getLocOfEmpty()
+        moveLoc: [int, int] = self.__getLocOfNum(move)
         if emptyLoc[0] == moveLoc[0] and emptyLoc[1] < moveLoc[1]:
-            self.__moveDown(move)
-        elif emptyLoc[0] == moveLoc[0] and emptyLoc[1] > moveLoc[1]:
-            self.__moveUp(move)
-        elif emptyLoc[0] < moveLoc[0] and emptyLoc[1] == moveLoc[1]:
             self.__moveLeft(move)
-        else:
+        elif emptyLoc[0] == moveLoc[0] and emptyLoc[1] > moveLoc[1]:
             self.__moveRight(move)
+        elif emptyLoc[0] < moveLoc[0] and emptyLoc[1] == moveLoc[1]:
+            self.__moveUp(move)
+        else:
+            self.__moveDown(move)
 
 
 x: Board = Board()
