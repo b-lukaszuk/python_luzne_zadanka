@@ -1,32 +1,5 @@
 import numpy as np
-
-
-def rightPad(inputStr: str, finalLen: int, pad: str) -> str:
-    result: str = str(inputStr)
-    if result == "16":  # no 16 is empty field
-        result = "  "
-    while len(result) < finalLen:
-        result += pad
-    return result
-
-
-def isAnyEltOutsideRange(aList: [int], lowIncl: int, upIncl: int) -> bool:
-    belowLow: [bool] = [i < lowIncl for i in aList]
-    # print(belowLow)
-    aboveUp: [bool] = [i > upIncl for i in aList]
-    # print(aboveUp)
-    # print(any(belowLow))
-    # print(any(aboveUp))
-    result = any(belowLow) or any(aboveUp)
-    return result
-
-
-def filterOutLstsWithEltsOutsideRange(
-    aList: [[int]], lowIncl: int, upIncl: int
-) -> [[int]]:
-    return list(
-        filter(lambda l: not isAnyEltOutsideRange(l, lowIncl, upIncl), aList)
-    )
+import utils as ut
 
 
 class Board(object):
@@ -43,10 +16,10 @@ class Board(object):
     def __str__(self) -> str:
         fieldLen: int = len(str(self.__board.max())) + 1
         colSep: str = "|"
-        rowSepSingleCell: str = "+" + rightPad("-", fieldLen, "-")
+        rowSepSingleCell: str = "+" + ut.rightPad("-", fieldLen, "-")
         nrow, ncol = self.__board.shape
         rowSep: str = (
-            rightPad(
+            ut.rightPad(
                 rowSepSingleCell,
                 ncol * len(rowSepSingleCell),
                 rowSepSingleCell,
@@ -57,7 +30,7 @@ class Board(object):
         for r in range(nrow):
             rowStr: str = "|"
             for c in range(ncol):
-                rowStr += rightPad(self.__board[r, c], fieldLen, " ")
+                rowStr += ut.rightPad(self.__board[r, c], fieldLen, " ")
                 rowStr += colSep
             result += rowStr + "\n" + rowSep
             if r != (nrow - 1):
@@ -83,7 +56,7 @@ class Board(object):
         nrow, ncol = locOfEmpty
         locsOfNearbyFields.extend([[nrow, ncol - 1], [nrow, ncol + 1]])
         locsOfNearbyFields.extend([[nrow - 1, ncol], [nrow + 1, ncol]])
-        return filterOutLstsWithEltsOutsideRange(
+        return ut.filterOutLstsWithEltsOutsideRange(
             locsOfNearbyFields, 0, self.__board.shape[0] - 1
         )
 
@@ -108,6 +81,3 @@ class Board(object):
 
     def isBoardSolved(self) -> bool:
         return np.array_equal(self.__board, self.__solution)
-
-
-x: Board = Board()
