@@ -87,55 +87,11 @@ class Board(object):
             locsOfNearbyFields, 0, self.__board.shape[0] - 1
         )
 
-    def __moveDown(self, move: int) -> None:
-        locEmpty: [int, int] = self.__getLocOfEmpty()
-        numsOfRowsAbove: [int] = list(range(0, locEmpty[0]))
-        oldRowsNums: [int] = [locEmpty[0]] + numsOfRowsAbove
-        newRowsNums: [int] = [numsOfRowsAbove[0]] + [
-            i + 1 for i in numsOfRowsAbove
-        ]
-        newBoard: np.ndarray = np.copy(self.__board)
-        for i in range(len(newRowsNums)):
-            newBoard[newRowsNums[i], locEmpty[1]] = self.__board[
-                oldRowsNums[i], locEmpty[1]
-            ]
-        self.__board = newBoard
-
-    def __moveUp(self, move: int) -> None:
-        locEmpty: [int, int] = self.__getLocOfEmpty()
-        numsOfBelow: [int] = list(range(locEmpty[0], self.__board.shape[0]))
-        oldRowsNums: [int] = numsOfBelow + [locEmpty[0]]
-        newRowsNums: [int] = [i - 1 for i in numsOfBelow] + [numsOfBelow[-1]]
-        newBoard: np.ndarray = np.copy(self.__board)
-        for i in range(len(newRowsNums)):
-            newBoard[newRowsNums[i], locEmpty[1]] = self.__board[
-                oldRowsNums[i], locEmpty[1]
-            ]
-        self.__board = newBoard
-
-    def __moveRight(self, move: int) -> None:
-        locEmpty: [int, int] = self.__getLocOfEmpty()
-        numsOnLeft: [int] = list(range(0, locEmpty[1]))
-        oldColsNums: [int] = [locEmpty[1]] + numsOnLeft
-        newColsNums: [int] = [numsOnLeft[0]] + [i + 1 for i in numsOnLeft]
-        newBoard: np.ndarray = np.copy(self.__board)
-        for i in range(len(newColsNums)):
-            newBoard[locEmpty[0], newColsNums[i]] = self.__board[
-                locEmpty[0], oldColsNums[i]
-            ]
-        self.__board = newBoard
-
-    def __moveLeft(self, move: int) -> None:
-        locEmpty: [int, int] = self.__getLocOfEmpty()
-        numsOnRight: [int] = list(range(locEmpty[1], self.__board.shape[1]))
-        oldColsNums: [int] = numsOnRight + [locEmpty[1]]
-        newColsNums: [int] = [i - 1 for i in numsOnRight] + [numsOnRight[-1]]
-        newBoard: np.ndarray = np.copy(self.__board)
-        for i in range(len(newColsNums)):
-            newBoard[locEmpty[0], newColsNums[i]] = self.__board[
-                locEmpty[0], oldColsNums[i]
-            ]
-        self.__board = newBoard
+    def __swapNumsOnBoard(self, num1: int, num2: int) -> None:
+        locNum1r, locNum1c = self.__getLocOfNum(num1)
+        locNum2r, locNum2c = self.__getLocOfNum(num2)
+        self.__board[locNum1r, locNum1c] = num2
+        self.__board[locNum2r, locNum2c] = num1
 
     def __getLegalMoves(self) -> [int]:
         locsNearEmpty: [[int]] = self.__getLocsOfFieldsNearEmpty()
@@ -147,16 +103,8 @@ class Board(object):
         return move in legMoves
 
     def makeMove(self, move: int) -> None:
-        emptyLoc: [int, int] = self.__getLocOfEmpty()
-        moveLoc: [int, int] = self.__getLocOfNum(move)
-        if emptyLoc[0] == moveLoc[0] and emptyLoc[1] < moveLoc[1]:
-            self.__moveLeft(move)
-        elif emptyLoc[0] == moveLoc[0] and emptyLoc[1] > moveLoc[1]:
-            self.__moveRight(move)
-        elif emptyLoc[0] < moveLoc[0] and emptyLoc[1] == moveLoc[1]:
-            self.__moveUp(move)
-        else:
-            self.__moveDown(move)
+        if self.isMoveLegal(move):
+            self.__swapNumsOnBoard(16, move)  # 16 i empty field
 
     def isBoardSolved(self) -> bool:
         return np.array_equal(self.__board, self.__solution)
