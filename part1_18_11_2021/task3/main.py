@@ -8,7 +8,9 @@ def printIntro():
     )
     print("You can move one field at a time")
     print("The field must be a neighbour to the empty field\n")
-    print("Let's begin :)")
+    print("The game will end automatically one the puzzle is solved\n")
+    print("To leave in the middle of the game press Ctrl+c\n")
+    print("All clear? OK. Let's begin :)")
 
 
 def main():
@@ -27,6 +29,9 @@ def main():
                 print("Move made")
         except ValueError:
             print("That was not a number")
+        except KeyboardInterrupt:
+            print("\nYou want to leave? OK. See You next time. Goodbye!")
+            quit()
     print("\nThat's it. The puzzle is solved. You won. Congratulations!")
     print("Behold the solved puzzle:")
     print(b)
