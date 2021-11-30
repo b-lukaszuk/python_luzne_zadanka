@@ -1,3 +1,4 @@
+import sys
 from Board import Board
 
 
@@ -31,7 +32,7 @@ def main():
             print("That was not a number")
         except KeyboardInterrupt:
             print("\nYou want to leave? OK. See You next time. Goodbye!")
-            quit()
+            sys.exit()
     print("\nThat's it. The puzzle is solved. You won. Congratulations!")
     print("Behold the solved puzzle:")
     print(b)
