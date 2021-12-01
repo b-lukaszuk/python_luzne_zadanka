@@ -40,9 +40,6 @@ class Board(object):
     def __repr__(self) -> str:
         return self.__str__()
 
-    def getBoard(self) -> np.ndarray:  # for testing
-        return self.__board
-
     def __getLocOfNum(self, num: int) -> [int, int]:
         result: [np.ndarray, np.ndarray] = np.where(self.__board == num)
         return [result[0][0], result[1][0]]
