@@ -39,7 +39,10 @@ def calcProbability(fn, nIter: int = 2000) -> float:
 def main():
 
     print("Calculating probability of success for:")
-    print("100 prisoners 100 cards, strategy: random, iterations: 10k ")
+    print(
+        "100 prisoners, 100 cards, 50 guesses each,",
+        "strategy: random, iterations: 10k ",
+    )
     print("Please be patient, this may take a while")
     print(
         "p =",
@@ -51,7 +54,8 @@ def main():
     print("====")
     print("Calculating probability of success for:")
     print(
-        "100 prisoners 100 cards, strategy: methodological, iterations: 10 k"
+        "100 prisoners 100 cards, 50 guesses each,",
+        "strategy: methodological, iterations: 10 k",
     )
     print("Please be patient, this may take a while")
     print(
