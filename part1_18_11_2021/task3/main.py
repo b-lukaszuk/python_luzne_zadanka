@@ -1,3 +1,4 @@
+#!/usr/bin/env python3.8
 import sys
 from Board import Board
 

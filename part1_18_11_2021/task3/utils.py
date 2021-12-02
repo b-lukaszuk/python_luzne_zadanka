@@ -1,3 +1,4 @@
+#!/usr/bin/env python3.8
 def rightPad(inputStr: str, finalLen: int, pad: str) -> str:
     result: str = str(inputStr)
     if result == "16":  # no 16 is empty field
