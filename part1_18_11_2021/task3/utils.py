@@ -10,11 +10,7 @@ def rightPad(inputStr: str, finalLen: int, pad: str) -> str:
 
 def isAnyEltOutsideRange(aList: [int], lowIncl: int, upIncl: int) -> bool:
     belowLow: [bool] = [i < lowIncl for i in aList]
-    # print(belowLow)
     aboveUp: [bool] = [i > upIncl for i in aList]
-    # print(aboveUp)
-    # print(any(belowLow))
-    # print(any(aboveUp))
     result = any(belowLow) or any(aboveUp)
     return result
 
