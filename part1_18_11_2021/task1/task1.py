@@ -1,3 +1,4 @@
+#!/usr/bin/env python3.8
 class Door:
     def __init__(self, id: int) -> None:
         self.__open: bool = False

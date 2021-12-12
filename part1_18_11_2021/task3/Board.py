@@ -1,3 +1,4 @@
+#!/usr/bin/env python3.8
 import numpy as np
 import utils as ut
 
