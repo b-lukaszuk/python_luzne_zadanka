@@ -9,10 +9,13 @@ class Board(object):
     """
 
     def __init__(self) -> None:
-        self.__board = np.arange(1, 17)
-        self.__solution = np.copy(self.__board)
-        np.random.shuffle(self.__board)
-        self.__board = np.reshape(self.__board, (4, 4))
+        self.__solution = np.arange(1, 17)
+        while True:
+            self.__board = np.copy(self.__solution)
+            np.random.shuffle(self.__board)
+            self.__board = np.reshape(self.__board, (4, 4))
+            if self.__isSolvable():
+                break
 
     def __str__(self) -> str:
         fieldLen: int = len(str(self.__board.max())) + 1
@@ -68,6 +71,47 @@ class Board(object):
         locsNearEmpty: [[int]] = self.__getLocsOfFieldsNearEmpty()
         result: [int] = [self.__board[r, c] for (r, c) in locsNearEmpty]
         return result
+
+    # from
+    # https://www.geeksforgeeks.org/check-instance-15-puzzle-solvable/
+    # modified by me
+
+    # in the example blank is equal to 0
+    # in my program it is 16 (that's why I got break in for loop with i)
+    def __getInversionsCount(self) -> int:
+        invCount: int = 0
+        nrows: int = self.__board.shape[0]
+        arr1d: np.ndarray = self.__board.flatten()
+        for i in range(nrows * nrows - 1):
+            if arr1d[i] == 16:
+                continue
+            for j in range(i + 1, nrows * nrows):
+                if i < j and arr1d[i] > arr1d[j]:
+                    invCount += 1
+                    return invCount
+
+    # find Position of blank (16) from bottom
+    # number of moves it takes to move from original position (3, 3)
+    # to the position it is now
+    def __findBlankPos(self) -> int:
+        nrows: int = self.__board.shape[0]
+        for i in range(nrows - 1, -1, -1):
+            for j in range(nrows - 1, -1, -1):
+                if self.__board[i, j] == 16:
+                    return nrows - i
+
+    def __isSolvable(self) -> bool:
+        numberOfInversions: int = self.__getInversionsCount()
+        # if grid is odd, return true if inversion count is even
+        if ut.isOdd(self.__board.shape[0]) and ut.isEven(numberOfInversions):
+            return True
+        else:  # grid is Even
+            posOfEmpty: int = self.__findBlankPos()
+            if ut.isEven(posOfEmpty) and ut.isOdd(numberOfInversions):
+                return True
+            if ut.isOdd(posOfEmpty) and ut.isEven(numberOfInversions):
+                return True
+        return False
 
     def isMoveLegal(self, move: int) -> bool:
         legMoves: [int] = self.__getLegalMoves()

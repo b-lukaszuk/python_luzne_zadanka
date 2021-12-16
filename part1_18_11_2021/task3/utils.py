@@ -21,3 +21,11 @@ def filterOutLstsWithEltsOutsideRange(
     return list(
         filter(lambda l: not isAnyEltOutsideRange(l, lowIncl, upIncl), aList)
     )
+
+
+def isEven(aNum: int) -> bool:
+    return aNum % 2 == 0
+
+
+def isOdd(aNum: int) -> bool:
+    return not isEven(aNum)
