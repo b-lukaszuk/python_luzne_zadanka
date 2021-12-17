@@ -24,6 +24,7 @@ def filterOutLstsWithEltsOutsideRange(
 
 
 def isEven(aNum: int) -> bool:
+    # print(aNum)
     return aNum % 2 == 0
 
 
