@@ -37,7 +37,7 @@ def main():
     print("\nThat's it. The puzzle is solved. You won. Congratulations!")
     print("Behold the solved puzzle:")
     print(b)
-    print("\nOK. That's it. Goodbye!")
+    print("\nOK. The game is finished. Goodbye!")
 
 
 if __name__ == "__main__":
