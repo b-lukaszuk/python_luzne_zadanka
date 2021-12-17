@@ -9,9 +9,9 @@ class Board(object):
     """
 
     def __init__(self) -> None:
-        self.__solution = np.arange(1, 17)
+        self.__solution = np.reshape(np.arange(1, 17), (4, 4))
         while True:
-            self.__board = np.copy(self.__solution)
+            self.__board = np.arange(1, 17)
             np.random.shuffle(self.__board)
             self.__board = np.reshape(self.__board, (4, 4))
             if self.__isSolvable():
@@ -88,7 +88,7 @@ class Board(object):
             for j in range(i + 1, nrows * nrows):
                 if i < j and arr1d[i] > arr1d[j]:
                     invCount += 1
-                    return invCount
+        return invCount
 
     # find Position of blank (16) from bottom
     # number of moves it takes to move from original position (3, 3)
