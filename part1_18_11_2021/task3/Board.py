@@ -77,7 +77,8 @@ class Board(object):
     # modified by me
 
     # in the example blank is equal to 0
-    # in my program it is 16 (that's why I got break in for loop with i)
+    # in my program it is 16
+    # (that's why I got continue statement in for loop with i)
     def __getInversionsCount(self) -> int:
         invCount: int = 0
         nrows: int = self.__board.shape[0]
@@ -119,7 +120,7 @@ class Board(object):
 
     def makeMove(self, move: int) -> None:
         if self.isMoveLegal(move):
-            self.__swapNumsOnBoard(16, move)  # 16 i empty field
+            self.__swapNumsOnBoard(16, move)  # 16 is empty field
 
     def isBoardSolved(self) -> bool:
         return np.array_equal(self.__board, self.__solution)
