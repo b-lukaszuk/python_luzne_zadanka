@@ -43,6 +43,7 @@ def calcProbability(fn, nIter: int = 2000) -> float:
 
 
 def displayInfoAboutStrategy(random: bool) -> None:
+
     strategy: str = "random" if random else "methodical"
     print("=======================================")
     print(
