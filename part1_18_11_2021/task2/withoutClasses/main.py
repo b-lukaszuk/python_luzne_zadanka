@@ -2,9 +2,9 @@
 import numpy as np
 import random
 
-noOfPrisoners: int = 10
-noOfCards: int = 10
-guessesPerPrisoner: int = 7
+noOfPrisoners: int = 100
+noOfCards: int = 100
+guessesPerPrisoner: int = 50
 noOfIterations: int = 10000
 
 
@@ -42,6 +42,26 @@ def calcProbability(fn, nIter: int = 2000) -> float:
     return np.mean(successes)
 
 
+def displayInfoAboutStrategy(random: bool) -> None:
+    strategy: str = "random" if random else "methodical"
+    print("=======================================")
+    print(
+        "Strategy: {}. No of iterations: {:d}".format(
+            strategy, noOfIterations
+        )
+    )
+    print("Please be patient, this may take a while")
+    print(
+        "p =",
+        calcProbability(
+            lambda: didAllGuessesSucceded(
+                noOfCards, noOfPrisoners, guessesPerPrisoner, random
+            ),
+            noOfIterations,
+        ),
+    )
+
+
 def main():
 
     print("====")
@@ -52,33 +72,8 @@ def main():
         )
     )
 
-    print("=======================================")
-    print("Strategy: random. No of iterations: {:d}".format(noOfIterations))
-    print("Please be patient, this may take a while")
-    print(
-        "p =",
-        calcProbability(
-            lambda: didAllGuessesSucceded(
-                noOfCards, noOfPrisoners, guessesPerPrisoner, True
-            ),
-            noOfIterations,
-        ),
-    )
-
-    print("=======================================")
-    print(
-        "Strategy: methodical. No of iterations: {:d}".format(noOfIterations)
-    )
-    print("Please be patient, this may take a while")
-    print(
-        "p =",
-        calcProbability(
-            lambda: didAllGuessesSucceded(
-                noOfCards, noOfPrisoners, guessesPerPrisoner, False
-            ),
-            noOfIterations,
-        ),
-    )
+    displayInfoAboutStrategy(True)
+    displayInfoAboutStrategy(False)
 
     print("====")
     print("That's all. Goodbye.")
