@@ -2,6 +2,11 @@
 import numpy as np
 import random
 
+noOfPrisoners: int = 10
+noOfCards: int = 10
+guessesPerPrisoner: int = 7
+noOfIterations: int = 10000
+
 
 def didAllGuessesSucceded(
     cupboardSize: int = 10,
@@ -39,34 +44,43 @@ def calcProbability(fn, nIter: int = 2000) -> float:
 
 def main():
 
+    print("====")
     print("Calculating probability of success for:")
     print(
-        "100 prisoners, 100 cards, 50 guesses each,",
-        "strategy: random, iterations: 10k ",
+        "{:d} prisoners, {:d} cards,\n{:d} guesses per each prisoner".format(
+            noOfPrisoners, noOfCards, guessesPerPrisoner
+        )
+    )
+
+    print("=======================================")
+    print("Strategy: random. No of iterations: {:d}".format(noOfIterations))
+    print("Please be patient, this may take a while")
+    print(
+        "p =",
+        calcProbability(
+            lambda: didAllGuessesSucceded(
+                noOfCards, noOfPrisoners, guessesPerPrisoner, True
+            ),
+            noOfIterations,
+        ),
+    )
+
+    print("=======================================")
+    print(
+        "Strategy: methodical. No of iterations: {:d}".format(noOfIterations)
     )
     print("Please be patient, this may take a while")
     print(
         "p =",
         calcProbability(
-            lambda: didAllGuessesSucceded(100, 100, 50, True), 10000
+            lambda: didAllGuessesSucceded(
+                noOfCards, noOfPrisoners, guessesPerPrisoner, False
+            ),
+            noOfIterations,
         ),
     )
 
     print("====")
-    print("Calculating probability of success for:")
-    print(
-        "100 prisoners 100 cards, 50 guesses each,",
-        "strategy: methodological, iterations: 10 k",
-    )
-    print("Please be patient, this may take a while")
-    print(
-        "p = ",
-        calcProbability(
-            lambda: didAllGuessesSucceded(100, 100, 50, False), 10000
-        ),
-    )
-
-    print("\n====")
     print("That's all. Goodbye.")
 
 
