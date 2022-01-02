@@ -108,11 +108,11 @@ So I will start with that and we will see.
 
 [Go to: Table of contents](#table-of-contents)
 
-Inspired by: [Birthday problem](https://en.wikipedia.org/wiki/Birthday_problem):
+Inspired by: [Birthday problem on wiki](https://en.wikipedia.org/wiki/Birthday_problem)
 
 ## The problem
 
-Let's say there are 30 people at a party. What is the probability that any two individuals celebrate their birthday the same day.
+Let's say there are 30 people at a party. What is the probability that any two (or more) individuals celebrate their birthday the same day.
 
 ## What to do
 
