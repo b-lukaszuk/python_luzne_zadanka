@@ -23,3 +23,18 @@ def getManhDistance(
     cLoc: [int, int] = getLoc(noOfInterest, curBoard)
     sLoc: [int, int] = getLoc(noOfInterest, solvedBoard)
     return abs(cLoc[0] - sLoc[0]) + abs(cLoc[1] - sLoc[1])
+
+
+def getLen(arr2d: np.ndarray) -> int:
+    dims: (int, int) = arr2d.shape
+    return dims[0] * dims[1]
+
+
+# G cost - number of steps taken from initState to curState
+# H cost - number of steps taken from curState to goalState
+def calcCost(state1: np.ndarray, state2: np.ndarray) -> int:
+    costs: [int] = [0] * getLen(state1)
+    for r in range(state1.shape[0]):
+        for c in range(state1.shape[1]):
+            costs[(r * c) + c] = getManhDistance(state1[r, c], state1, state2)
+    return sum(costs)
