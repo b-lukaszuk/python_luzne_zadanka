@@ -11,6 +11,8 @@ startBoard: np.ndarray = np.reshape(
     [10, 8, 12, 9, 13, 4, 7, 2, 5, 3, 6, 16, 1, 11, 14, 15], (4, 4)
 )
 
+emptyField: int = 16
+
 
 def isAnyEltOutsideRange(aList: [int], lowIncl: int, upIncl: int) -> bool:
     belowLow: [bool] = [i < lowIncl for i in aList]
@@ -33,7 +35,7 @@ def getLoc(numToFind: int, board: np.ndarray) -> [int, int]:
 
 
 def getLegMovesLocs(arr2d: np.ndarray) -> [[int]]:
-    emptyLoc: [int, int] = getLoc(16, arr2d)
+    emptyLoc: [int, int] = getLoc(emptyField, arr2d)
     neighLocs: [[int]] = []
     nrow, ncol = emptyLoc
     neighLocs.extend([[nrow, ncol - 1], [nrow, ncol + 1]])
