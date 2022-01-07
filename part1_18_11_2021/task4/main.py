@@ -32,13 +32,18 @@ def getLoc(numToFind: int, board: np.ndarray) -> [int, int]:
     return [theLoc[0][0], theLoc[1][0]]
 
 
-def getLegMoves(arr2d: np.ndarray) -> [int]:
+def getLegMovesLocs(arr2d: np.ndarray) -> [[int]]:
     emptyLoc: [int, int] = getLoc(16, arr2d)
     neighLocs: [[int]] = []
     nrow, ncol = emptyLoc
     neighLocs.extend([[nrow, ncol - 1], [nrow, ncol + 1]])
     neighLocs.extend([[nrow - 1, ncol], [nrow + 1, ncol]])
     neighLocs = removeEltsOutsideRange(neighLocs, 0, arr2d.shape[0] - 1)
+    return neighLocs
+
+
+def getLegMoves(arr2d: np.ndarray) -> [int]:
+    neighLocs = getLegMovesLocs(arr2d)
     return [arr2d[r, c] for [r, c] in neighLocs]
 
 
