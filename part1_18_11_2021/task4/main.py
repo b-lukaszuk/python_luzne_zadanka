@@ -38,7 +38,8 @@ def getLegMoves(arr2d: np.ndarray) -> [int]:
     nrow, ncol = emptyLoc
     neighLocs.extend([[nrow, ncol - 1], [nrow, ncol + 1]])
     neighLocs.extend([[nrow - 1, ncol], [nrow + 1, ncol]])
-    return removeEltsOutsideRange(neighLocs, 0, arr2d.shape[0] - 1)
+    neighLocs = removeEltsOutsideRange(neighLocs, 0, arr2d.shape[0] - 1)
+    return [arr2d[r, c] for [r, c] in neighLocs]
 
 
 def getManhDistance(
