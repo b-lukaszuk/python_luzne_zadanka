@@ -12,9 +12,33 @@ startBoard: np.ndarray = np.reshape(
 )
 
 
+def isAnyEltOutsideRange(aList: [int], lowIncl: int, upIncl: int) -> bool:
+    belowLow: [bool] = [i < lowIncl for i in aList]
+    aboveUp: [bool] = [i > upIncl for i in aList]
+    result = any(belowLow) or any(aboveUp)
+    return result
+
+
+def removeEltsOutsideRange(
+    aList: [[int]], lowIncl: int, upIncl: int
+) -> [[int]]:
+    return list(
+        filter(lambda l: not isAnyEltOutsideRange(l, lowIncl, upIncl), aList)
+    )
+
+
 def getLoc(numToFind: int, board: np.ndarray) -> [int, int]:
     theLoc: np.ndarray = np.where(board == numToFind)
     return [theLoc[0][0], theLoc[1][0]]
+
+
+def getLegMoves(arr2d: np.ndarray) -> [int]:
+    emptyLoc: [int, int] = getLoc(16, arr2d)
+    neighLocs: [[int]] = []
+    nrow, ncol = emptyLoc
+    neighLocs.extend([[nrow, ncol - 1], [nrow, ncol + 1]])
+    neighLocs.extend([[nrow - 1, ncol], [nrow + 1, ncol]])
+    return removeEltsOutsideRange(neighLocs, 0, arr2d.shape[0] - 1)
 
 
 def getManhDistance(
