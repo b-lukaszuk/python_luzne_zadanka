@@ -53,9 +53,12 @@ def getLegMoves(arr2d: np.ndarray) -> List[int]:
 def getManhDistance(
     noOfInterest: int, curBoard: np.ndarray, solvedBoard: np.ndarray
 ) -> int:
-    cLoc: List[int] = getLoc(noOfInterest, curBoard)
-    sLoc: List[int] = getLoc(noOfInterest, solvedBoard)
-    return abs(cLoc[0] - sLoc[0]) + abs(cLoc[1] - sLoc[1])
+    if noOfInterest == emptyField:
+        return 0
+    else:
+        cRow, cCol = getLoc(noOfInterest, curBoard)
+        sRow, sCol = getLoc(noOfInterest, solvedBoard)
+        return abs(cRow - sRow) + abs(cCol - sCol)
 
 
 def getLen(arr2d: np.ndarray) -> int:
