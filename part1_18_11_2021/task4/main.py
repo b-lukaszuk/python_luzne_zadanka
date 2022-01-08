@@ -88,3 +88,28 @@ def mkMove(numToMove: int, arr2d: np.ndarray) -> np.ndarray:
 def getNextStates(arr2d: np.ndarray) -> List[np.ndarray]:
     legMoves: List[int] = getLegMoves(arr2d)
     return [mkMove(move, arr2d) for move in legMoves]
+
+
+def isEql(arr2d1: np.ndarray, arr2d2: np.ndarray) -> bool:
+    return np.array_equal(arr2d1, arr2d2)
+
+
+def isInForbiddenStates(
+    arr2d: np.ndarray, forbStates: List[np.ndarray]
+) -> bool:
+    for fState in forbStates:
+        if isEql(arr2d, fState):
+            continue
+        else:
+            return False
+    return True
+
+
+def rmForbiddenStates(
+    newStates: List[np.ndarray], forbStates: List[np.ndarray]
+) -> List[np.ndarray]:
+    result: List[np.ndarray] = []
+    for newState in newStates:
+        if not isInForbiddenStates(newState, forbStates):
+            result.append(newState)
+    return result
