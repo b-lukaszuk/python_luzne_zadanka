@@ -83,3 +83,8 @@ def mkMove(numToMove: int, arr2d: np.ndarray) -> np.ndarray:
         return arr2dCopy
     else:
         raise ValueError("Wrong number. Illegal move.")
+
+
+def getNextStates(arr2d: np.ndarray) -> List[np.ndarray]:
+    legMoves: List[int] = getLegMoves(arr2d)
+    return [mkMove(move, arr2d) for move in legMoves]
