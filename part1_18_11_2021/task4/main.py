@@ -71,3 +71,15 @@ def calcCost(state1: np.ndarray, state2: np.ndarray) -> int:
         for c in range(state1.shape[1]):
             costs[(r * c) + c] = getManhDistance(state1[r, c], state1, state2)
     return sum(costs)
+
+
+def mkMove(numToMove: int, arr2d: np.ndarray) -> np.ndarray:
+    if (numToMove != emptyField) and (numToMove in getLegMoves(arr2d)):
+        numR, numC = getLoc(numToMove, arr2d)
+        emptyR, emptyC = getLoc(emptyField, arr2d)
+        arr2dCopy: np.ndarray = np.copy(arr2d)
+        arr2dCopy[numR, numC] = emptyField
+        arr2dCopy[emptyR, emptyC] = numToMove
+        return arr2dCopy
+    else:
+        raise ValueError("Wrong number. Illegal move.")
