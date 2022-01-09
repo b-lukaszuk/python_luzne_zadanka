@@ -40,7 +40,7 @@ def mean(succsAndFails: List[bool]) -> float:
 def runNIters(nIter: int) -> List[bool]:
     result: List[bool] = [
         anySameBDays(getPeopleAtParty(noOfPeopleAtParty))
-        for i in range(nIter)
+        for _ in range(nIter)
     ]
     return result
 
