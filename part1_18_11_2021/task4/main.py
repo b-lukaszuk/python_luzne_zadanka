@@ -8,7 +8,7 @@ from typing import List
 
 goalBoard: np.ndarray = np.reshape(np.arange(1, 17), (4, 4))
 
-startBoard: np.ndarray = np.reshape(
+initialBoard: np.ndarray = np.reshape(
     [10, 8, 12, 9, 13, 4, 7, 2, 5, 3, 6, 16, 1, 11, 14, 15], (4, 4)
 )
 
@@ -74,6 +74,14 @@ def calcCost(state1: np.ndarray, state2: np.ndarray) -> int:
         for c in range(state1.shape[1]):
             costs[(r * c) + c] = getManhDistance(state1[r, c], state1, state2)
     return sum(costs)
+
+
+def getHCost(curState: np.ndaray) -> int:
+    return calcCost(curState, goalBoard)
+
+
+def getGCost(curState: np.ndarray) -> int:
+    return calcCost(curState, initialBoard)
 
 
 def mkMove(numToMove: int, arr2d: np.ndarray) -> np.ndarray:
