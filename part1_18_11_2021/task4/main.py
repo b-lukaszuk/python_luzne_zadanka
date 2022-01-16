@@ -76,7 +76,7 @@ def calcCost(state1: np.ndarray, state2: np.ndarray) -> int:
     return sum(costs)
 
 
-def getHCost(curState: np.ndaray) -> int:
+def getHCost(curState: np.ndarray) -> int:
     return calcCost(curState, goalBoard)
 
 
