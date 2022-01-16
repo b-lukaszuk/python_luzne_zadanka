@@ -84,6 +84,13 @@ def getGCost(curState: np.ndarray) -> int:
     return calcCost(curState, initialBoard)
 
 
+# F cost = G cost + H cost
+def getFCost(curState: np.ndarray) -> int:
+    hCost: int = getHCost(curState)
+    gCost: int = getGCost(curState)
+    return hCost + gCost
+
+
 def mkMove(numToMove: int, arr2d: np.ndarray) -> np.ndarray:
     if (numToMove != emptyField) and (numToMove in getLegMoves(arr2d)):
         numR, numC = getLoc(numToMove, arr2d)
