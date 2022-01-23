@@ -9,6 +9,7 @@
 5. [Task 4](#task-4)
 6. [Task 5](#task-5)
 7. [Task 6](#task-6)
+8. [Task 7](#task-7)
 
 ---
 
@@ -151,3 +152,26 @@ The proper divisors of   100   are   1, 2, 4, 5, 10, 20, 25, and 50.
 Create a routine to generate all the proper divisors of a number.
 use it to show the proper divisors of the numbers 1 to 10 inclusive.
 Find a number in the range 1 to 20,000 with the most proper divisors. Show the number and just the count of how many proper divisors it has.
+
+# Task 7
+
+[Go to: Table of contents](#table-of-contents)
+
+[Amicable Pairs](https://rosettacode.org/wiki/Amicable_pairs):
+
+## Description
+
+### Basic Info
+
+Two integers `N` and `M` are said to be `amicable pairs` if `N != M` and `sum(propDivs(N)) = M` as well as `sum(propDivs(M)) = N`
+
+### Example
+
+1184 and 1210 are an amicable pair, with proper divisors:
+
++ 1, 2, 4, 8, 16, 32, 37, 74, 148, 296, 592 and
++ 1, 2, 5, 10, 11, 22, 55, 110, 121, 242, 605 respectively.
+
+### What to do?
+
+Calculate and show here the Amicable pairs below 20,000; (there are eight).
