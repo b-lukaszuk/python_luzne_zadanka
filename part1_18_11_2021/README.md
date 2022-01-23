@@ -139,7 +139,7 @@ List of assumptions:
 
 The `proper divisors` of a positive integer `N` are those numbers, other than `N` itself, that divide `N` without remainder.
 
-For N > 1 they will always include 1, but for N == 1 there are no proper divisors.
+For `N > 1` they will always include 1, but for `N == 1` there are no proper divisors.
 
 ### Examples
 
