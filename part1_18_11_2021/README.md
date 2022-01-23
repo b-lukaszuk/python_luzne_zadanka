@@ -137,14 +137,14 @@ List of assumptions:
 
 ### Basic Info
 
-The proper divisors of a positive integer N are those numbers, other than N itself, that divide N without remainder.
+The `proper divisors` of a positive integer `N` are those numbers, other than `N` itself, that divide `N` without remainder.
 
 For N > 1 they will always include 1, but for N == 1 there are no proper divisors.
 
 ### Examples
 
-The proper divisors of     6     are   1, 2, and 3.
-The proper divisors of   100   are   1, 2, 4, 5, 10, 20, 25, and 50.
+The proper divisors of 6 are 1, 2, and 3.
+The proper divisors of 100 are 1, 2, 4, 5, 10, 20, 25, and 50.
 
 
 ### What to do?
