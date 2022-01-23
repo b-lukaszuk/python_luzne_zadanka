@@ -35,7 +35,7 @@ def printInfOfNumWithMaxPropDivInRange(start: int, end: int) -> None:
     )
     print("Please be patient this may take some time")
     divisors: Dict[int, int] = getNumsOfPropDivForNumsInRange(start, end)
-    print("Looking for the number with greates proper divisors")
+    print("Looking for the number with greatest count of proper divisors")
     print("Please be patient this may also take some time")
     keyOfMax: int = getKeyWithMaxOfDict(divisors)
     print(
@@ -47,7 +47,7 @@ def printInfOfNumWithMaxPropDivInRange(start: int, end: int) -> None:
 
 
 def main():
-    print("Wellcome in the program calculating proper divisors of numbers")
+    print("Welcome in the program calculating proper divisors of numbers")
     print("\nRoutine 1")
     printInfoPropDivInRange(1, 11)
     print("\nRoutine 2")
