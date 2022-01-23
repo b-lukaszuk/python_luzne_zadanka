@@ -8,6 +8,7 @@
 4. [Task 3](#task-3)
 5. [Task 4](#task-4)
 6. [Task 5](#task-5)
+7. [Task 6](#task-6)
 
 ---
 
@@ -124,3 +125,29 @@ List of assumptions:
 + every year got exactly 365 days
 + people's births are distributed equaly throughout the year (uniform distribution)
 + use only standard Python's libraries (the one you get without pip-ing)
+
+# Task 6
+
+[Go to: Table of contents](#table-of-contents)
+
+[Proper Divisors](https://rosettacode.org/wiki/Proper_divisors):
+
+## Description
+
+### Basic Info
+
+The proper divisors of a positive integer N are those numbers, other than N itself, that divide N without remainder.
+
+For N > 1 they will always include 1, but for N == 1 there are no proper divisors.
+
+### Examples
+
+The proper divisors of     6     are   1, 2, and 3.
+The proper divisors of   100   are   1, 2, 4, 5, 10, 20, 25, and 50.
+
+
+### What to do?
+
+Create a routine to generate all the proper divisors of a number.
+use it to show the proper divisors of the numbers 1 to 10 inclusive.
+Find a number in the range 1 to 20,000 with the most proper divisors. Show the number and just the count of how many proper divisors it has.
