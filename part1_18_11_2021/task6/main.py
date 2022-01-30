@@ -1,7 +1,7 @@
 from typing import List, Dict
 
 
-def getPropDiv(num: int) -> List[int]:
+def getPropDivs(num: int) -> List[int]:
     if num < 0:
         raise ValueError("Cannot compute proper divisors for values below 0")
     elif num == 0:
@@ -10,16 +10,16 @@ def getPropDiv(num: int) -> List[int]:
         return [i for i in range(1, num) if num % i == 0]
 
 
-def printInfoPropDivInRange(start: int, end: int) -> None:
+def printInfoPropDivsInRange(start: int, end: int) -> None:
     print("Proper divisors for numbers from", start, "to", end - 1, "are:")
     for i in range(start, end):
-        print(i, ":", getPropDiv(i))
+        print(i, ":", getPropDivs(i))
 
 
-def getNumsOfPropDivForNumsInRange(start: int, end: int) -> Dict[int, int]:
+def getNumsOfPropDivsForNumsInRange(start: int, end: int) -> Dict[int, int]:
     result: Dict[int, int] = dict()
     for i in range(start, end):
-        result[i] = len(getPropDiv(i))
+        result[i] = len(getPropDivs(i))
     return result
 
 
@@ -29,12 +29,12 @@ def getKeyWithMaxOfDict(numsAndNoOfPropDivs: Dict[int, int]) -> int:
     return k[v.index(max(v))]
 
 
-def printInfOfNumWithMaxPropDivInRange(start: int, end: int) -> None:
+def printInfOfNumWithMaxPropDivsInRange(start: int, end: int) -> None:
     print(
         "Calculating proper divisors for numbers from", start, "to", end - 1
     )
     print("Please be patient this may take some time")
-    divisors: Dict[int, int] = getNumsOfPropDivForNumsInRange(start, end)
+    divisors: Dict[int, int] = getNumsOfPropDivsForNumsInRange(start, end)
     print("Looking for the number with greatest count of proper divisors")
     print("Please be patient this may also take some time")
     keyOfMax: int = getKeyWithMaxOfDict(divisors)
@@ -49,9 +49,9 @@ def printInfOfNumWithMaxPropDivInRange(start: int, end: int) -> None:
 def main() -> None:
     print("Welcome in the program calculating proper divisors of numbers")
     print("\nRoutine 1")
-    printInfoPropDivInRange(1, 11)
+    printInfoPropDivsInRange(1, 11)
     print("\nRoutine 2")
-    printInfOfNumWithMaxPropDivInRange(1, 20001)
+    printInfOfNumWithMaxPropDivsInRange(1, 20001)
     print("\nThat is all. Goodbye.")
 
 
