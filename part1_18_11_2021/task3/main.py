@@ -15,7 +15,7 @@ def printIntro():
     print("All clear? OK. Let's begin :)")
 
 
-def main():
+def main() -> None:
     b: Board = Board()
     printIntro()
     while not b.isBoardSolved():

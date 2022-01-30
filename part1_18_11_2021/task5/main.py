@@ -45,7 +45,7 @@ def runNIters(nIter: int) -> List[bool]:
     return result
 
 
-def main():
+def main() -> None:
     print("====")
     print("Calculating probability of success for:")
     print(

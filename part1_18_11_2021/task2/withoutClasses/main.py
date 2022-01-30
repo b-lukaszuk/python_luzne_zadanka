@@ -63,7 +63,7 @@ def displayInfoAboutStrategy(random: bool) -> None:
     )
 
 
-def main():
+def main() -> None:
 
     print("====")
     print("Calculating probability of success for:")

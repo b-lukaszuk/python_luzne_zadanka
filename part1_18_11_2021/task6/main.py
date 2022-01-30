@@ -46,7 +46,7 @@ def printInfOfNumWithMaxPropDivInRange(start: int, end: int) -> None:
     )
 
 
-def main():
+def main() -> None:
     print("Welcome in the program calculating proper divisors of numbers")
     print("\nRoutine 1")
     printInfoPropDivInRange(1, 11)
