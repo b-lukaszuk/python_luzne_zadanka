@@ -57,7 +57,7 @@ def displInfoAmicablePairs(searchUpToExcl: int) -> None:
     searchForAmicablePairs(searchUpToExcl)
 
 
-def main():
+def main() -> None:
     print("Welcome in the program calculating proper divisors of numbers")
     print("====")
     displInfoAmicablePairs(2000)
