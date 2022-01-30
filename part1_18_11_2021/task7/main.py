@@ -10,15 +10,15 @@ def getPropDivs(num: int) -> List[int]:
         return [i for i in range(1, num) if num % i == 0]
 
 
-def getSumPropDivs(num1: int) -> int:
+def getSumOfPropDivs(num1: int) -> int:
     return sum(getPropDivs(num1))
 
 
 def areAmicablePair(num1: int, num2: int) -> bool:
     return (
         (num1 != num2)
-        and (getSumPropDivs(num1) == num2)
-        and ((getSumPropDivs(num2) == num1))
+        and (getSumOfPropDivs(num1) == num2)
+        and ((getSumOfPropDivs(num2) == num1))
     )
 
 
