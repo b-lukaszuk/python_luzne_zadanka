@@ -18,3 +18,9 @@ Two integers `N` and `M` are said to be `amicable pairs` if `N != M` and `sum(pr
 ### What to do?
 
 Calculate and show here the Amicable pairs below 20,000; (there are eight).
+
+### Additional info
+
+Due to performance I limited my programs to look for amiable pairs below 2'000.
+
+Still, the program is quite slow (~180 sec on my laptop)
