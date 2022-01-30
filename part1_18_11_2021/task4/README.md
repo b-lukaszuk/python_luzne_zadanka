@@ -1,6 +1,6 @@
 # Task 4
 
-[15 puzzle game solver](https://rosettacode.org/wiki/15_puzzle_solver):
+[15 puzzle game solver](https://rosettacode.org/wiki/15_puzzle_solver)
 
 ## What to do
 

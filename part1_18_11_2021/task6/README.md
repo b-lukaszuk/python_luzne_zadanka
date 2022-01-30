@@ -1,6 +1,6 @@
 # Task 6
 
-[Proper Divisors](https://rosettacode.org/wiki/Proper_divisors):
+[Proper Divisors](https://rosettacode.org/wiki/Proper_divisors)
 
 ## Description
 

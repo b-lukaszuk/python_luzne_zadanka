@@ -1,6 +1,6 @@
 # Task 1
 
-[100 doors on rosettacode webpage](https://rosettacode.org/wiki/100_doors):
+[100 doors on rosettacode webpage](https://rosettacode.org/wiki/100_doors)
 
 There are 100 doors in a row that are all initially closed.
 

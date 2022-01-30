@@ -1,6 +1,6 @@
 # Task 3
 
-[15 puzzle game](https://rosettacode.org/wiki/15_puzzle_game):
+[15 puzzle game](https://rosettacode.org/wiki/15_puzzle_game)
 
 ## What to do
 

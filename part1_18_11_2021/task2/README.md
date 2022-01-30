@@ -1,6 +1,6 @@
 # Task 2
 
-[100 prisoners on rosettacode webpage](https://rosettacode.org/wiki/100_prisoners):
+[100 prisoners on rosettacode webpage](https://rosettacode.org/wiki/100_prisoners)
 
 ## The Problem
 
