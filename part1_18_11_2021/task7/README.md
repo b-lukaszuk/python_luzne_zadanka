@@ -23,4 +23,4 @@ Calculate and show here the Amicable pairs below 20,000; (there are eight).
 
 Due to performance I limited my programs to look for amiable pairs below 2'000.
 
-Still, the program is quite slow (~180 sec on my laptop)
+Still, the program is quite slow (~65 sec on my laptop)
