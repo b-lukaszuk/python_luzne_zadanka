@@ -2,10 +2,8 @@ from typing import List
 
 
 def getPropDivs(num: int) -> List[int]:
-    if num < 0:
-        raise ValueError("Cannot compute proper divisors for values below 0")
-    elif num == 0:
-        return []
+    if num <= 0:
+        raise ValueError("Cannot compute proper divisors for values <= 0")
     else:
         return [i for i in range(1, num) if num % i == 0]
 
@@ -23,10 +21,10 @@ def areAmicablePair(num1: int, num2: int) -> bool:
 
 
 def searchForAmicablePairs(upToExcl: int) -> None:
-    for i in range(upToExcl):
+    for i in range(1, upToExcl):
         for j in range(i, upToExcl):
             if areAmicablePair(i, j):
-                print("Pair found:", sorted([i, j]))
+                print("Pair found:", [i, j])
 
 
 def displInfoAmicablePairs(searchUpToExcl: int) -> None:
