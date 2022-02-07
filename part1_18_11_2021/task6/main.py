@@ -2,10 +2,8 @@ from typing import List, Dict
 
 
 def getPropDivs(num: int) -> List[int]:
-    if num < 0:
-        raise ValueError("Cannot compute proper divisors for values below 0")
-    elif num == 0:
-        return []
+    if num <= 0:
+        raise ValueError("Cannot compute proper divisors for values <= 0")
     else:
         return [i for i in range(1, num) if num % i == 0]
 
