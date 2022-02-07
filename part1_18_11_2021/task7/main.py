@@ -22,31 +22,10 @@ def areAmicablePair(num1: int, num2: int) -> bool:
     )
 
 
-def areListsEql(arr1: List[int], arr2: List[int]) -> bool:
-    if len(arr1) != len(arr2):
-        return False
-    else:
-        for i in range(len(arr1)):
-            if arr1[i] != arr2[i]:
-                return False
-    return True
-
-
-def isSubList(arr1d: List[int], arr2d: List[List[int]]) -> bool:
-    for subArr in arr2d:
-        if areListsEql(arr1d, subArr):
-            return True
-    return False
-
-
 def searchForAmicablePairs(upToExcl: int) -> None:
-    results: List[List[int]] = []
     for i in range(upToExcl):
-        for j in range(upToExcl):
-            if areAmicablePair(i, j) and not isSubList(
-                sorted([i, j]), results
-            ):
-                results.append(sorted([i, j]))
+        for j in range(i, upToExcl):
+            if areAmicablePair(i, j):
                 print("Pair found:", sorted([i, j]))
 
 
