@@ -9,9 +9,6 @@ class Custom_Function(TypedDict):
     fun: Callable[[int, int], float]
 
 
-arg_a: int = 3
-arg_b: int = 2
-
 my_functions: List[Custom_Function] = [
     {"description": "The sum of {0} and {1}", "fun": lambda a, b: a + b},
     {
@@ -32,9 +29,25 @@ my_functions: List[Custom_Function] = [
 ]
 
 
+def handleUserInput(name_of_variable: str = "a", default_int: int = 2) -> int:
+    users_input: str = input(
+        "Enter a value of variable {0} (positive integer) and press enter: ".format(
+            name_of_variable
+        )
+    )
+    an_int: int = default_int
+    try:
+        if int(users_input) <= 0:
+            raise ValueError
+        an_int = int(users_input)
+    except ValueError:
+        print("Invalid input. I default to {0}\n".format(an_int))
+    return an_int
+
+
 def print_info_about_fn(fn: Custom_Function, arg1: int, arg2: int) -> None:
     print(fn["description"].format(arg1, arg2))
-    print("result: {:.3f}\n".format(fn["fun"](arg_a, arg_b)))
+    print("result: {:.3f}\n".format(fn["fun"](arg1, arg2)))
 
 
 def print_program_description() -> None:
@@ -48,7 +61,11 @@ def print_program_description() -> None:
 
 
 def main() -> None:
+    arg_a: int = 2
+    arg_b: int = 2
     print_program_description()
+    arg_a = handleUserInput("a", arg_a)
+    arg_b = handleUserInput("b", arg_b)
     for custom_function in my_functions:
         print_info_about_fn(custom_function, arg_a, arg_b)
     print("That's all. Goodbye!")
