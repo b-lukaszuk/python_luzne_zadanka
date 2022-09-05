@@ -26,7 +26,7 @@ compute and display:
 - The quotient when a is divided by b
 - The remainder when a is divided by b
 - The result of log10 a
-- The result of a b
+- The result of a to the power of b
 
 # Task 2
 
