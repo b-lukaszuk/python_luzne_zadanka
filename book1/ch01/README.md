@@ -17,8 +17,7 @@ Arithmetic
 
 ## Description
 
-Create a program that reads two integers, a and b, from the user. Your program should
-compute and display:
+Create a program that reads two integers, a and b, from the user. Your program should compute and display:
 
 - The sum of a and b
 - The difference when b is subtracted from a
@@ -40,9 +39,11 @@ Distance Between Two Points on Earth
 
 The surface of the Earth is curved, and the distance between degrees of longitude varies with latitude. As a result, finding the distance between two points on the surface of the Earth is more complicated than simply using the Pythagorean theorem.
 
-Let (t1 , g1 ) and (t2 , g2 ) be the latitude and longitude of two points on the Earth’s surface. The distance between these points, following the surface of the Earth, in kilometers is:
+Let (t1, g1) and (t2, g2) be the latitude and longitude of two points on the Earth’s surface. The distance between these points, following the surface of the Earth, in kilometers is:
 
-distance = 6371.01 × arccos(sin(t1 ) × sin(t2 ) + cos(t1 ) × cos(t2 ) × cos(g1 − g2 ))
+<pre>
+distance = 6371.01 × arccos(sin(t1) × sin(t2) + cos(t1) × cos(t2) × cos(g1 − g2))
+</pre>
 
 The value 6371.01 in the previous equation wasn’t selected at random. It is the average radius of the Earth in kilometers.
 
