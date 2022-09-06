@@ -41,7 +41,7 @@ def handleUserInput(name_of_variable: str = "a", default_int: int = 2) -> int:
             raise ValueError
         an_int = int(users_input)
     except ValueError:
-        print("Invalid input. I default to {0}\n".format(an_int))
+        print("Invalid input. I default to {0}\n".format(default_int))
     return an_int
 
 
