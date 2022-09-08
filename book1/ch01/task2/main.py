@@ -18,12 +18,17 @@ class Longitude(TypedDict):
     message: str
 
 
-class Point(TypedDict):
+class LongPoint(TypedDict):
     latitude: Latitude
     longitude: Longitude
 
 
-exemplary_point: Point = {
+class ShortPoint(TypedDict):
+    latitude: int
+    longitude: int
+
+
+exemplary_point: LongPoint = {
     "latitude": {
         "value": 0,
         "minIncl": -90,
@@ -43,6 +48,31 @@ def isNumBetween(num: int, minIncl: int, maxIncl: int) -> bool:
     return (num >= minIncl) and (num <= maxIncl)
 
 
+def handleUserInput(exemplary_point: LongPoint = exemplary_point) -> ShortPoint:
+    user_input_str: str = ""
+    user_input_int: int = 0
+    result: ShortPoint = {"latitude": 0, "longitude": 0}
+    for key in exemplary_point.keys():
+        user_input_str = input(
+            "Enter the value of {0} and press enter: ".format(
+                exemplary_point[key]["message"]
+            )
+        )
+        try:
+            user_input_int: int = int(user_input_str)
+            if isNumBetween(
+                user_input_int,
+                exemplary_point[key]["minIncl"],
+                exemplary_point[key]["maxIncl"],
+            ):
+                result[key] = user_input_int
+            else:
+                raise ValueError
+        except ValueError:
+            print("Invalid input. I default to 0\n")
+    return result
+
+
 def print_program_description() -> None:
     print("\nHi.\n")
     print(
@@ -60,6 +90,8 @@ def print_program_description() -> None:
 
 def main() -> None:
     print_program_description()
+    result: ShortPoint = handleUserInput()
+    print("result: ", result)
     print("That's all. Goodbye!")
 
 
