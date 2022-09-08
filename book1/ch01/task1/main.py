@@ -31,18 +31,18 @@ my_functions: List[Custom_Function] = [
 
 def handleUserInput(name_of_variable: str = "a", default_int: int = 2) -> int:
     users_input: str = input(
-        "Enter a value of variable {0} (positive integer) and press enter: ".format(
+        "Enter a value of variable {0} (integer from 1 to 10) and press enter: ".format(
             name_of_variable
         )
     )
-    an_int: int = default_int
     try:
-        if int(users_input) <= 0:
+        users_int: int = int(users_input)
+        if users_int < 1 or users_int > 10:
             raise ValueError
-        an_int = int(users_input)
     except ValueError:
         print("Invalid input. I default to {0}\n".format(default_int))
-    return an_int
+        users_int = default_int
+    return users_int
 
 
 def print_info_about_fn(fn: Custom_Function, arg1: int, arg2: int) -> None:
