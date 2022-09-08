@@ -75,9 +75,28 @@ def handleUserInput(exemplary_point: LongPoint = exemplary_point) -> ShortPoint:
 
 def getNPointsFromUser(how_many: int = 2) -> List[ShortPoint]:
     points: List[ShortPoint] = []
-    for _ in range(how_many):
+    for i in range(how_many):
+        print("\n==Point {0}==".format(i + 1))
         points.append(handleUserInput())
     return points
+
+
+def getDistance(
+    latitude1: int, longitude1: int, latitude2: int, longitude2: int
+) -> float:
+    distance: float = 6371.01 * math.acos(
+        math.sin(math.radians(latitude1)) * math.sin(math.radians(latitude2))
+        + math.cos(math.radians(latitude1))
+        * math.cos(math.radians(latitude2))
+        * math.cos(math.radians(longitude1 - longitude2))
+    )
+    return distance
+
+
+def getDistanceForPoints(point1: ShortPoint, point2: ShortPoint) -> float:
+    return getDistance(
+        point1["latitude"], point1["longitude"], point2["latitude"], point2["longitude"]
+    )
 
 
 def print_program_description() -> None:
@@ -92,14 +111,18 @@ def print_program_description() -> None:
     print(
         "There is no guarantee of correct results (although I hope it will work just fine)"
     )
-    print("All clear. Then let's begin.\n")
+    print("All clear. Then let's begin.")
 
 
 def main() -> None:
     print_program_description()
     twoPoints: List[ShortPoint] = getNPointsFromUser()
-    print("points: ", twoPoints)
-    print("That's all. Goodbye!")
+    print("\nThe distance between two points, i.e.")
+    print(twoPoints)
+    print(
+        "is approximately equal to {:.2f} [km]".format(getDistanceForPoints(*twoPoints))
+    )
+    print("\nThat's all. Goodbye!")
 
 
 if __name__ == "__main__":
