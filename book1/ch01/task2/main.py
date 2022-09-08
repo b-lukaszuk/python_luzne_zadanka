@@ -54,7 +54,7 @@ def handleUserInput(exemplary_point: LongPoint = exemplary_point) -> ShortPoint:
     result: ShortPoint = {"latitude": 0, "longitude": 0}
     for key in exemplary_point.keys():
         user_input_str = input(
-            "Enter the value of {0} and press enter: ".format(
+            "Enter the value for {0} and press enter: ".format(
                 exemplary_point[key]["message"]
             )
         )
@@ -71,6 +71,13 @@ def handleUserInput(exemplary_point: LongPoint = exemplary_point) -> ShortPoint:
         except ValueError:
             print("Invalid input. I default to 0\n")
     return result
+
+
+def getNPointsFromUser(how_many: int = 2) -> List[ShortPoint]:
+    points: List[ShortPoint] = []
+    for _ in range(how_many):
+        points.append(handleUserInput())
+    return points
 
 
 def print_program_description() -> None:
@@ -90,8 +97,8 @@ def print_program_description() -> None:
 
 def main() -> None:
     print_program_description()
-    result: ShortPoint = handleUserInput()
-    print("result: ", result)
+    twoPoints: List[ShortPoint] = getNPointsFromUser()
+    print("points: ", twoPoints)
     print("That's all. Goodbye!")
 
 
