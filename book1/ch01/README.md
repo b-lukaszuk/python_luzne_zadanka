@@ -15,6 +15,8 @@
 
 Arithmetic
 
+(Part 1, Exercise 10 from the book)
+
 ## Description
 
 Create a program that reads two integers, a and b, from the user. Your program should compute and display:
@@ -34,6 +36,8 @@ Create a program that reads two integers, a and b, from the user. Your program s
 ## Title
 
 Distance Between Two Points on Earth
+
+(Part 1, Exercise 12 from the book)
 
 ## Description
 
