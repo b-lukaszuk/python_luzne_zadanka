@@ -35,7 +35,9 @@ def get_change(
 
 
 def get_input_from_user(default_on_error: int = 1234) -> int:
-    user_input_str: str = input("Enter the amount of money (integer) in cents: ")
+    user_input_str: str = input(
+        "Enter the amount of money (integer) in cents: "
+    )
     try:
         user_input_int: int = int(user_input_str)
         return user_input_int
@@ -46,11 +48,13 @@ def get_input_from_user(default_on_error: int = 1234) -> int:
 
 def print_program_description() -> None:
     print("\nHi.\n")
-    print("This program reads the the number of cents (integer) from the user")
+    print("This program reads the number of cents (integer) from the user")
     print("Next, it gives the change (using as few coins as possible)")
     print("Available coins (unlimited supply):")
-    print("toonie ($2), loonie ($1), quarter (25/100th of $1), dime (10/100th of $1)")
-    print("nickel (5/100th of $1), penny (1/100th of $1)")
+    print("toonie ($2), loonie ($1), quarter (25/100th of $1),")
+    print(
+        "dime (10/100th of $1), nickel (5/100th of $1), penny (1/100th of $1)"
+    )
     print("All clear. Then let's begin.\n")
 
 
