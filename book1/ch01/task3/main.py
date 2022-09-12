@@ -17,6 +17,7 @@ def can_be_subtracted_from_total(amount: int, total: int) -> bool:
     return amount <= total
 
 
+# available_coins needs to be sorted in descending order
 def get_change(
     sum_to_change: int,
     available_coins: List[Dict[str, int]] = available_coins,
