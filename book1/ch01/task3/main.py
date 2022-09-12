@@ -42,7 +42,7 @@ def get_input_from_user(default_on_error: int = 1234) -> int:
         user_input_int: int = int(user_input_str)
         return user_input_int
     except ValueError:
-        print("Invalid input. I default to 1234")
+        print("Invalid input. I default to {0}".format(default_on_error))
         return default_on_error
 
 
