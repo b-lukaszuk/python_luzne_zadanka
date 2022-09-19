@@ -37,7 +37,7 @@ What Color is that Square?
 
 ## Description
 
-Write a program that reads a position from the user. Use an if statement to determine if the column begins with a black square or a white square.
+Write a program that reads a position on a chessboard from the user (e.g. a8, b3). Determine the color of that square.
 
 # Task 3
 
