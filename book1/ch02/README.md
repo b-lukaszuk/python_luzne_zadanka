@@ -109,8 +109,8 @@ Write a program that reads a wavelength from the user and reports its color.
 I was taught that there are [7 colors of the rainbow](https://en.wikipedia.org/wiki/ROYGBIV)
 So instead of violet, I will define:
 
-Indigo: 420-450 nm
-Violet: 380-435 nm
+Indigo: 420-443 nm (should be: 420-450 nm)
+Violet: 380-442 nm (should be: 380-435 nm)
 
 # Task 5
 
