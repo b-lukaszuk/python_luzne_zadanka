@@ -48,6 +48,12 @@ Write a program that computes the [parity bit](https://en.wikipedia.org/wiki/Par
 
 After each string is entered by the user your program should display a clear message indicating whether the parity bit should be 0 or 1.
 
+## My notes
+
+Instruction not entirely clear, so is user allowed to enter, e.g. just one bit (should I then calculate parity bit?).
+
+I'll just stick to the [wikipedia page](https://en.wikipedia.org/wiki/Parity_bit), e.g. the user will be asked to enter 7 bits, the parity bit is 8th bit (calculated by program). Then the user will be given choice to enter another sequence of 7 bits for which another parity bit (8th bit) will be determined. The above will continue until the user quits.
+
 # Task 3
 
 [Go to: Table of contents](#table-of-contents)
