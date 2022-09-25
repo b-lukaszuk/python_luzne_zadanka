@@ -23,7 +23,7 @@ def is_even(number: int) -> bool:
 
 
 def get_count_of_1_bits(bits: List[int]) -> int:
-    return len(list(filter(lambda bit: bit == 1, bits)))
+    return sum(bits, 0)
 
 
 def get_even_parity_bit(bits: List[int]) -> int:
@@ -36,7 +36,7 @@ def print_program_description() -> None:
     print("This is a toy program that asks the user to enter 7 bits.")
     print("Then it calculates even parity bit (8th bit).")
     print("NO GUARANTEE OF ITS ACCURACY. Still, I hope it'll work fine.")
-    print("All clear. Then let's begin.\n")
+    print("All clear. Then let's begin.")
 
 
 def main() -> None:
