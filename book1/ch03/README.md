@@ -5,6 +5,9 @@
 1. [Task 1](#task-1)
 2. [Task 2](#task-2)
 3. [Task 3](#task-3)
+4. [Task 4](#task-4)
+5. [Task 5](#task-5)
+6. [Task 6](#task-6)
 
 ---
 
@@ -76,3 +79,62 @@ Update guess to be the average of guess and x/guess
 </pre>
 
 [...] good enough when the absolute value of the difference between guess ∗ guess and x was less than or equal to 10^(−12).
+
+# Task 4
+
+[Go to: Table of contents](#table-of-contents)
+
+## Title
+
+Multiple Word Palindromes
+
+(Part 1, Exercise 73 from the book)
+
+## Description
+
+Write a program that checks if a string is a (palindrome)[https://en.wikipedia.org/wiki/Palindrome]. The program should ignore spaces and interpunction characters. It should also treat upper- and lowercase letters as equivalent, e.g.
+
+<pre>
+"go dog"
+"Flee to me remote elf"
+"Some men interpret nine memos."
+</pre>
+
+Are all multiple word palindromes.
+
+# Task 5
+
+[Go to: Table of contents](#table-of-contents)
+
+## Title
+
+Multiplication Table.
+
+(Part 1, Exercise 74 from the book)
+
+## Description
+
+Write a program that displays multiplication table (from 1x1 till 10x10). The top row and the 1st left column are headers.
+
+# Task 6
+
+[Go to: Table of contents](#table-of-contents)
+
+## Title
+
+Greatest Common Divisor
+
+(Part 1, Exercise 75 from the book)
+
+## Description
+
+Write a program that reads two positive integers from the user and uses this algorithm to determine and report their greatest common divisor (the largest number, `d`, which divides evenly into both `n` and `m`).
+
+Proposed algorithm:
+
+<pre>
+Initialize d to the smaller of m and n.
+While d does not evenly divide m or d does not evenly divide n do
+Decrease the value of d by 1
+Report d as the greatest common divisor of n and m
+</pre>
