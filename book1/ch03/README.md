@@ -8,6 +8,8 @@
 4. [Task 4](#task-4)
 5. [Task 5](#task-5)
 6. [Task 6](#task-6)
+7. [Task 7](#task-7)
+8. [Task 8](#task-8)
 
 ---
 
@@ -137,4 +139,48 @@ Initialize d to the smaller of m and n.
 While d does not evenly divide m or d does not evenly divide n do
 Decrease the value of d by 1
 Report d as the greatest common divisor of n and m
+</pre>
+
+# Task 7
+
+[Go to: Table of contents](#table-of-contents)
+
+## Title
+
+Binary to Decimal
+
+(Part 1, Exercise 77 from the book)
+
+## Description
+
+Write a program that converts a binary (base 2) number to decimal (base 10).
+
+# Task 8
+
+[Go to: Table of contents](#table-of-contents)
+
+## Title
+
+Coin Flip Simulation
+
+(Part 1, Exercise 80 from the book)
+
+## Description
+
+[...]
+
+Create a program that uses Python’s random number generator to simulate flipping a coin several times. The simulated coin should be fair, meaning that the probability of heads is equal to the probability of tails. Your program should flip simulated coins until either 3 consecutive heads of 3 consecutive tails occur. Display an H each time the outcome is heads, and a T each time the outcome is tails, with all of the outcomes shown on the same line. Then display the number of flips needed to reach 3 consecutive flips with the same outcome. When your program is run it should perform the simulation 10 times and report the average number of flips needed. Sample output is shown below:
+
+<pre>
+H T T T (4 flips)
+H H T T H T H T T H H T H T T H T T T (19 flips)
+T T T (3 flips)
+T H H H (4 flips)
+H H H (3 flips)
+T H T T H T H H T T H H T H T H H H (18 flips)
+H T T H H H (6 flips)
+T H T T T (5 flips)
+T T H T T H T H T H H H (12 flips)
+T H T T T (5 flips)
+On average, 7.9 flips were needed.
 </pre>
