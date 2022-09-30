@@ -94,7 +94,7 @@ Multiple Word Palindromes
 
 ## Description
 
-Write a program that checks if a string is a (palindrome)[https://en.wikipedia.org/wiki/Palindrome]. The program should ignore spaces and interpunction characters. It should also treat upper- and lowercase letters as equivalent, e.g.
+Write a program that checks if a string is a [palindrome](https://en.wikipedia.org/wiki/Palindrome). The program should ignore spaces and interpunction characters. It should also treat upper- and lowercase letters as equivalent, e.g.
 
 <pre>
 "go dog"
