@@ -40,6 +40,36 @@ def get_input_from_user(allowed_chars: str = hex_chars_ascending) -> str:
     return input_str
 
 
+def declare_conversion(str_to_convert: str, convert_to_hex: bool) -> None:
+    print(
+        "{0} ({1}) is {2} ({3})".format(
+            "0x" + str_to_convert if convert_to_hex else str_to_convert,
+            "hex" if convert_to_hex else "decimal",
+            hex2int(str_to_convert)
+            if convert_to_hex
+            else "0x" + int2hex(int(str_to_convert)),
+            "decimal" if convert_to_hex else "hex",
+        )
+    )
+
+
+def handle_user_input() -> None:
+    print("\nEnter 'h' to convert hex -> decimal.")
+    print("Ener 'd' (or anything else) to convert decimal -> hex.")
+    convert_to_hex = input("Your choice [h/d]: ") in ["h", "H"]
+    str_to_convert = get_input_from_user(
+        hex_chars_ascending if convert_to_hex else decimal_chars_ascending
+    ).lower()
+    valid_input = is_valid_string(
+        str_to_convert,
+        hex_chars_ascending if convert_to_hex else decimal_chars_ascending,
+    )
+    if not valid_input:
+        print("Input not valid. No convertion to perform.")
+    else:
+        declare_conversion(str_to_convert, convert_to_hex)
+
+
 def print_program_description() -> None:
     print("\nHi.\n")
     print("This is a toy program asks the user to enter a number.")
@@ -53,32 +83,8 @@ def print_program_description() -> None:
 def main() -> None:
     end_program: bool = False
     print_program_description()
-    convert_to_hex: bool = True
     while not end_program:
-        print(
-            "\nEnter 'h' if you want to convert hex -> decimal, 'd' or anything else will signify conversion decimal -> hex"
-        )
-        convert_to_hex = input("Your choice [h/d]: ") in ["h", "H"]
-        str_to_convert = get_input_from_user(
-            hex_chars_ascending if convert_to_hex else decimal_chars_ascending
-        ).lower()
-        valid_input = is_valid_string(
-            str_to_convert,
-            hex_chars_ascending if convert_to_hex else decimal_chars_ascending,
-        )
-        if not valid_input:
-            print("Input not valid. No convertion to perform.")
-        else:
-            print(
-                "{0} ({1}) is {2} ({3})".format(
-                    "0x" + str_to_convert if convert_to_hex else str_to_convert,
-                    "hex" if convert_to_hex else "decimal",
-                    hex2int(str_to_convert)
-                    if convert_to_hex
-                    else "0x" + int2hex(int(str_to_convert)),
-                    "decimal" if convert_to_hex else "hex",
-                )
-            )
+        handle_user_input()
         end_program = input("\nWanna try again [y/n or anything else]? ") not in [
             "y",
             "Y",
