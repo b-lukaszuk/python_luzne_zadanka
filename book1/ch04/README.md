@@ -5,6 +5,7 @@
 1. [Task 1](#task-1)
 2. [Task 2](#task-2)
 3. [Task 3](#task-3)
+4. [Task 4](#task-4)
 
 ---
 
@@ -49,3 +50,17 @@ Random Password
 ## Description
 
 [...] write a function that determines whether [...] a password is good. [...] a good password to be a one that is at least 8 characters long and contains at least one uppercase letter, at least one lowercase letter, and at least one number.
+
+# Task 4
+
+[Go to: Table of contents](#table-of-contents)
+
+## Title
+
+Hexadecimal and Decimal Digits
+
+(Part 1, Exercise 98 from the book)
+
+## Description
+
+Write two functions, hex2int and int2hex, that convert between hexadecimal digits (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E and F) and base 10 integers. [...] Ensure that the hex2int function works correctly for both uppercase and lowercase letters. Your functions should end the program with a meaningful error message if an invalid parameter is provided.
