@@ -6,6 +6,7 @@
 2. [Task 2](#task-2)
 3. [Task 3](#task-3)
 4. [Task 4](#task-4)
+5. [Task 5](#task-5)
 
 ---
 
@@ -64,3 +65,17 @@ Hexadecimal and Decimal Digits
 ## Description
 
 Write two functions, `hex2int` and `int2hex`, that convert between hexadecimal digits (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E and F) and base 10 integers. [...] Ensure that the `hex2int` function works correctly for both uppercase and lowercase letters. Your functions should end the program with a meaningful error message if an invalid parameter is provided.
+
+# Task 5
+
+[Go to: Table of contents](#table-of-contents)
+
+## Title
+
+Arbitrary Base Conversions
+
+(Part 1, Exercise 99 from the book)
+
+## Description
+
+Write a program that allows the user to convert a number from one base to another. Your program should support bases between 2 and 16 for both the input number and the result number. 
