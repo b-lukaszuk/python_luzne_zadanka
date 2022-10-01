@@ -63,4 +63,4 @@ Hexadecimal and Decimal Digits
 
 ## Description
 
-Write two functions, hex2int and int2hex, that convert between hexadecimal digits (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E and F) and base 10 integers. [...] Ensure that the hex2int function works correctly for both uppercase and lowercase letters. Your functions should end the program with a meaningful error message if an invalid parameter is provided.
+Write two functions, `hex2int` and `int2hex`, that convert between hexadecimal digits (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E and F) and base 10 integers. [...] Ensure that the `hex2int` function works correctly for both uppercase and lowercase letters. Your functions should end the program with a meaningful error message if an invalid parameter is provided.
