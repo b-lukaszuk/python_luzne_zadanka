@@ -67,23 +67,29 @@ def convert_num_base_n_to_num_base_m(
         return decimal_to_base_n(str(decimal), base_m)
 
 
-def pad_num_base_n_with_spaces(
+def lpad_num_base_n_with_spaces(
     num_base_n: str, final_length_multiple_of: int = 4
 ) -> str:
     length_difference: int = len(num_base_n) - final_length_multiple_of
     if length_difference <= 0:
         return " " * abs(length_difference) + num_base_n
+    elif len(num_base_n) % final_length_multiple_of == 0:
+        return num_base_n
     else:
-        return " " * (len(num_base_n) % final_length_multiple_of) + num_base_n
+        num_of_chars_to_add: int = final_length_multiple_of - (
+            len(num_base_n) % final_length_multiple_of
+        )
+        return " " * num_of_chars_to_add + num_base_n
 
 
+# len(number_base_n) must be multiple of m_chars
 def get_num_base_n_grouped_by_m_chars(number_base_n: str, m_chars: int = 4) -> str:
     return " ".join(re.findall("." * m_chars, number_base_n))
 
 
 def format_number_base_n(number_base_n: str) -> str:
     return get_num_base_n_grouped_by_m_chars(
-        pad_num_base_n_with_spaces(number_base_n)
+        lpad_num_base_n_with_spaces(number_base_n)
     ).lstrip()
 
 
