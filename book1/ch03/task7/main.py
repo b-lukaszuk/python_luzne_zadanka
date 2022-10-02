@@ -14,7 +14,7 @@ def leave_0s_and_1s(maybe_valid_binary: str) -> str:
     return "".join(list(filter(lambda c: c in ["0", "1"], maybe_valid_binary)))
 
 
-def pad_binary_with_0s(binary: str, final_length_multiple_of: int = 4) -> str:
+def lpad_binary_with_0s(binary: str, final_length_multiple_of: int = 4) -> str:
     length_difference: int = len(binary) - final_length_multiple_of
     if length_difference <= 0:
         return "0" * abs(length_difference) + binary
@@ -28,9 +28,10 @@ def pad_binary_with_0s(binary: str, final_length_multiple_of: int = 4) -> str:
 
 
 def get_string_processed_to_binary(maybe_valid_binary: str) -> str:
-    return pad_binary_with_0s(leave_0s_and_1s(maybe_valid_binary))
+    return lpad_binary_with_0s(leave_0s_and_1s(maybe_valid_binary))
 
 
+# len(binary) must be multiple of n_chars
 def get_binary_grouped_by_n_chars(binary: str, n_chars: int = 4, sep: str = " ") -> str:
     return sep.join(re.findall("." * n_chars, binary))
 
