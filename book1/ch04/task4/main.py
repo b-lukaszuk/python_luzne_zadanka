@@ -31,7 +31,7 @@ def get_input_from_user(allowed_chars: str = hex_chars_ascending) -> str:
     input_str: str = ""
     print("\nEnter a number to convert.")
     print(
-        "Convertion type {0}.".format(
+        "Conversion type {0}.".format(
             "hex -> decimal" if "f" in allowed_chars else "decimal -> hex"
         )
     )
@@ -85,7 +85,9 @@ def main() -> None:
     print_program_description()
     while not end_program:
         handle_user_input()
-        end_program = input("\nWanna try again [y/n or anything else]? ") not in [
+        end_program = input(
+            "\nWanna try again [y/n or anything else]? "
+        ) not in [
             "y",
             "Y",
         ]
