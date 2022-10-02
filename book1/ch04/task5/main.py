@@ -107,21 +107,45 @@ def get_input_from_user() -> List[str]:
     return inputs
 
 
+def declare_additional_checks(
+    num_to_convert: str, base_convert_from: str, base_convert_to: str
+) -> None:
+    result_base_10: str = convert_num_base_n_to_num_base_m(
+        num_to_convert, int(base_convert_from), 10
+    )
+    print("\nAdditional check (my functions).")
+    print(
+        "The input: '{0}' (base {1}) = {2} (base 10)".format(
+            num_to_convert, base_convert_from, result_base_10
+        )
+    )
+    print("Additional check (python's build in functions).")
+    print(
+        "The input: '{0}' (base {1}) = {2} (base 10)".format(
+            num_to_convert,
+            base_convert_from,
+            int(num_to_convert, int(base_convert_from)),
+        )
+    )
+
+
 def declare_conversion(
     num_to_convert: str, base_convert_from: str, base_convert_to: str
 ) -> None:
+    result: str = format_number_base_n(
+        convert_num_base_n_to_num_base_m(
+            num_to_convert, int(base_convert_from), int(base_convert_to)
+        )
+    )
     print(
         "'{0}' (base {1}) = '{2}' (base {3})".format(
             format_number_base_n(num_to_convert),
             base_convert_from,
-            format_number_base_n(
-                convert_num_base_n_to_num_base_m(
-                    num_to_convert, int(base_convert_from), int(base_convert_to)
-                )
-            ),
+            result,
             base_convert_to,
         )
     )
+    declare_additional_checks(num_to_convert, base_convert_from, base_convert_to)
 
 
 def declare_inputs_validity(
@@ -147,7 +171,7 @@ def validate_inputs_and_declare_conversion(
         print("Validation failed.")
         declare_inputs_validity(num_to_convert, base_convert_from, base_convert_to)
     else:
-        print("Inputs are valid. Proceeding with conversion.")
+        print("Inputs are valid. Proceeding with conversion.\n")
         declare_conversion(num_to_convert, base_convert_from, base_convert_to)
 
 
