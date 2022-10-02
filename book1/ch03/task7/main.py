@@ -18,8 +18,13 @@ def pad_binary_with_0s(binary: str, final_length_multiple_of: int = 4) -> str:
     length_difference: int = len(binary) - final_length_multiple_of
     if length_difference <= 0:
         return "0" * abs(length_difference) + binary
+    elif len(binary) % final_length_multiple_of == 0:
+        return binary
     else:
-        return "0" * (len(binary) % final_length_multiple_of) + binary
+        num_of_chars_to_add: int = final_length_multiple_of - (
+            len(binary) % final_length_multiple_of
+        )
+        return "0" * num_of_chars_to_add + binary
 
 
 def get_string_processed_to_binary(maybe_valid_binary: str) -> str:
