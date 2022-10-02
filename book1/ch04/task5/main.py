@@ -107,9 +107,7 @@ def get_input_from_user() -> List[str]:
     return inputs
 
 
-def declare_additional_checks(
-    num_to_convert: str, base_convert_from: str, base_convert_to: str
-) -> None:
+def declare_additional_checks(num_to_convert: str, base_convert_from: str) -> None:
     result_base_10: str = convert_num_base_n_to_num_base_m(
         num_to_convert, int(base_convert_from), 10
     )
@@ -145,7 +143,9 @@ def declare_conversion(
             base_convert_to,
         )
     )
-    declare_additional_checks(num_to_convert, base_convert_from, base_convert_to)
+    print("Additional checks. If they failed the conversion probably isn't valid.")
+    print("If they succeded you are more sure that the conversion is valid.")
+    declare_additional_checks(num_to_convert, base_convert_from)
 
 
 def declare_inputs_validity(
