@@ -97,7 +97,9 @@ def get_input_from_user() -> List[str]:
     for i in range(len(names_of_inputs)):
         if i == 0:
             print()
-        inputs[i] = input("Enter {0} and press Enter: ".format(names_of_inputs[i]))
+        inputs[i] = input(
+            "Enter {0} and press Enter: ".format(names_of_inputs[i])
+        ).lower()
     return inputs
 
 
