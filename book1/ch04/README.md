@@ -7,6 +7,7 @@
 3. [Task 3](#task-3)
 4. [Task 4](#task-4)
 5. [Task 5](#task-5)
+6. [Task 6](#task-6)
 
 ---
 
@@ -79,3 +80,17 @@ Arbitrary Base Conversions
 ## Description
 
 Write a program that allows the user to convert a number from one base to another. Your program should support bases between 2 and 16 for both the input number and the result number. 
+
+# Task 6
+
+[Go to: Table of contents](#table-of-contents)
+
+## Title
+
+Reduce a Fraction to Lowest Terms
+
+(Part 1, Exercise 101 from the book)
+
+## Description
+
+Write a function that takes two positive integers that represent the numerator and denominator of a fraction as its only two parameters. [...] For example, if the parameters passed to the function are 6 and 63 then the function should return 2 and 21.
