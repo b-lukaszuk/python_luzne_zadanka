@@ -70,7 +70,11 @@ Write a program that accepts x,y coordinates of n-points and returns formula for
 </pre>
 
 where:
-$$ m = {{\sum xy - {(\sum x) (\sum y) \over n}} \over \sum x^2 - {{(\sum x)^2} \over n}} $$
-$$ b = \overline{y} - m \overline{x} $$
+
+$$m = {{\sum xy - {(\sum x) (\sum y) \over n}} \over \sum x^2 - {{(\sum x)^2} \over n}}$$
+
+and
+
+$$b = \overline{y} - m \overline{x}$$
 
 Input is taken from the user, the result is printed on the screen.
