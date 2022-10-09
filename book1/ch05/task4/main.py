@@ -72,22 +72,22 @@ def get_xy_coordinates_from_user(
 
 
 # returns List of points, e.g. [[1,2], [2,3], [4,5]]
-def get_points_from_user() -> List[List[float]]:
+def get_points_from_user(max_number_of_points: int = 10) -> List[List[float]]:
     data_collected: bool = False
     points: List[List[float]] = []
     print("Beginning data acquisition.")
     print("Enter the coordinates of at least two different points.")
-    print("Enter no more than 10 points.")
+    print("Enter no more than {0} points.".format(max_number_of_points))
     while not data_collected:
         print("")
         points.append(get_xy_coordinates_from_user())
-        data_collected = len(points) >= 10
+        data_collected = len(points) >= max_number_of_points
         if not data_collected:
             data_collected = input(
                 "\nAnother point [Y/n or anything else]? "
             ).strip() not in ["y", "Y", ""]
         else:
-            print("Collected 10 data points.")
+            print("Collected {0} data points.".format(max_number_of_points))
     print("End of data acquisition.")
     return points
 
