@@ -5,6 +5,7 @@
 1. [Task 1](#task-1)
 2. [Task 2](#task-2)
 3. [Task 3](#task-3)
+4. [Task 4](#task-4)
 
 ---
 
@@ -49,3 +50,27 @@ Random Lottery Numbers
 ## Description
 
 Write a program that generates a random selection of 6 numbers for a lottery ticket (numbers 1 to 49 without a repetition).
+
+# Task 4
+
+[Go to: Table of contents](#table-of-contents)
+
+## Title
+
+Line of Best Fit
+
+(Part 1, Exercise 117 from the book)
+
+## Description
+
+Write a program that accepts x,y coordinates of n-points and returns formula for the line of best fit (linear regression):
+
+<pre>
+ y = mx + b
+</pre>
+
+where:
+$$ m = {{\sum xy - {(\sum x) (\sum y) \over n}} \over \sum x^2 - {{(\sum x)^2} \over n}} $$
+$$ b = \overline{y} - m \overline{x} $$
+
+Input is taken from the user, the result is printed on the screen.
