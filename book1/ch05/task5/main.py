@@ -23,7 +23,7 @@ def declare_result_of_simulation(min: Number = 20, max: Number = 40) -> None:
     nums: List[Number] = random.choices(population=range(100), k=10)
     print(
         "List {0} number of elements between {1} (inclusive) and {2} (inclusive) = {3}".format(
-            nums, min, max, countRange(nums, 20, 40)
+            nums, min, max, countRange(nums, min, max)
         )
     )
 
