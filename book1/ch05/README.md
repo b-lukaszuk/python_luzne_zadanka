@@ -96,5 +96,7 @@ Create a function named `countRange` which determines and returns the number of 
 Signature:
 
 <pre>
-def countRange(doubles: List[double], min: double, max: double) -> int:
+def countRange(ints: List[int], min: int, max: int) -> int:
+# or
+def countRange(floats: List[float], min: float, max: float) -> int:
 </pre>
