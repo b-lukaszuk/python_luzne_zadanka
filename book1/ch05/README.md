@@ -78,3 +78,23 @@ and
 $$b = \overline{y} - m \overline{x}$$
 
 Input is taken from the user, the result is printed on the screen.
+
+# Task 5
+
+[Go to: Table of contents](#table-of-contents)
+
+## Title
+
+Count the Elements
+
+(Part 1, Exercise 121 from the book)
+
+## Description
+
+Create a function named `countRange` which determines and returns the number of elements within a list that are greater than or equal to some minimum value and less than some maximum value.
+
+Signature:
+
+<pre>
+def countRange(doubles: List[double], min: double, max: double) -> int:
+</pre>
