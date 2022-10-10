@@ -45,7 +45,7 @@ Write a function that generates a random password. The password should have a ra
 
 ## Title
 
-Random Password
+Check a Password
 
 (Part 1, Exercise 96 from the book)
 
