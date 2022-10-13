@@ -7,6 +7,7 @@
 3. [Task 3](#task-3)
 4. [Task 4](#task-4)
 5. [Task 5](#task-5)
+6. [Task 6](#task-6)
 
 ---
 
@@ -101,3 +102,19 @@ def countRange(ints: List[int], min: int, max: int) -> int:
 # or
 def countRange(floats: List[float], min: float, max: float) -> int:
 </pre>
+
+# Task 6
+
+Tokenizing a String
+
+(Part 1, Exercise 122 from the book)
+
+## Description
+
+Tokenizing is the process of converting a string into a list of substrings, known as tokens.
+
+[...]
+
+Write a function that takes a string containing a mathematical expression as its only parameter and breaks it into a list of tokens. Each token should be a parenthesis, an operator, or a number with an optional leading + or - (for simplicity we will only work with integers in this problem). Return the list of tokens as the function’s result.
+
+[...] assume that the string passed to your function always contains a valid mathematical expression consisting of parentheses, operators and integers. 
