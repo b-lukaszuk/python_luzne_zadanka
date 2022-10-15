@@ -9,6 +9,7 @@
 5. [Task 5](#task-5)
 6. [Task 6](#task-6)
 7. [Task 7](#task-7)
+8. [Task 8](#task-8)
 
 ---
 
@@ -139,3 +140,7 @@ The Sieve of Eratosthenes
 ## Description
 
 Create a Python program that uses [this algorithm](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes) to display all of the prime numbers between 2 and a limit entered by the user. If you implement the algorithm correctly you should be able to display all of the prime numbers less than 1,000,000 in a few seconds.
+
+## My notes
+
+Getting the input from the user is boring (I did it many times in the previous exercises from the book), so I will skip that part. I will also limit myself to some smaller number (it is boring to write down so many numbers on the screen and then read it to check the corectness of the input).
