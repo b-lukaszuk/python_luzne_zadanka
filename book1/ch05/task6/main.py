@@ -46,7 +46,12 @@ def get_tokens(math_expression: str, separators: str = "()+-*/") -> List[str]:
         expression_no_spaces, separators
     )
     indexes.sort()
-    return split_text_at(expression_no_spaces, indexes)
+    tokens: List[str] = split_text_at(expression_no_spaces, indexes)
+    # not sure if -/+ before parenthesis should go separetley of ( or together
+    # here is together (since it is not separate operator but negation) like with numbers
+    if tokens[0] in "+-" and tokens[1] in "(":
+        tokens = [tokens[0] + tokens[1]] + tokens[2:]
+    return tokens
 
 
 def print_program_description() -> None:
