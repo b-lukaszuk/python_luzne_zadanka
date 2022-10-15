@@ -129,3 +129,13 @@ Generate All Sublists of a List
 ## Description
 
 [...] write a function that returns a list containing every possible sublist of a list. For example, the sublists of [1, 2, 3] are [], [1], [2], [3], [1, 2], [2, 3] and [1, 2, 3]. Note that your func- tion will always return a list containing at least the empty list because the empty list is a sublist of every list.
+
+# Task 8
+
+The Sieve of Eratosthenes
+
+(Part 1, Exercise 127 from the book)
+
+## Description
+
+Create a Python program that uses [this algorithm](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes) to display all of the prime numbers between 2 and a limit entered by the user. If you implement the algorithm correctly you should be able to display all of the prime numbers less than 1,000,000 in a few seconds.
