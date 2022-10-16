@@ -46,7 +46,7 @@ def get_hundreds_str(number: int, mapping: Dict[int, str] = nums_to_words) -> st
     if hundreds[1] == 0:
         return ""
     else:
-        return "{0} {1}".format(mapping[hundreds[1]], mapping[hundreds[0]])
+        return "{0} {1} ".format(mapping[hundreds[1]], mapping[hundreds[0]])
 
 
 def get_tens(number: int) -> Tuple[int, int]:
@@ -63,7 +63,7 @@ def get_tens_str(number: int, mapping: Dict[int, str] = nums_to_words) -> str:
     if tens_single_num == 0:
         return ""
     else:
-        return mapping[tens_single_num]
+        return "{0} ".format(mapping[tens_single_num])
 
 
 def get_ones(number: int) -> Tuple[int, int]:
@@ -90,7 +90,7 @@ def get_number_str(number: int) -> str:
     if (number < 0) or (number > 999):
         raise ValueError("Number must be in range 0-999")
     else:
-        return "{0} {1} {2}".format(
+        return "{0}{1}{2}".format(
             get_hundreds_str(number),
             get_tens_str(number),
             get_ones_str(number),
