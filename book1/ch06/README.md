@@ -51,3 +51,5 @@ Create a Bingo Card
 ## Description
 
 A [Bingo card](<https://en.wikipedia.org/wiki/Bingo_(American_version)>) consists of 5 columns of 5 numbers. The columns are labeled with the letters B, I, N, G and O. There are 15 numbers that can appear under each letter. In particular, the numbers that can appear under the B range from 1 to 15, the numbers that can appear under the I range from 16 to 30, the numbers that can appear under the N range from 31 to 45, and so on.
+
+Write a function that creates a random Bingo card [...]. [...] write a program that displays a random Bingo card.
