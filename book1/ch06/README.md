@@ -88,3 +88,7 @@ Play Bingo
 ## Description
 
 In this exercise you will write a program that simulates a game of Bingo [...]. Begin by generating a list of all of the valid Bingo calls (B1 through O75). [...] Then your program should consume calls out of the list, crossing out numbers on the card, until the card contains a crossed out line (horizontal, vertical or diagonal). Simulate 1,000 games and report the minimum, maximum and average number of calls that must be made before the card wins.
+
+## My notes
+
+Not sure what the 'all of the valid Bingo calls (B1 through O75)' means. I think I should generate a sequence of numbers 1:75, shuffle them, and draw one at a time until a random bingo card is filled (that's what I will do).
