@@ -8,6 +8,12 @@ class Bingo:
     def __init__(self) -> None:
         self.__bingo: Dict[str, List[int]] = self.__get_random_digits_in_bingo()
 
+    def __str__(self) -> str:
+        return self.__get_formatted_bingo()
+
+    def __repr__(self) -> str:
+        return self.__str__()
+
     # returns dict with key columns identificator and digits (values) in List[int]
     # middle of the card [2, 2] is empty (it is always considered to be marked)
     def __get_random_digits_in_bingo(self) -> Dict[str, List[int]]:
@@ -51,7 +57,7 @@ class Bingo:
         else:
             return self.__format_list_to_row(self.__r_pad_list(self.__get_row(row_id)))
 
-    def get_formatted_bingo(self) -> str:
+    def __get_formatted_bingo(self) -> str:
         rows: List[str] = [self.__get_formatted_row(i) + "\n" for i in range(-1, 5)]
         row_separator: str = "-" * (len(rows[1]) - 1) + "\n"
         return "\n" + row_separator.join(rows) + row_separator
