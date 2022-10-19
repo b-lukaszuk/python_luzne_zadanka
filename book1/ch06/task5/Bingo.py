@@ -96,3 +96,10 @@ class Bingo:
             or self.__is_any_row_marked()
             or self.__is_any_diagonal_marked()
         )
+
+    def mark_number_if_exists(self, number: int) -> None:
+        if 0 < number < 76:
+            for col_id in "bingo":
+                for row_id in range(5):
+                    if self.__bingo[col_id][row_id] == number:
+                        self.__bingo[col_id][row_id] = 0
