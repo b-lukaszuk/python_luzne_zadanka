@@ -52,11 +52,9 @@ def get_formatted_row(bingo: Dict[str, List[int]], row_id: int) -> str:
 
 
 def get_formatted_bingo(bingo: Dict[str, List[int]]) -> str:
-    result: str = "\n"
-    for i in range(-1, 5):
-        result += get_formatted_row(bingo, i) + "\n"
-        result += "-" * 21 + "\n"
-    return result
+    rows: List[str] = [get_formatted_row(bingo, i) + "\n" for i in range(-1, 5)]
+    row_separator: str = "-" * (len(rows[1]) - 1) + "\n"
+    return "\n" + row_separator.join(rows) + row_separator
 
 
 def mark_random_column(bingo: Dict[str, List[int]]) -> Dict[str, List[int]]:
