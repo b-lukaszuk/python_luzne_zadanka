@@ -59,7 +59,7 @@ class Bingo:
 
     def __get_formatted_bingo(self) -> str:
         rows: List[str] = [self.__get_formatted_row(i) + "\n" for i in range(-1, 5)]
-        row_separator: str = "-" * (len(rows[1]) - 1) + "\n"
+        row_separator: str = "-" * (len(rows[0]) - 1) + "\n"
         return "\n" + row_separator.join(rows) + row_separator
 
     def __get_sums_of_columns(self) -> List[int]:
