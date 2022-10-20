@@ -50,7 +50,7 @@ def get_statistics(numbers_of_calls: List[int]) -> Dict[str, float]:
 
 
 def declare_results(number_of_simulations: int = 1000) -> None:
-    print("Performing {0} simulations.".format(number_of_simulations))
+    print("\nPerforming {0} simulations.".format(number_of_simulations))
     print("Please be patient this may take some time.\n")
     statistics: Dict[str, float] = get_statistics(
         get_numbers_of_calls_per_n_bingo_winnings(number_of_simulations)
@@ -75,6 +75,7 @@ def print_program_description() -> None:
 
 def main() -> None:
     print_program_description()
+    _: str = input("Press any key to continue")
     number_of_simulations: int = 1000
     declare_results(number_of_simulations)
     print("\nThat's all. Goodbye!\n")
