@@ -27,7 +27,7 @@ def print_error_msgs_for_sys_argv(sys_argv: List[str]) -> None:
     if len(sys_argv) != 3:
         print("Incorrect number of arguments sent to program.")
     elif not os.path.isfile(sys_argv[1]):
-        print("File {0} does not exist.".format(sys_argv[1]))
+        print("File '{0}' does not exist.".format(sys_argv[1]))
     elif sys_argv[1] == sys_argv[1]:
         print("Name of input file must be different than the output file.")
     print("Terminating program.")
@@ -37,7 +37,7 @@ def main() -> None:
     if not are_sys_argv_ok(sys.argv):
         print_error_msgs_for_sys_argv(sys.argv)
     else:
-        print("Reading contents of {0}".format(sys.argv[1]))
+        print("Reading contents of '{0}'".format(sys.argv[1]))
         print("Writing contents with line numbers to {0}".format(sys.argv[2]))
         write_contents_to_file(sys.argv[2], get_file_contents(sys.argv[1]))
         print("Done. That's all. Goodbye!")
