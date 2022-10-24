@@ -1,11 +1,3 @@
----
-
-# Table of contents
-
-1. [Task 1](#task-1)
-
----
-
 # Task 1
 
 [Go to: Table of contents](#table-of-contents)
