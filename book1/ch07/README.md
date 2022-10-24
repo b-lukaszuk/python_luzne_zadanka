@@ -4,6 +4,7 @@
 
 1. [Task 1](#task-1)
 2. [Task 2](#task-2)
+3. [Task 3](#task-3)
 
 ---
 
@@ -38,3 +39,17 @@ Letter Frequencies
 ## Description
 
 Write a program that [...] displayes the frequencies of all letters in a file. Ignore spaces, punctuation marks, and numbers as you perform this analysis. Your program should be case insensitive [...]. The user will provide the file name as a command line parameter.
+
+# Task 3
+
+[Go to: Table of contents](#table-of-contents)
+
+## Title
+
+Sum a List of Numbers
+
+(Part 1, Exercise 148 from the book)
+
+## Description
+
+Create a program that sums all of the numbers entered by the user while ignoring any lines entered by the user that are not valid numbers. Your program should display the current sum after each number is entered. It should display an appropriate error message after any invalid input, and then continue to sum any additional num- bers entered by the user. Your program should exit when the user enters a blank line. Ensure that your program works correctly for both integers and floating point numbers.
