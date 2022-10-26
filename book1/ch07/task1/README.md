@@ -18,7 +18,7 @@ Name of the input file and output file will be read from command line args (so, 
 
 ## Usage
 
-WARNING! The program may accidentally overwrite a file content. Be careful not to do that!
+**WARNING!** The program may accidentally overwrite a file content. Be careful not to do that!
 
 ```bash
 python3 main.py input_file.txt output_file.txt

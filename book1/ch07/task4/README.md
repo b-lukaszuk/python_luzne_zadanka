@@ -14,8 +14,9 @@ Remove Comments
 
 ## Usage
 
-WARNING! The program may accidentally overwrite a file content. Be careful not to do that!
-WARNING! The input_file.py (file with comments) cannot contain `#` characters that are not comments (e.g. in strings between quotation signs).
+**WARNING!** The program may accidentally overwrite a file content. Be careful not to do that!
+
+**WARNING!** The input_file.py (file with comments) cannot contain `#` characters that are not comments (e.g. in strings between quotation signs).
 
 ```bash
 python3 main.py input_file.py output_file.py

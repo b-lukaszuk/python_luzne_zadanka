@@ -14,7 +14,7 @@ Write a program that [...] displayes the frequencies of all letters in a file. I
 
 ## Usage
 
-WARNING! The program may accidentally overwrite a file content. Be careful not to do that!
+**WARNING!** The program may accidentally overwrite a file content. Be careful not to do that!
 
 ```bash
 python3 main.py input_file.txt
