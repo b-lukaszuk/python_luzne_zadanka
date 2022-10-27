@@ -16,7 +16,18 @@ def write_contents_to_file(file_path: str, contents: List[str]) -> None:
 
 
 def remove_comments(contents: List[str]) -> List[str]:
-    return [re.sub(r"#.*", "", line) for line in contents]
+    result: List[str] = []
+    tmp_line: str = ""
+    for line in contents:
+        if "#" in line:
+            tmp_line = re.sub(r"#.*", "", line).rstrip()
+            if tmp_line == "":
+                continue
+            else:
+                result.append(tmp_line + "\n")
+        else:
+            result.append(line)
+    return result
 
 
 def are_sys_argv_ok(sys_argv: List[str]) -> bool:
