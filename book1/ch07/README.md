@@ -6,6 +6,7 @@
 2. [Task 2](#task-2)
 3. [Task 3](#task-3)
 4. [Task 4](#task-4)
+5. [Task 5](#task-5)
 
 ---
 
@@ -68,3 +69,17 @@ Remove Comments
 ## Description
 
 [...] create a program that removes all of the comments from a Python source file.
+
+# Task 5
+
+[Go to: Table of contents](#table-of-contents)
+
+## Title
+
+What’s that Element Again?
+
+(Part 1, Exercise 152 from the book)
+
+## Description
+
+Write a program that reads a file containing information about chemical elements and stores it in one or more appropriate data structures. Then your program should read and process input from the user. If the user enters an integer then your program should display the symbol and name of the element with the number of protons entered. If the user enters a string then your program should display the number of protons for the element with that name or symbol. [...] Continue to read input from the user until a blank line is entered.
