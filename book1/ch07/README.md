@@ -87,3 +87,5 @@ Write a program that reads a file containing information about chemical elements
 ## My Notes
 
 I will download the periodic table of elements from [PubChem](https://pubchem.ncbi.nlm.nih.gov/periodic-table/) as a CSV file.
+
+My solution is slightly different from the one mentioned in the description, but it is close enough. I could have written the solution to adhere more closely to the requirements, but I prefer it that way (and this is but an exercise).
