@@ -43,16 +43,21 @@ def get_element_position(searched_phrase: str, key: str, elements: Elements) -> 
 def get_element_description(elt_position: int, elements: Elements) -> str:
     if elt_position < 0:
         return "Element not found"
+    dictKeys: Dict[str, str] = {
+        "fullNames": "full name",
+        "symbols": "symbol",
+        "atomicNumbers": "atomic number (# of protons)",
+    }
     result: str = ""
     for key in ["fullNames", "symbols", "atomicNumbers"]:
-        result += "{0}: {1}, ".format(key[:-1], elements[key][elt_position])
+        result += "{0}: {1}, ".format(dictKeys[key], elements[key][elt_position])
     return result[:-2]
 
 
 def ask_user_for_action() -> str:
     input_collected: bool = False
     user_choice: str = ""
-    keysDict: Dict = {"f": "fullNames", "s": "symbols", "a": "atomicNumbers"}
+    keysDict: Dict[str, str] = {"f": "fullNames", "s": "symbols", "a": "atomicNumbers"}
     msg: str = "\nAvailable action types:\n"
     msg += "\ttype 'f': chose element by full name\n"
     msg += "\ttype 's': chose element by symbol\n"
@@ -68,7 +73,7 @@ def ask_user_for_action() -> str:
 
 
 def ask_user_for_search_phrase(key_from_elements: str) -> str:
-    keysDict: Dict = {
+    keysDict: Dict[str, str] = {
         "fullNames": "full name",
         "symbols": "symbol",
         "atomicNumbers": "atomic number (# of protons)",
@@ -110,9 +115,10 @@ def main() -> None:
     print_program_description()
     print("Obtaining elements data from {0}".format(path_to_elements_data))
     elements: Elements = get_elements_from_file(path_to_elements_data)
-    print("Done.\nObtaining user's input.")
+    print("Done.\n\nObtaining user's input.")
     program_main_loop(elements)
-    print("Done. That's all. Goodbye!\n")
+    print("Obtaining user's input completed.")
+    print("\nThat's all. Goodbye!\n")
 
 
 if __name__ == "__main__":
