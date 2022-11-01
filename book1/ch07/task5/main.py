@@ -1,4 +1,4 @@
-from typing import List, TypedDict
+from typing import Dict, List, TypedDict
 
 
 class Elements(TypedDict):
@@ -49,6 +49,36 @@ def get_element_description(elt_position: int, elements: Elements) -> str:
     for key in ["fullNames", "symbols", "atomicNumbers"]:
         result += "{0}: {1}, ".format(key[:-1], elements[key][elt_position])
     return result[:-2]
+
+
+def ask_user_for_action() -> str:
+    input_collected: bool = False
+    user_choice: str = ""
+    keysDict: Dict = {"f": "fullNames", "s": "symbols", "a": "atomicNumbers"}
+    msg: str = "Action types:\n"
+    msg += "\ttype 'f': chose element by full name\n"
+    msg += "\ttype 's': chose element by symbol\n"
+    msg += "\ttype 'a': chose element by atomic number (# of protons)\n"
+    while not input_collected:
+        print(msg)
+        user_choice = input("Enter Your choice: ")
+        if user_choice.strip().lower() not in keysDict:
+            print("Incorrect input. Try again.\n")
+        else:
+            input_collected = True
+    return keysDict[user_choice.strip().lower()]
+
+
+def ask_user_for_search_phrase(key_from_elements: str) -> str:
+    keysDict: Dict = {
+        "fullNames": "full name",
+        "symbols": "symbol",
+        "atomicNumbers": "atomic number (# of protons)",
+    }
+    searched_phrase: str = input(
+        "Type {0} of the searched element: ".format(keysDict[key_from_elements])
+    )
+    return searched_phrase.strip()
 
 
 def main() -> None:
