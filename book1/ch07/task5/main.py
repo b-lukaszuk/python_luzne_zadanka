@@ -5,6 +5,7 @@ class Elements(TypedDict):
     fullNames: List[str]
     symbols: List[str]
     atomicNumbers: List[str]
+    atomicMasses: List[str]
 
 
 def get_file_contents(file_path: str) -> List[str]:
@@ -14,13 +15,23 @@ def get_file_contents(file_path: str) -> List[str]:
 
 
 def add_values_to_elements(elements: Elements, line_from_csv: List[str]) -> None:
-    elements["fullNames"].append(line_from_csv[2].strip())
-    elements["symbols"].append(line_from_csv[1].strip())
-    elements["atomicNumbers"].append(line_from_csv[0].strip())
+    dictKeysToColumns: Dict[str, int] = {
+        "fullNames": 2,
+        "symbols": 1,
+        "atomicNumbers": 0,
+        "atomicMasses": 3,
+    }
+    for key in dictKeysToColumns:
+        elements[key].append(line_from_csv[dictKeysToColumns[key]].strip())
 
 
 def get_elements_from_file(file_path: str) -> Elements:
-    elements: Elements = {"fullNames": [], "symbols": [], "atomicNumbers": []}
+    elements: Elements = {
+        "fullNames": [],
+        "symbols": [],
+        "atomicNumbers": [],
+        "atomicMasses": [],
+    }
     lines: List[str] = get_file_contents(file_path)
     for i in range(1, len(lines)):
         # fields are separated with commas, and fields contain quotations
@@ -47,9 +58,10 @@ def get_element_description(elt_position: int, elements: Elements) -> str:
         "fullNames": "full name",
         "symbols": "symbol",
         "atomicNumbers": "atomic number (# of protons)",
+        "atomicMasses": "atomic mass",
     }
     result: str = ""
-    for key in ["fullNames", "symbols", "atomicNumbers"]:
+    for key in ["fullNames", "symbols", "atomicNumbers", "atomicMasses"]:
         result += "{0}: {1}, ".format(dictKeys[key], elements[key][elt_position])
     return result[:-2]
 
@@ -117,7 +129,7 @@ def main() -> None:
     elements: Elements = get_elements_from_file(path_to_elements_data)
     print("Done.\n\nObtaining user's input.")
     program_main_loop(elements)
-    print("Obtaining user's input completed.")
+    print("\nObtaining user's input completed.")
     print("\nThat's all. Goodbye!\n")
 
 
