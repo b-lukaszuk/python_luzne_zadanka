@@ -2,10 +2,10 @@ from typing import Dict, List, TypedDict
 
 
 class Elements(TypedDict):
-    fullNames: List[str]
+    full_names: List[str]
     symbols: List[str]
-    atomicNumbers: List[str]
-    atomicMasses: List[str]
+    atomic_numbers: List[str]
+    atomic_masses: List[str]
 
 
 def get_file_contents(file_path: str) -> List[str]:
@@ -15,22 +15,22 @@ def get_file_contents(file_path: str) -> List[str]:
 
 
 def add_values_to_elements(elements: Elements, line_from_csv: List[str]) -> None:
-    dictKeysToColumns: Dict[str, int] = {
-        "fullNames": 2,
+    elements_keys_to_columns: Dict[str, int] = {
+        "full_names": 2,
         "symbols": 1,
-        "atomicNumbers": 0,
-        "atomicMasses": 3,
+        "atomic_numbers": 0,
+        "atomic_masses": 3,
     }
-    for key in dictKeysToColumns:
-        elements[key].append(line_from_csv[dictKeysToColumns[key]].strip())
+    for key in elements_keys_to_columns:
+        elements[key].append(line_from_csv[elements_keys_to_columns[key]].strip())
 
 
 def get_elements_from_file(file_path: str) -> Elements:
     elements: Elements = {
-        "fullNames": [],
+        "full_names": [],
         "symbols": [],
-        "atomicNumbers": [],
-        "atomicMasses": [],
+        "atomic_numbers": [],
+        "atomic_masses": [],
     }
     lines: List[str] = get_file_contents(file_path)
     for i in range(1, len(lines)):
@@ -54,22 +54,28 @@ def get_element_position(searched_phrase: str, key: str, elements: Elements) -> 
 def get_element_description(elt_position: int, elements: Elements) -> str:
     if elt_position < 0:
         return "Element not found"
-    dictKeys: Dict[str, str] = {
-        "fullNames": "full name",
+    elements_keys_to_descriptions: Dict[str, str] = {
+        "full_names": "full name",
         "symbols": "symbol",
-        "atomicNumbers": "atomic number (# of protons)",
-        "atomicMasses": "atomic mass",
+        "atomic_numbers": "atomic number (# of protons)",
+        "atomic_masses": "atomic mass",
     }
     result: str = ""
-    for key in ["fullNames", "symbols", "atomicNumbers", "atomicMasses"]:
-        result += "{0}: {1}, ".format(dictKeys[key], elements[key][elt_position])
+    for key in ["full_names", "symbols", "atomic_numbers", "atomic_masses"]:
+        result += "{0}: {1}, ".format(
+            elements_keys_to_descriptions[key], elements[key][elt_position]
+        )
     return result[:-2]
 
 
 def ask_user_for_action() -> str:
     input_collected: bool = False
     user_choice: str = ""
-    keysDict: Dict[str, str] = {"f": "fullNames", "s": "symbols", "a": "atomicNumbers"}
+    user_choice_to_elts_key: Dict[str, str] = {
+        "f": "full_names",
+        "s": "symbols",
+        "a": "atomic_numbers",
+    }
     msg: str = "\nAvailable action types:\n"
     msg += "\ttype 'f': chose element by full name\n"
     msg += "\ttype 's': chose element by symbol\n"
@@ -77,21 +83,23 @@ def ask_user_for_action() -> str:
     while not input_collected:
         print(msg)
         user_choice = input("Enter Your choice: ")
-        if user_choice.strip().lower() not in keysDict:
+        if user_choice.strip().lower() not in user_choice_to_elts_key:
             print("Incorrect input. Try again.\n")
         else:
             input_collected = True
-    return keysDict[user_choice.strip().lower()]
+    return user_choice_to_elts_key[user_choice.strip().lower()]
 
 
 def ask_user_for_search_phrase(key_from_elements: str) -> str:
-    keysDict: Dict[str, str] = {
-        "fullNames": "full name",
+    elements_keys_to_search_phrase: Dict[str, str] = {
+        "full_names": "full name",
         "symbols": "symbol",
-        "atomicNumbers": "atomic number (# of protons)",
+        "atomic_numbers": "atomic number (# of protons)",
     }
     searched_phrase: str = input(
-        "Type {0} of the searched element: ".format(keysDict[key_from_elements])
+        "Type {0} of the searched element: ".format(
+            elements_keys_to_search_phrase[key_from_elements]
+        )
     )
     return searched_phrase.strip()
 
