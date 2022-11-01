@@ -31,6 +31,26 @@ def get_elements_from_file(
     return elements
 
 
+def get_element_position(searched_phrase: str, key: str, elements: Elements) -> int:
+    position: int = -99
+    try:
+        position = elements[key].index(searched_phrase)
+    except ValueError:
+        position = -1
+    except KeyError:
+        position = -99
+    return position
+
+
+def get_element_description(elt_position: int, elements: Elements) -> str:
+    if elt_position < 0:
+        return "Element not found"
+    result: str = ""
+    for key in ["fullNames", "symbols", "atomicNumbers"]:
+        result += "{0}: {1}, ".format(key[:-1], elements[key][elt_position])
+    return result[:-2]
+
+
 def main() -> None:
     print("Done. That's all. Goodbye!")
 
