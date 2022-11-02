@@ -104,3 +104,7 @@ Names that Reached Number One
 ## Description
 
 The baby names data set consists of over X files. [...] Write a program that reads every file [...] and identifies all of the names that were most popular [...]. Your program should output two lists: one containing the most popular names for boys and the other containing the most popular names for girls.
+
+## My notes
+
+I will download exemplary datasets from [this public source](https://www.ssa.gov/oact/babynames/limits.html). Let's say I will use data for years 1880 to 1930. I will change file suffix from `.txt` to `.csv`. If the dataset is sorted, I will scramble row order in a file. Finally I will use such files for this exercise.
