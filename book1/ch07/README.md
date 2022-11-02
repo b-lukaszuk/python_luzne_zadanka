@@ -108,3 +108,5 @@ The baby names data set consists of over X files. [...] Write a program that rea
 ## My notes
 
 I will download exemplary datasets from [this public source](https://www.ssa.gov/oact/babynames/limits.html). Let's say I will use data for years 1880 to 1930. I will change file suffix from `.txt` to `.csv`. If the dataset is sorted, I will scramble row order in a file. Finally I will use such files for this exercise.
+
+Format of data (column names) in the `.csv` files: `name`, `gender`, `number of occurences`
