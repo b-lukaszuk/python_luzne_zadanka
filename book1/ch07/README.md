@@ -7,6 +7,7 @@
 3. [Task 3](#task-3)
 4. [Task 4](#task-4)
 5. [Task 5](#task-5)
+6. [Task 6](#task-6)
 
 ---
 
@@ -89,3 +90,17 @@ Write a program that reads a file containing information about chemical elements
 I will download the periodic table of elements from [PubChem](https://pubchem.ncbi.nlm.nih.gov/periodic-table/) as a CSV file.
 
 My solution is slightly different from the one mentioned in the description, but it is close enough. I could have written the solution to adhere more closely to the requirements, but I prefer it that way (and this is but an exercise).
+
+# Task 6
+
+[Go to: Table of contents](#table-of-contents)
+
+## Title
+
+Names that Reached Number One
+
+(Part 1, Exercise 154 from the book)
+
+## Description
+
+The baby names data set consists of over X files. [...] Write a program that reads every file [...] and identifies all of the names that were most popular [...]. Your program should output two lists: one containing the most popular names for boys and the other containing the most popular names for girls.
