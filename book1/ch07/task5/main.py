@@ -111,10 +111,11 @@ def print_program_description() -> None:
     print("You can search using full name, symbol or atomic number of an element.")
     print("The result is printed to the terminal.")
     print("NO GUARANTEE OF THE PROGRAM ACCURACY. Still, I hope it'll work fine.")
-    print("All clear. Then let's begin.\n")
+    print("All clear. Then let's start.")
+    _: str = input("Press any key to begin ")
 
 
-def program_main_loop(elements: Elements) -> None:
+def run_main_loop(elements: Elements) -> None:
     end_program: bool = False
     key_from_elts: str = ""
     searched_phrase: str = ""
@@ -133,10 +134,10 @@ def program_main_loop(elements: Elements) -> None:
 def main() -> None:
     path_to_elements_data: str = "./PubChemElements_all.csv"
     print_program_description()
-    print("Obtaining elements data from {0}".format(path_to_elements_data))
+    print("\nObtaining elements data from {0}".format(path_to_elements_data))
     elements: Elements = get_elements_from_file(path_to_elements_data)
     print("Done.\n\nObtaining user's input.")
-    program_main_loop(elements)
+    run_main_loop(elements)
     print("\nObtaining user's input completed.")
     print("\nThat's all. Goodbye!\n")
 
