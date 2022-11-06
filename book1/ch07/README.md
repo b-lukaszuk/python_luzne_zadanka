@@ -26,7 +26,7 @@ Number the Lines in a File
 
 Create a program that adds line numbers to a file. The name of the input file will be read from the user, as will the name of the new file that your program will create. Each line in the output file should begin with the line number, followed by a colon and a space, followed by the line from the input file.
 
-## My notes
+## My Notes
 
 Name of the input file and output file will be read from command line args (so, `sys.argv`).
 
@@ -106,7 +106,7 @@ Names that Reached Number One
 
 The baby names data set consists of over X files. [...] Write a program that reads every file [...] and identifies all of the names that were most popular [...]. Your program should output two lists: one containing the most popular names for boys and the other containing the most popular names for girls.
 
-## My notes
+## My Notes
 
 I will download exemplary datasets from [this public source](https://www.ssa.gov/oact/babynames/limits.html). Let's say I will use data for years 1880 to 1930. I will change file suffix from `.txt` to `.csv`. If the dataset is sorted, I will scramble row order in a file. Finally I will use such files for this exercise.
 
@@ -123,3 +123,7 @@ Distinct Names
 (Part 1, Exercise 157 from the book)
 
 In this exercise, you will create a program that reads every file in the baby names data set described in Exercise 154. As your program reads the files, it should keep track of each name used for a boy and each name used for a girl. Your program should output two lists. One list will contain all of the names that have been used for girls. The other list will contain all of the names that have been used for boys. Neither of your lists should contain any repeated values.
+
+## My Notes
+
+There will be way too many names to print into the console (it will not be readable). I think I will limit myself to like 10 files. Additionally I will trim the amount of names per file to say 5 male and 5 female.
