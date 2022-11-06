@@ -8,6 +8,7 @@
 4. [Task 4](#task-4)
 5. [Task 5](#task-5)
 6. [Task 6](#task-6)
+7. [Task 7](#task-7)
 
 ---
 
@@ -110,3 +111,15 @@ The baby names data set consists of over X files. [...] Write a program that rea
 I will download exemplary datasets from [this public source](https://www.ssa.gov/oact/babynames/limits.html). Let's say I will use data for years 1880 to 1930. I will change file suffix from `.txt` to `.csv`. If the dataset is sorted, I will scramble row order in a file. Finally I will use such files for this exercise.
 
 Format of data (column names) in the `.csv` files: `name`, `gender`, `number of occurences`
+
+# Task 7
+
+[Go to: Table of contents](#table-of-contents)
+
+## Title
+
+Distinct Names
+
+(Part 1, Exercise 157 from the book)
+
+In this exercise, you will create a program that reads every file in the baby names data set described in Exercise 154. As your program reads the files, it should keep track of each name used for a boy and each name used for a girl. Your program should output two lists. One list will contain all of the names that have been used for girls. The other list will contain all of the names that have been used for boys. Neither of your lists should contain any repeated values.
