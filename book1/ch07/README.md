@@ -127,3 +127,5 @@ In this exercise, you will create a program that reads every file in the baby na
 ## My Notes
 
 There will be way too many names to print into the console (it will not be readable). I think I will limit myself to like 10 files. Additionally I will trim the amount of names per file to say 5 male and 5 female.
+
+Since exemplary datasets (and the information how to obtain them) were placed in Task6 (above) here I will not include datasets.
