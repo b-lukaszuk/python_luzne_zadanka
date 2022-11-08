@@ -152,3 +152,7 @@ The user will provide the name of the file to check for spelling mistakes as a c
 Hint:
 
 While you could load all of the English words from the words data set into a list, searching a list is slow if you use Python’s `in` operator. It is much faster to check if a key is present in a dictionary, or if a value is present in a set. [...]
+
+## My Notes
+
+I think I will use the dictionary that can be found in the file `/usr/share/dict/american-english`. Although I think I will not include the dictionary in the repo. Regarding the file for spellcheck I think I will create *.TXT quickly and include some semi-random words. I think I will require both the dictionary and the file to spellcheck as command line args during this program invocation.
