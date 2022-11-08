@@ -29,6 +29,8 @@ def get_correctly_typed_words(file_path: str) -> Dict[str, int]:
     return result
 
 
+# assumption more than one word per line, with special characters (,.!?, etc.)
+# read words are lowercased
 def get_words_to_spellcheck(file_path: str) -> Dict[str, int]:
     result: Dict[str, int] = {}
     with open(file_path, "r") as f:
