@@ -46,7 +46,7 @@ def get_misspelled_words(
     return {
         word_to_check: 1
         for word_to_check in words_to_spellcheck
-        if word_to_check not in correctly_typed_words
+        if word_to_check not in correctly_typed_words and word_to_check != ""
     }
 
 
@@ -56,10 +56,13 @@ def print_misspelled_words(
     misspelled_words: Dict[str, int] = get_misspelled_words(
         words_to_spellcheck, correctly_typed_words
     )
-    print("\nMisspelled words (If none found. Nothing is printed):")
-    for misspelled_word in misspelled_words:
-        if misspelled_word.strip() != "":
-            print(misspelled_word)
+    print("\nMisspelled words:")
+    if misspelled_words:
+        for misspelled_word in misspelled_words:
+            if misspelled_word.strip() != "":
+                print(misspelled_word)
+    else:
+        print("No misspelled words found.")
 
 
 def main() -> None:
@@ -73,7 +76,7 @@ def main() -> None:
         words_to_spellcheck = get_words_to_spellcheck(sys.argv[1])
         print("Reading reference words from file '{0}'".format(sys.argv[2]))
         correct_words = get_correctly_typed_words(sys.argv[2])
-        print("Searching for misspelled words.")
+        print("Searching for misspelled words (case insensitive search).")
         print_misspelled_words(words_to_spellcheck, correct_words)
     print("\nThat's all. Goodbye!\n")
 
