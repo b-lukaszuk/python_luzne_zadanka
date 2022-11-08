@@ -9,6 +9,7 @@
 5. [Task 5](#task-5)
 6. [Task 6](#task-6)
 7. [Task 7](#task-7)
+8. [Task 8](#task-8)
 
 ---
 
@@ -122,6 +123,8 @@ Distinct Names
 
 (Part 1, Exercise 157 from the book)
 
+## Description
+
 In this exercise, you will create a program that reads every file in the baby names data set described in Exercise 154. As your program reads the files, it should keep track of each name used for a boy and each name used for a girl. Your program should output two lists. One list will contain all of the names that have been used for girls. The other list will contain all of the names that have been used for boys. Neither of your lists should contain any repeated values.
 
 ## My Notes
@@ -129,3 +132,23 @@ In this exercise, you will create a program that reads every file in the baby na
 There will be way too many names to print into the console (it will not be readable). I think I will limit myself to like 10 files. Additionally I will trim the amount of names per file to say 5 male and 5 female.
 
 Since exemplary datasets (and the information how to obtain them) were placed in Task6 (above) here I will not include datasets.
+
+# Task 8
+
+[Go to: Table of contents](#table-of-contents)
+
+## Title
+
+Distinct Names
+
+(Part 1, Exercise 158 from the book)
+
+## Description
+
+[...] write a program that reads a file and displays all of the words in it that are misspelled. Misspelled words will be identified by checking each word in the file against a list of known words. Any words in the user’s file that do not appear in the list of known words will be reported as spelling mistakes.
+
+The user will provide the name of the file to check for spelling mistakes as a command line parameter.
+
+Hint:
+
+While you could load all of the English words from the words data set into a list, searching a list is slow if you use Python’s `in` operator. It is much faster to check if a key is present in a dictionary, or if a value is present in a set. [...]
