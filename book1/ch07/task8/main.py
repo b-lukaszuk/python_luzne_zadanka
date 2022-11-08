@@ -1,11 +1,23 @@
 import os
 import re
 import sys
-from typing import Dict
+from typing import Dict, List
 
 
 def is_file_ok(file_path: str) -> bool:
     return os.path.exists(file_path) and os.path.isfile(file_path)
+
+
+def are_argv_ok_print_messages_and_get_decision(sys_argv: List[str]) -> bool:
+    print("\nProgram running. Evaluating entered arguments.")
+    if len(sys_argv) != 3:
+        print("Incorrect number of arguments.")
+        return False
+    for file_path in sys_argv[1:]:
+        if not is_file_ok(file_path):
+            print("Cannot find '{0}'. Is this a valid file?".format(file_path))
+            return False
+    return True
 
 
 # assumption one word per line, no special characters
@@ -38,26 +50,31 @@ def get_misspelled_words(
     }
 
 
+def print_misspelled_words(
+    words_to_spellcheck: Dict[str, int], correctly_typed_words: Dict[str, int]
+) -> None:
+    misspelled_words: Dict[str, int] = get_misspelled_words(
+        words_to_spellcheck, correctly_typed_words
+    )
+    print("\nMisspelled words (If none found. Nothing is printed):")
+    for misspelled_word in misspelled_words:
+        if misspelled_word.strip() != "":
+            print(misspelled_word)
+
+
 def main() -> None:
-    terminate_program: bool = False
+    terminate_program: bool = not are_argv_ok_print_messages_and_get_decision(sys.argv)
     correct_words: Dict[str, int] = {}
     words_to_spellcheck: Dict[str, int] = {}
-    misspelled_words: Dict[str, int] = {}
-    for file_path in sys.argv[1:]:
-        if not is_file_ok(file_path):
-            print("Cannot find '{0}'. Is this a valid file?".format(file_path))
-            terminate_program = True
-    if len(sys.argv) != 3:
-        print("Incorrect number of arguments.")
-        terminate_program = True
-    if not terminate_program:
+    if terminate_program:
+        print("Nothing to do. Terminating program.")
+    else:
+        print("Reading words to spellcheck from file '{0}'".format(sys.argv[1]))
         words_to_spellcheck = get_words_to_spellcheck(sys.argv[1])
+        print("Reading reference words from file '{0}'".format(sys.argv[2]))
         correct_words = get_correctly_typed_words(sys.argv[2])
-        misspelled_words = get_misspelled_words(words_to_spellcheck, correct_words)
-        print("\nMisspelled words:")
-        for misspelled_word in misspelled_words:
-            if misspelled_word.strip() != "":
-                print(misspelled_word)
+        print("Searching for misspelled words.")
+        print_misspelled_words(words_to_spellcheck, correct_words)
     print("\nThat's all. Goodbye!\n")
 
 
