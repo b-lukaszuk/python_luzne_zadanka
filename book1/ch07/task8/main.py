@@ -17,6 +17,7 @@ def are_argv_ok_print_messages_and_get_decision(sys_argv: List[str]) -> bool:
         if not is_file_ok(file_path):
             print("Cannot find '{0}'. Is this a valid file?".format(file_path))
             return False
+    print("Everything looks fine.\n")
     return True
 
 
