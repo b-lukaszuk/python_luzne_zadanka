@@ -206,3 +206,9 @@ conversations in it, "and what is the use of a
 book," thought Alice, "without pictures or
 conversations?"
 </pre>
+
+## Usage Example
+
+```bash
+python3 main.py alice.txt
+```
