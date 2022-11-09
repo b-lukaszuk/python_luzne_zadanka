@@ -160,5 +160,5 @@ I think I will use the dictionary that can be found in the file `/usr/share/dict
 ## Usage Example
 
 ```bash
-pythn3 main.py file_to_spell_check.txt dictionary.txt
+python3 main.py file_to_spell_check.txt dictionary.txt
 ```
