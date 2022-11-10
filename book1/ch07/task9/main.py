@@ -29,6 +29,7 @@ def get_words(file_path: str) -> Generator[str, None, None]:
                     yield word.strip()
 
 
+# each time returns line without "\n" character (unless blank line)
 def get_line_n_chars_long(
     words_generator: Generator[str, None, None], n_chars: int = 50
 ) -> Generator[str, None, None]:
@@ -37,20 +38,17 @@ def get_line_n_chars_long(
     else:
         line: str = ""
         word: str = ""
-        to_return: str = ""
         try:
             while True:
                 word = next(words_generator)
                 if word == "\n":
-                    to_return = line.rstrip() + "\n"
+                    yield line.rstrip() + "\n"
                     line = ""
-                    yield to_return
                 elif len(word) + len(line) <= n_chars:
                     line += word + " "
                 else:
-                    to_return = line.rstrip()
+                    yield line.rstrip()
                     line = word + " "
-                    yield to_return
         except StopIteration:
             yield line.lstrip()
 
