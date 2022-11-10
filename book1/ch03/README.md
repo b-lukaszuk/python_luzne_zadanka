@@ -1,3 +1,5 @@
+# Chapter 3. Loop Exercises.
+
 ---
 
 # Table of contents

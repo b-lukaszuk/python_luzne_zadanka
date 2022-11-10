@@ -1,3 +1,5 @@
+# Chapter 7. File and Exception Exercises.
+
 ---
 
 # Table of contents

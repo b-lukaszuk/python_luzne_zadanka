@@ -1,3 +1,5 @@
+# Chapter 6. Dictionary Exercises.
+
 ---
 
 # Table of contents
