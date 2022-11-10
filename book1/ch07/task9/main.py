@@ -22,8 +22,11 @@ def are_argv_ok_print_messages_and_get_decision(sys_argv: List[str]) -> bool:
 def get_words(file_path: str) -> Generator[str, None, None]:
     with open(file_path, "r") as f:
         for line in f:
-            for word in line.split():
-                yield word.strip()
+            if line == "\n":
+                yield "\n"
+            else:
+                for word in line.split():
+                    yield word.strip()
 
 
 def get_line_n_chars_long(
@@ -42,7 +45,11 @@ def get_line_n_chars_long(
                     start_new_line = False
                 else:
                     word = next(words_generator)
-                if len(word) + len(line) <= n_chars:
+                if word == "\n":
+                    tmp: str = line.rstrip() + "\n"
+                    line = ""
+                    yield tmp
+                elif len(word) + len(line) <= n_chars:
                     line += word + " "
                 else:
                     start_new_line = True
