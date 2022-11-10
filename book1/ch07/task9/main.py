@@ -37,23 +37,20 @@ def get_line_n_chars_long(
     else:
         line: str = ""
         word: str = ""
-        start_new_line: bool = False
+        to_return: str = ""
         try:
             while True:
-                if start_new_line:
-                    line = ""
-                    start_new_line = False
-                else:
-                    word = next(words_generator)
+                word = next(words_generator)
                 if word == "\n":
-                    tmp: str = line.rstrip() + "\n"
+                    to_return = line.rstrip() + "\n"
                     line = ""
-                    yield tmp
+                    yield to_return
                 elif len(word) + len(line) <= n_chars:
                     line += word + " "
                 else:
-                    start_new_line = True
-                    yield line.rstrip()
+                    to_return = line.rstrip()
+                    line = word + " "
+                    yield to_return
         except StopIteration:
             yield line.lstrip()
 
