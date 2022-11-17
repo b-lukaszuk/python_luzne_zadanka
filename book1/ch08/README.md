@@ -5,6 +5,7 @@
 # Table of contents
 
 1. [Task 1](#task-1)
+2. [Task 2](#task-2)
 
 ---
 
@@ -31,3 +32,19 @@ Else
 </pre>
 
 Write a program that implements Euclid’s algorithm [...].
+
+# Task 2
+
+[Go to: Table of contents](#table-of-contents)
+
+## Title
+
+Recursive Palindrome
+
+(Part 1, Exercise 167 from the book)
+
+## Description
+
+[...]
+
+In this exercise you will write a recursive function that determines whether or not a string is a [palindrome](https://en.wikipedia.org/wiki/Palindrome). The empty string is a palindrome, as is any string containing only one character. Any longer string is a palindrome if its first and last characters match, and if the string formed by removing the first and last characters is also a palindrome [...].
