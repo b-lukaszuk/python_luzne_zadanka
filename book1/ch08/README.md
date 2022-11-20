@@ -7,6 +7,7 @@
 1. [Task 1](#task-1)
 2. [Task 2](#task-2)
 3. [Task 3](#task-3)
+4. [Task 4](#task-4)
 
 ---
 
@@ -86,3 +87,19 @@ Else
 	in s, and all characters except the last one in t, plus cost
 	Return the minimum of d1, d2 and d3
 </pre>
+
+# Task 4
+
+[Go to: Table of contents](#table-of-contents)
+
+## Title
+
+Possible Change
+
+(Part 1, Exercise 170 from the book)
+
+## Description
+
+Create a program that determines whether or not it is possible to construct a particular total using a specific number of coins. For example, it is possible to have a total of $1.00 using four coins if they are all quarters. However, there is no way to have a total of $1.00 using 5 coins. Yet it is possible to have $1.00 using 6 coins by using 3 quarters, 2 dimes and a nickel. Similarly, a total of $1.25 can be formed using 5 coins or 8 coins, but a total of $1.25 can not be formed using 4, 6 or 7 coins.
+
+[...] Assume the existence of quarters, dimes, nickels and pennies when completing this problem. Your solution must use recursion. It can not contain any loops.
