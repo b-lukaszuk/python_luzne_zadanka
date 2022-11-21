@@ -3,25 +3,25 @@ from typing import List, Tuple, TypeVar
 T = TypeVar("T")
 
 
-def decode_run_length(list: List[Tuple[T, int]], acc: List[T] = []) -> List[T]:
-    if len(list) == 0:
+def decode_run_length(to_decode: List[Tuple[T, int]], acc: List[T] = []) -> List[T]:
+    if len(to_decode) == 0:
         return acc
-    if list[0][1] <= 0:
-        return decode_run_length(list[1:], acc)
+    if to_decode[0][1] <= 0:
+        return decode_run_length(to_decode[1:], acc)
     if len(acc) == 0:
-        list = list[:]  # prevents modificaion of original list (from args)
-        list[0] = (list[0][0], list[0][1] - 1)
-        return decode_run_length(list, [list[0][0]])
+        to_decode = to_decode[:]  # prevents modificaion of original list (args)
+        to_decode[0] = (to_decode[0][0], to_decode[0][1] - 1)
+        return decode_run_length(to_decode, [to_decode[0][0]])
     else:
-        list[0] = (list[0][0], list[0][1] - 1)
-        acc.append(list[0][0])
-        return decode_run_length(list, acc)
+        to_decode[0] = (to_decode[0][0], to_decode[0][1] - 1)
+        acc.append(to_decode[0][0])
+        return decode_run_length(to_decode, acc)
 
 
 def print_program_description() -> None:
     print("\nHi.\n")
     print("This is a toy program.")
-    print("It performs run length decoding on a list.")
+    print("It performs run length decoding on a to_decode.")
     print("The result is displayed on the screen.")
     print("NO GUARANTEE OF ITS ACCURACY. Still, I hope it'll work fine.")
     print("All clear. Then let's begin.")

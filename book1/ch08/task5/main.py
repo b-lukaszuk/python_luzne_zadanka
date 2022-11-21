@@ -4,24 +4,24 @@ T = TypeVar("T")
 
 
 def encode_run_length(
-    list: List[T], acc: List[Tuple[T, int]] = []
+    to_encode: List[T], acc: List[Tuple[T, int]] = []
 ) -> List[Tuple[T, int]]:
-    if len(list) == 0:
+    if len(to_encode) == 0:
         return acc
     elif len(acc) == 0:
-        return encode_run_length(list[1:], [(list[0], 1)])
-    elif acc[-1][0] == list[0]:
-        acc[-1] = (list[0], acc[-1][1] + 1)
-        return encode_run_length(list[1:], acc)
+        return encode_run_length(to_encode[1:], [(to_encode[0], 1)])
+    elif acc[-1][0] == to_encode[0]:
+        acc[-1] = (to_encode[0], acc[-1][1] + 1)
+        return encode_run_length(to_encode[1:], acc)
     else:
-        acc.append((list[0], 1))
-        return encode_run_length(list[1:], acc)
+        acc.append((to_encode[0], 1))
+        return encode_run_length(to_encode[1:], acc)
 
 
 def print_program_description() -> None:
     print("\nHi.\n")
     print("This is a toy program.")
-    print("It performs run length encoding on a list.")
+    print("It performs run length encoding on a to_encode.")
     print("The result is displayed on the screen.")
     print("NO GUARANTEE OF ITS ACCURACY. Still, I hope it'll work fine.")
     print("All clear. Then let's begin.")
