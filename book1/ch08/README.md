@@ -8,6 +8,7 @@
 2. [Task 2](#task-2)
 3. [Task 3](#task-3)
 4. [Task 4](#task-4)
+5. [Task 5](#task-5)
 
 ---
 
@@ -111,3 +112,17 @@ value of coins:
 - cent nickel - 5/100th of a dollar,
 - dime - 10/100th of a dollar,
 - quarter - 25/100th of a dollar.
+
+# Task 5
+
+[Go to: Table of contents](#table-of-contents)
+
+## Title
+
+Run-Length Encoding
+
+(Part 1, Exercise 174 from the book)
+
+## Description
+
+Write a recursive function that implements [the run-length compression technique](https://en.wikipedia.org/wiki/Run-length_encoding) [...]. Your function will take a list or a string as its only parameter. It should return the run-length compressed list as its only result.
