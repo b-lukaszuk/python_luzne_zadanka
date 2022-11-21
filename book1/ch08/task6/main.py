@@ -9,6 +9,7 @@ def decode_run_length(list: List[Tuple[T, int]], acc: List[T] = []) -> List[T]:
     if list[0][1] <= 0:
         return decode_run_length(list[1:], acc)
     if len(acc) == 0:
+        list = list[:]  # prevents modificaion of original list (from args)
         list[0] = (list[0][0], list[0][1] - 1)
         return decode_run_length(list, [list[0][0]])
     else:
