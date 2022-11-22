@@ -11,6 +11,10 @@ For better visual clarity I will not use quotations.
 python3 main.py
 ```
 
+# Status
+
+Finished (2022-11-22).
+
 # Additional info
 
 **Do użytku własnego, nie powinno być używane przez nikogo innego.**
