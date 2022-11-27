@@ -4,11 +4,16 @@
 
 # Table of contents
 
+0. [Web Page](#web-page)
 1. [Task 1](#task-1)
 2. [Task 2](#task-2)
 3. [Task 3](#task-3)
 
 ---
+
+# Web Page
+
+Tasks from [w3resource.com](https://www.w3resource.com/python-exercises/python-basic-exercises.php) 
 
 # Task 1
 
