@@ -1,4 +1,4 @@
-# Part 1. Exercises 1-20 (selected).
+# Part 1. Exercises 1-50 (selected).
 
 ---
 
