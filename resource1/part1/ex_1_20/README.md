@@ -8,12 +8,13 @@
 1. [Task 1](#task-1)
 2. [Task 2](#task-2)
 3. [Task 3](#task-3)
+4. [Task 4](#task-4)
 
 ---
 
 # Web Page
 
-Tasks from [w3resource.com](https://www.w3resource.com/python-exercises/python-basic-exercises.php) 
+Tasks from [w3resource.com](https://www.w3resource.com/python-exercises/python-basic-exercises.php)
 
 # Task 1
 
@@ -56,3 +57,15 @@ Write a Python program to calculate number of days between two dates.
 Sample dates : (2014, 7, 2), (2014, 7, 11)
 
 Expected output : 9 days
+
+# Task 4
+
+[Go to: Table of contents](#table-of-contents)
+
+## Original Exercise Number
+
+Exercise 26
+
+## Description
+
+Write a Python program to create a histogram from a given list of integers.
