@@ -19,6 +19,10 @@
 
 Tasks from [w3resource.com](https://www.w3resource.com/python-exercises/python-basic-exercises.php)
 
+# Side Note
+
+In general the tasks in this section were a bit too easy for me. Still, I solved a few of them just for practice and to be systematic with the tasks.
+
 # Task 1
 
 [Go to: Table of contents](#table-of-contents)
