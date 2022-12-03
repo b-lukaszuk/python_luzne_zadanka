@@ -11,6 +11,7 @@
 4. [Task 4](#task-4)
 5. [Task 5](#task-5)
 6. [Task 6](#task-6)
+7. [Task 7](#task-7)
 
 ---
 
@@ -95,3 +96,15 @@ Exercise 43
 ## Description
 
 Write a Python program to get OS name, platform and release information.
+
+# Task 7
+
+[Go to: Table of contents](#table-of-contents)
+
+## Original Exercise Number
+
+Exercise 50
+
+## Description
+
+Write a Python program to print without newline or space.
