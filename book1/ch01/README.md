@@ -77,12 +77,14 @@ Write a program that begins by reading a number of cents from the user as an int
 
 ## My notes
 
-penny - 1/100th of a dollar, a cent
-nickel - five centes
-dime - ten cents
-quarter - 25 cents
-loonie - 1 dollar coin in Canada (hint from the book)
-toonie - 2 dollar coin in Canada (hint from the book)
+List of available coins
+
++ penny - 1/100th of a dollar, a cent
++ nickel - five centes
++ dime - ten cents
++ quarter - 25 cents
++ loonie - 1 dollar coin in Canada (hint from the book)
++ toonie - 2 dollar coin in Canada (hint from the book)
 
 # Task 4
 
