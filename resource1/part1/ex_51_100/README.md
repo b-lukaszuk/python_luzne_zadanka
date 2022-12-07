@@ -7,6 +7,7 @@
 0. [Web Page](#web-page)
 1. [Task 1](#task-1)
 2. [Task 2](#task-2)
+3. [Task 3](#task-3)
 
 ---
 
@@ -36,8 +37,20 @@ Write a Python program to convert seconds to day, hour, minutes and seconds.
 
 ## Original Exercise Number
 
-Exercise 63
+Exercise 66
 
 ## Description
 
 Write a Python program to calculate [body mass index](https://en.wikipedia.org/wiki/Body_mass_index).
+
+# Task 3
+
+[Go to: Table of contents](#table-of-contents)
+
+## Original Exercise Number
+
+Exercise 68
+
+## Description
+
+Write a Python program to calculate sum of digits of a number.
