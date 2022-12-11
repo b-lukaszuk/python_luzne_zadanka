@@ -9,6 +9,7 @@
 2. [Task 2](#task-2)
 3. [Task 3](#task-3)
 4. [Task 4](#task-4)
+5. [Task 5](#task-5)
 
 ---
 
@@ -67,3 +68,15 @@ Exercise 69
 ## Description
 
 Write a Python program to sort three integers without using conditional statements and loops.
+
+# Task 5
+
+[Go to: Table of contents](#table-of-contents)
+
+## Original Exercise Number
+
+Exercise 81
+
+## Description
+
+Write a Python program to concatenate N strings.
