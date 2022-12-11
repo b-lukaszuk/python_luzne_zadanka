@@ -11,6 +11,7 @@
 4. [Task 4](#task-4)
 5. [Task 5](#task-5)
 6. [Task 6](#task-6)
+7. [Task 7](#task-7)
 
 ---
 
@@ -95,3 +96,15 @@ Exercise 98
 Write a Python program to get the system time.
 
 Note: The system time is important for debugging, network information, random number seeds, or something as simple as program performance.
+
+# Task 7
+
+[Go to: Table of contents](#table-of-contents)
+
+## Original Exercise Number
+
+Exercise 100
+
+## Description
+
+Write a Python program to get the name of the host on which the routine is running.
