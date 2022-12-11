@@ -8,6 +8,7 @@
 1. [Task 1](#task-1)
 2. [Task 2](#task-2)
 3. [Task 3](#task-3)
+4. [Task 4](#task-4)
 
 ---
 
@@ -54,3 +55,15 @@ Exercise 68
 ## Description
 
 Write a Python program to calculate sum of digits of a number.
+
+# Task 4
+
+[Go to: Table of contents](#table-of-contents)
+
+## Original Exercise Number
+
+Exercise 69
+
+## Description
+
+Write a Python program to sort three integers without using conditional statements and loops.
