@@ -10,6 +10,7 @@
 3. [Task 3](#task-3)
 4. [Task 4](#task-4)
 5. [Task 5](#task-5)
+6. [Task 6](#task-6)
 
 ---
 
@@ -80,3 +81,17 @@ Exercise 81
 ## Description
 
 Write a Python program to concatenate N strings.
+
+# Task 6
+
+[Go to: Table of contents](#table-of-contents)
+
+## Original Exercise Number
+
+Exercise 98
+
+## Description
+
+Write a Python program to get the system time.
+
+Note: The system time is important for debugging, network information, random number seeds, or something as simple as program performance.
