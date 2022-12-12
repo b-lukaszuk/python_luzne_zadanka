@@ -7,6 +7,7 @@
 0. [Web Page](#web-page)
 1. [Task 1](#task-1)
 2. [Task 2](#task-2)
+3. [Task 3](#task-3)
 
 ---
 
@@ -41,3 +42,15 @@ Exercise 115
 ## Description
 
 Write a Python program to compute the product of a list of integers (without using for loop).
+
+# Task 3
+
+[Go to: Table of contents](#table-of-contents)
+
+## Original Exercise Number
+
+Exercise 129
+
+## Description
+
+Write a Python program to add leading zeroes to a string.
