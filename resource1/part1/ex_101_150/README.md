@@ -6,6 +6,7 @@
 
 0. [Web Page](#web-page)
 1. [Task 1](#task-1)
+2. [Task 2](#task-2)
 
 ---
 
@@ -28,3 +29,15 @@ Exercise 110
 ## Description
 
 Write a Python program to get numbers divisible by fifteen from a list using an anonymous function.
+
+# Task 2
+
+[Go to: Table of contents](#table-of-contents)
+
+## Original Exercise Number
+
+Exercise 115
+
+## Description
+
+Write a Python program to compute the product of a list of integers (without using for loop).
