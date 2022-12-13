@@ -8,6 +8,7 @@
 1. [Task 1](#task-1)
 2. [Task 2](#task-2)
 3. [Task 3](#task-3)
+4. [Task 4](#task-4)
 
 ---
 
@@ -54,3 +55,21 @@ Exercise 129
 ## Description
 
 Write a Python program to add leading zeroes to a string.
+
+# Task 4
+
+## Original Exercise Number
+
+Exercise 139
+
+## Description
+
+Write a Python program to valid a IP address.
+
+## My Notes
+
+I will assume I have to check [IPv4 addresses ](https://en.wikipedia.org/wiki/IP_address#IPv4_addresses):
+
+<pre>
+IPv4 addresses are usually represented in dot-decimal notation, consisting of four decimal numbers, each ranging from 0 to 255, separated by dots, e.g., 192.0.2.1.
+</pre>
