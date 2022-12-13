@@ -73,3 +73,5 @@ I will assume I have to check [IPv4 addresses ](https://en.wikipedia.org/wiki/IP
 <pre>
 IPv4 addresses are usually represented in dot-decimal notation, consisting of four decimal numbers, each ranging from 0 to 255, separated by dots, e.g., 192.0.2.1.
 </pre>
+
+Additional info, leading zeroes are not allowed, but single zero is OK. Online IPv4 checkers require them to have dots as separators, so I will do that too.
