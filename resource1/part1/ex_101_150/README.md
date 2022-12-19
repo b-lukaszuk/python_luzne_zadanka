@@ -9,6 +9,7 @@
 2. [Task 2](#task-2)
 3. [Task 3](#task-3)
 4. [Task 4](#task-4)
+5. [Task 5](#task-5)
 
 ---
 
@@ -75,3 +76,29 @@ IPv4 addresses are usually represented in dot-decimal notation, consisting of fo
 </pre>
 
 Additional info, leading zeroes are not allowed, but single zero is OK. Online IPv4 checkers require them to have dots as separators, so I will do that too.
+
+# Task 5
+
+## Original Exercise Number
+
+Exercise 142
+
+## Description
+
+Write a Python program to check if every consecutive sequence of zeroes is followed by a consecutive sequence of ones of same length in a given string. Return True/False
+
+## Examples
+
+<pre>
+Original sequence: 01010101
+True
+
+Original sequence: 00
+False
+
+Original sequence: 000111000111
+True
+
+Original sequence: 00011100011
+False
+</pre>
