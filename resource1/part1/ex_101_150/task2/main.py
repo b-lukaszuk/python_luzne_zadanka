@@ -14,7 +14,7 @@ def get_list_of_rand_nums(
 # uses recursion, remember to use relatively short list as arg to function
 def get_product(ints: List[int]) -> int:
     if len(ints) == 0:
-        return 0
+        raise ValueError("Cannot compute product of empty list.")
     if len(ints) == 1:
         return ints[0]
     return ints[0] * get_product(ints[1:])
