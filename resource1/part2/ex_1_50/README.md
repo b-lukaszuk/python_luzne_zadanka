@@ -28,3 +28,7 @@ Exercise 2
 ## Description
 
 Write a Python program to create all possible strings by using 'a', 'e', 'i', 'o', 'u'. Use the characters exactly once.
+
+## My Notes
+
+I will return all the strings for 'a', 'e', 'i', since `factorial(len("aeiou")) = 120` (too many to print), and `factorial(len("aei")) = 6` (good enough to check visually).
