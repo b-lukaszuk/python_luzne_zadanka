@@ -59,6 +59,8 @@ Write a Python program to add leading zeroes to a string.
 
 # Task 4
 
+[Go to: Table of contents](#table-of-contents)
+
 ## Original Exercise Number
 
 Exercise 139
@@ -78,6 +80,8 @@ IPv4 addresses are usually represented in dot-decimal notation, consisting of fo
 Additional info, leading zeroes are not allowed, but single zero is OK. Online IPv4 checkers require them to have dots as separators, so I will do that too.
 
 # Task 5
+
+[Go to: Table of contents](#table-of-contents)
 
 ## Original Exercise Number
 
