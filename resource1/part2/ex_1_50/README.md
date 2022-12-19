@@ -1,0 +1,30 @@
+# Part 2. Exercises 1-50 (selected).
+
+---
+
+# Table of contents
+
+0. [Web Page](#web-page)
+1. [Task 1](#task-1)
+
+---
+
+# Web Page
+
+Tasks from [w3resource.com](https://www.w3resource.com/python-exercises/basic/)
+
+# Side Note
+
+In general the tasks in this section were a bit too easy for me. Still, I solved a few of them just for practice and to be systematic with the tasks.
+
+# Task 1
+
+[Go to: Table of contents](#table-of-contents)
+
+## Original Exercise Number
+
+Exercise 2
+
+## Description
+
+Write a Python program to create all possible strings by using 'a', 'e', 'i', 'o', 'u'. Use the characters exactly once.
