@@ -6,6 +6,7 @@
 
 0. [Web Page](#web-page)
 1. [Task 1](#task-1)
+2. [Task 2](#task-2)
 
 ---
 
@@ -32,3 +33,17 @@ Write a Python program to create all possible strings by using 'a', 'e', 'i', 'o
 ## My Notes
 
 I will return all the strings for 'a', 'e', 'i', since `factorial(len("aeiou")) = 120` (too many to print), and `factorial(len("aei")) = 6` (good enough to check visually).
+
+# Task 2
+
+[Go to: Table of contents](#table-of-contents)
+
+## Original Exercise Number
+
+Exercise 14
+
+## Description
+
+Write a Python program to add two positive integers without using the '+' operator.
+
+Note: Use bit wise operations to add two numbers.
