@@ -9,7 +9,7 @@ def throw_error_if_not_positive_integers(num1: int, num2: int) -> None:
     msg: str = "Both num1 and num2 need to be integers greater than 0"
     if not (0 <= num1 and 0 <= num2):
         raise ValueError(msg)
-    if not (isinstance(num1, int), isinstance(num2, int)):
+    if not (isinstance(num1, int) and isinstance(num2, int)):
         raise ValueError(msg)
 
 
