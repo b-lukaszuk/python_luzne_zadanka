@@ -51,3 +51,7 @@ Note: Use bit wise operations to add two numbers.
 ## My Notes
 
 As for now (23-12-2022) it adds only two positive integers, maybe I will extend it in the future for negative numbers as well.
+
+Actually, yesterday I did not notice that the task description says only about adding two positive integers.
+
+Therefore, I think I will consider my task done (24-12-2022). Still I simplified my solution in version 2 of the program.
