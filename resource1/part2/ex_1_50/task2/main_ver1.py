@@ -1,4 +1,6 @@
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+
 
 import random
 from typing import Callable, List, Tuple
@@ -20,6 +22,7 @@ def all_bits_equal_0(bits: str) -> bool:
 def get_xor_of_2_bits(bit1: str, bit2: str) -> str:
     raise_errors_if_not_bits(bit1, bit2)
     return "1" if (bit1 != bit2) else "0"
+
 
 def get_shift_bit(bit1: str, bit2: str) -> str:
     raise_errors_if_not_bits(bit1, bit2)
@@ -51,8 +54,11 @@ def get_shift_bits_of_2_binary_nums(bin_num1: str, bin_num2: str) -> str:
 
 
 def int2bin(num: int) -> str:
+    msg: str = "Only positive integers can be converted to binary."
     if num < 0:
-        raise ValueError("Only positive integers can be converted to binary.")
+        raise ValueError(msg)
+    if not isinstance(num, int):
+        raise ValueError(msg)
     return bin(num)[2:]
 
 
