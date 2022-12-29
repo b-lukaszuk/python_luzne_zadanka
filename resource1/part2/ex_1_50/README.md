@@ -10,6 +10,7 @@
 3. [Task 3](#task-3)
 4. [Task 4](#task-4)
 5. [Task 5](#task-5)
+6. [Task 6](#task-6)
 
 ---
 
@@ -112,3 +113,15 @@ non-zero number called the common ratio. For example, the sequence 2, 6, 18, 54,
 . . . is a geometric progression with common ratio 3. For this problem, we will
 limit ourselves to geometric progression whose common ratio is a non-zero
 integer.
+
+# Task 6
+
+[Go to: Table of contents](#table-of-contents)
+
+## Original Exercise Number
+
+Exercise 40
+
+## Description
+
+Write a Python program to check whether a point (x,y) is in a triangle or not. There is a triangle formed by three points. 
