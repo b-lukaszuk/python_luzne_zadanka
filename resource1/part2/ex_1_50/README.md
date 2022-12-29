@@ -7,6 +7,7 @@
 0. [Web Page](#web-page)
 1. [Task 1](#task-1)
 2. [Task 2](#task-2)
+3. [Task 3](#task-3)
 
 ---
 
@@ -55,3 +56,19 @@ As for now (23-12-2022) it adds only two positive integers, maybe I will extend 
 Actually, yesterday I did not notice that the task description says only about adding two positive integers.
 
 Therefore, I think I will consider my task done (24-12-2022). Still I simplified my solution in version 2 of the program.
+
+# Task 3
+
+[Go to: Table of contents](#table-of-contents)
+
+## Original Exercise Number
+
+Exercise 18
+
+## Description
+
+Write a Python program to find the median among three given numbers.
+
+## My Notes
+
+I'll write a program to find the median among any number of given numbers (finite data set of numbers) according to the [definition](https://en.wikipedia.org/wiki/Median#Finite_data_set_of_numbers).
