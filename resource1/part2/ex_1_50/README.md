@@ -8,6 +8,7 @@
 1. [Task 1](#task-1)
 2. [Task 2](#task-2)
 3. [Task 3](#task-3)
+4. [Task 4](#task-4)
 
 ---
 
@@ -72,3 +73,15 @@ Write a Python program to find the median among three given numbers.
 ## My Notes
 
 I'll write a program to find the median among any number of given numbers (finite data set of numbers) according to the [definition](https://en.wikipedia.org/wiki/Median#Finite_data_set_of_numbers).
+
+# Task 4
+
+[Go to: Table of contents](#table-of-contents)
+
+## Original Exercise Number
+
+Exercise 25
+
+## Description
+
+Write a Python program to find the digits which are absent in a given mobile number.
