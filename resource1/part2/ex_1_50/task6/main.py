@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+
 import math
 from typing import Tuple, Union
 
-# https://www.baeldung.com/cs/check-if-point-is-in-2d-triangle
 
 Number = Union[int, float]
+
 
 class Point:
     def __init__(self, x: Number, y: Number):
@@ -46,6 +47,9 @@ class Triangle:
         s3: float = p2.get_distance(p3)
         return (s1, s2, s3)
 
+    def __get_my_side_lengths(self) -> Tuple[float, float, float]:
+        return self.__get_side_lengths(self.__p1, self.__p2, self.__p3)
+
     def __is_valid_triangle(self, p1: Point, p2: Point, p3: Point) -> bool:
         s1, s2, s3 = self.__get_side_lengths(p1, p2, p3)
         if (s1 + s2) <= s3:
@@ -55,6 +59,25 @@ class Triangle:
         if (s2 + s3) <= s1:
             return False
         return True
+
+    # https://www.matemaks.pl/area-of-a-triangle.html
+    def __get_area(self) -> float:
+        s1, s2, s3 = self.__get_my_side_lengths()
+        p = (s1 + s2 + s3) / 2
+        return math.sqrt(p * (p-s1) * (p-s2) * (p-s3))
+
+    # https://www.baeldung.com/cs/check-if-point-is-in-2d-triangle
+    # 3.3. Algorithm
+    def is_inside(self, p: Point, precision: int = 3) -> bool:
+        triangle_area: float = self.__get_area()
+        area_sum: float = 0
+        area_sum += Triangle(self.__p1, self.__p2, p).__get_area()
+        area_sum += Triangle(self.__p1, self.__p3, p).__get_area()
+        area_sum += Triangle(self.__p2, self.__p3, p).__get_area()
+        if round(triangle_area, precision) == round(area_sum, precision):
+            return True
+        else:
+            return False
 
 
 def print_program_description() -> None:
