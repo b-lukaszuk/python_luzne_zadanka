@@ -3,7 +3,7 @@
 
 
 import math
-from typing import Tuple, Union
+from typing import List, Tuple, Union
 
 
 Number = Union[int, float]
@@ -27,8 +27,8 @@ class Point:
 
 
 class Triangle:
-    def __init__(self, p1: Point, p2: Point, p3: Point):
-        if not self.__is_valid_triangle(p1, p2, p3):
+    def __init__(self, p1: Point, p2: Point, p3: Point, check_input: bool = True):
+        if check_input and not self.__is_valid_triangle(p1, p2, p3):
             raise ValueError("Incompatible side lenghts to build a triangle.")
         self.__p1: Point = p1
         self.__p2: Point = p2
@@ -71,9 +71,9 @@ class Triangle:
     def is_inside(self, p: Point, precision: int = 3) -> bool:
         triangle_area: float = self.__get_area()
         area_sum: float = 0
-        area_sum += Triangle(self.__p1, self.__p2, p).__get_area()
-        area_sum += Triangle(self.__p1, self.__p3, p).__get_area()
-        area_sum += Triangle(self.__p2, self.__p3, p).__get_area()
+        area_sum += Triangle(self.__p1, self.__p2, p, False).__get_area()
+        area_sum += Triangle(self.__p1, self.__p3, p, False).__get_area()
+        area_sum += Triangle(self.__p2, self.__p3, p, False).__get_area()
         if round(triangle_area, precision) == round(area_sum, precision):
             return True
         else:
@@ -90,7 +90,18 @@ def print_program_description() -> None:
 
 
 def main() -> None:
+    print_program_description()
+    t: Triangle = Triangle(Point(2, 1), Point(4, 1), Point(2, 5))
+    pts: List[Point] = [Point(2.5, 2.5), Point(3.5, 3.5), Point(2, 6), Point(3.5, 1.8)]
+    answs: List[bool] = [True, False, False, True]
     print("Examples:")
+    print("The triangle: {0}".format(t))
+    print("Precision of estimate 3 decimal places.")
+    for i in range(len(pts)):
+        print("-" * 3)
+        print("Does point {0} lies inside the triangle?".format(pts[i]))
+        print("Computed answer: {0}".format(t.is_inside(pts[i])))
+        print("Should be: {0}".format(answs[i]))
     print("\nThat's all. Goodbye!")
 
 
