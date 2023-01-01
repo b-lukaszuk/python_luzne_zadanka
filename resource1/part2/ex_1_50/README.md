@@ -11,6 +11,7 @@
 4. [Task 4](#task-4)
 5. [Task 5](#task-5)
 6. [Task 6](#task-6)
+7. [Task 7](#task-7)
 
 ---
 
@@ -124,4 +125,24 @@ Exercise 40
 
 ## Description
 
-Write a Python program to check whether a point (x,y) is in a triangle or not. There is a triangle formed by three points. 
+Write a Python program to check whether a point (x,y) is in a triangle or not. There is a triangle formed by three points.
+
+# Task 7
+
+[Go to: Table of contents](#table-of-contents)
+
+## Original Exercise Number
+
+Exercise 43
+
+## Description
+
+ Write a Python program to test whether two lines PQ and RS are parallel. The four points are P(x1, y1), Q(x2, y2), R(x3, y3), S(x4, y4).
+
+ e.g.
+
+ <pre>
+Input x1,y1,x2,y2,x3,y3,xp,yp:
+2 5 6 4 8 3 9 7
+PQ and RS are not parallel
+ </pre>
