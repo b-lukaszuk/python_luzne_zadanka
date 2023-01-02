@@ -12,6 +12,7 @@
 5. [Task 5](#task-5)
 6. [Task 6](#task-6)
 7. [Task 7](#task-7)
+8. [Task 8](#task-8)
 
 ---
 
@@ -146,3 +147,23 @@ Input x1,y1,x2,y2,x3,y3,xp,yp:
 2 5 6 4 8 3 9 7
 PQ and RS are not parallel
  </pre>
+
+# Task 8
+
+[Go to: Table of contents](#table-of-contents)
+
+## Original Exercise Number
+
+Exercise 45
+
+## Description
+
+There are two circles C1 with radius r1, central coordinate (x1, y1) and C2 with radius r2 and central coordinate (x2, y2).
+
+Write a Python program to test the followings -
+
+"C2 is in C1" if C2 is in C1
+"C1 is in C2" if C1 is in C2
+"Circumference of C1 and C2 intersect" if circumference of C1 and C2 intersect
+"C1 and C2 do not overlap" if C1 and C2 do not overlap and
+"Circumference of C1 and C2 will touch" if C1 and C2 touch
