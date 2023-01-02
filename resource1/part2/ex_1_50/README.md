@@ -162,8 +162,8 @@ There are two circles C1 with radius r1, central coordinate (x1, y1) and C2 with
 
 Write a Python program to test the followings -
 
-"C2 is in C1" if C2 is in C1
-"C1 is in C2" if C1 is in C2
-"Circumference of C1 and C2 intersect" if circumference of C1 and C2 intersect
-"C1 and C2 do not overlap" if C1 and C2 do not overlap and
-"Circumference of C1 and C2 will touch" if C1 and C2 touch
+8.1. "C2 is in C1" if C2 is in C1
+8.2. "C1 is in C2" if C1 is in C2
+8.3. "Circumference of C1 and C2 intersect" if circumference of C1 and C2 intersect
+8.4. "C1 and C2 do not overlap" if C1 and C2 do not overlap and
+8.5. "Circumference of C1 and C2 will touch" if C1 and C2 touch
