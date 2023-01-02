@@ -108,7 +108,7 @@ According to Wikipedia, an arithmetic progression (AP) is a sequence of numbers
 such that the difference of any two successive members of the sequence is a
 constant. For instance, the sequence 3, 5, 7, 9, 11, 13, . . . is an arithmetic
 progression with common difference 2. For this problem, we will limit ourselves
-to arithmetic progression whose common difference is a non-zero integer.  On the
+to arithmetic progression whose common difference is a non-zero integer. On the
 other hand, a geometric progression (GP) is a sequence of numbers where each
 term after the first is found by multiplying the previous one by a fixed
 non-zero number called the common ratio. For example, the sequence 2, 6, 18, 54,
@@ -138,9 +138,9 @@ Exercise 43
 
 ## Description
 
- Write a Python program to test whether two lines PQ and RS are parallel. The four points are P(x1, y1), Q(x2, y2), R(x3, y3), S(x4, y4).
+Write a Python program to test whether two lines PQ and RS are parallel. The four points are P(x1, y1), Q(x2, y2), R(x3, y3), S(x4, y4).
 
- e.g.
+e.g.
 
  <pre>
 Input x1,y1,x2,y2,x3,y3,xp,yp:
@@ -162,8 +162,8 @@ There are two circles C1 with radius r1, central coordinate (x1, y1) and C2 with
 
 Write a Python program to test the followings -
 
-8.1. "C2 is in C1" if C2 is in C1
-8.2. "C1 is in C2" if C1 is in C2
-8.3. "Circumference of C1 and C2 intersect" if circumference of C1 and C2 intersect
-8.4. "C1 and C2 do not overlap" if C1 and C2 do not overlap and
-8.5. "Circumference of C1 and C2 will touch" if C1 and C2 touch
+8.1. "C2 is in C1" if C2 is in C1</br>
+8.2. "C1 is in C2" if C1 is in C2</br>
+8.3. "Circumference of C1 and C2 intersect" if circumference of C1 and C2 intersect</br>
+8.4. "C1 and C2 do not overlap" if C1 and C2 do not overlap and</br>
+8.5. "Circumference of C1 and C2 will touch" if C1 and C2 touch</br>
