@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 
 import math
-import sys
 from typing import List, Tuple, Union
 
 
@@ -54,11 +53,23 @@ class Circle:
     def get_radius(self) -> Number:
         return self.__radius
 
+    def get_dist_betw_centers(self, other: 'Circle') -> float:
+        return self.get_center().get_distance(other.get_center())
+
     def is_other_circle_completely_in_me(self, other: 'Circle',
                                          precision: int = 3) -> bool:
-        dc: float = self.get_center().get_distance(other.get_center())
-        return (round(dc + other.get_radius(), precision) <=
-                round(self.get_radius(), precision))
+        the_sum: float = self.get_dist_betw_centers(other) + other.get_radius()
+        return (round(the_sum, precision) <= round(self.get_radius(), precision))
+
+    def do_circumferences_intersect(self, other: 'Circle',
+                                    precision: int = 3) -> bool:
+        r1: float = self.get_radius()
+        r2: float = other.get_radius()
+        dc: float = self.get_dist_betw_centers(other)
+        if round(r1, precision) < round(r2, precision):
+            return round(dc+r1, precision) > round(r2, precision)
+        else:
+            return round(dc+r2, precision) > round(r1, precision)
 
 
 def print_program_description() -> None:
@@ -83,6 +94,20 @@ def print_examples_circle_in_circle(examples: List[Tuple[Circle, Circle]],
         print("Expected answer: {0}".format(expected_answers[i]))
 
 
+def print_examples_circle_intersect(examples: List[Tuple[Circle, Circle]],
+                                    expected_answers: List[bool]) -> None:
+    if len(examples) != len(expected_answers):
+        raise ValueError("len(examples) must be equal to len(expected_answers)")
+    print("\nCircles circumferences intersect examples.")
+    for i in range(len(examples)):
+        circ1, circ2 = examples[i]
+        print("-" * 3)
+        print("Do circumferences of {0} and {1} intersect?".format(circ2, circ1))
+        print("Computed answer: {0}".format(
+            circ1.do_circumferences_intersect(circ2)))
+        print("Expected answer: {0}".format(expected_answers[i]))
+
+
 def main() -> None:
     print_program_description()
     circles1: List[Tuple[Circle, Circle]] = [
@@ -91,7 +116,13 @@ def main() -> None:
         (Circle(Point(6, 7), 1), Circle(Point(7, 6), 4))
     ]
     expected_answers1: List[bool] = [True, False, False]
+    circles2: List[Tuple[Circle, Circle]] = [
+        (Circle(Point(7, 6), 4), Circle(Point(9, 8), 2)),
+        (Circle(Point(7, 6), 4), Circle(Point(6, 7), 1)),
+    ]
+    expected_answers2: List[bool] = [True, False]
     print_examples_circle_in_circle(circles1, expected_answers1)
+    print_examples_circle_intersect(circles2, expected_answers2)
     print("\nThat's all. Goodbye!")
 
 
