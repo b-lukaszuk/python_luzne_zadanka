@@ -71,12 +71,25 @@ def print_examples3() -> None:
         lambda c1, c2: "Do circle {0} and {1} overlap?".format(c1, c2),
         lambda c1, c2: str(c1.does_it_overlap(c2)))
 
+def print_examples4() -> None:
+    circles4: List[Tuple[Circle, Circle]] = [
+        (Circle(Point(7, 6), 4), Circle(Point(9, 8), 1)),
+        (Circle(Point(7, 6), 4), Circle(Point(13, 6), 2)),
+    ]
+    expected_answers4: List[bool] = [False, True]
+    print_examples(
+        circles4, expected_answers4,
+        "\nCircles touch in 1 point examples.",
+        lambda c1, c2: "Do circumferences of {0} and {1} touch in 1 point?".format(c1, c2),
+        lambda c1, c2: str(c1.do_circumferences_touch_in_1_point(c2)))
+
 
 def main() -> None:
     print_program_description()
     print_examples1()
     print_examples2()
     print_examples3()
+    print_examples4()
     print("\nThat's all. Goodbye!")
 
 

@@ -46,3 +46,9 @@ class Circle:
         dc: float = self.get_dist_betw_centers(other)
         sum_rs: float = self.get_radius() + other.get_radius()
         return round(dc, precision) < round(sum_rs, precision)
+
+    def do_circumferences_touch_in_1_point(self, other: 'Circle',
+                                precision: int = 3) -> bool:
+        dc: float = self.get_dist_betw_centers(other)
+        sum_rs: float = self.get_radius() + other.get_radius()
+        return round(dc, precision) == round(sum_rs, precision)
