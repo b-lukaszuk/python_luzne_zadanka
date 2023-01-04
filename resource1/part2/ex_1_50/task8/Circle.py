@@ -3,6 +3,7 @@
 
 from Number import Number
 from Point import Point
+from typing import Callable
 
 
 class Circle:
@@ -42,13 +43,18 @@ class Circle:
         else:
             return round(dc+r2, precision) > round(r1, precision)
 
+    def __compare_dist_betw_centers_and_sum_rs(
+            self, other: 'Circle',
+            compare_fn: Callable[[float, float], bool]) -> bool:
+            dc: float = self.get_dist_betw_centers(other)
+            sum_rs: float = self.get_radius() + other.get_radius()
+            return compare_fn(dc, sum_rs)
+
     def does_it_overlap(self, other: 'Circle', precision: int = 3) -> bool:
-        dc: float = self.get_dist_betw_centers(other)
-        sum_rs: float = self.get_radius() + other.get_radius()
-        return round(dc, precision) < round(sum_rs, precision)
+        return self.__compare_dist_betw_centers_and_sum_rs(
+            other, lambda dc, sr: round(dc, precision) < round(sr, precision))
 
     def do_circumferences_touch_in_1_point(self, other: 'Circle',
                                 precision: int = 3) -> bool:
-        dc: float = self.get_dist_betw_centers(other)
-        sum_rs: float = self.get_radius() + other.get_radius()
-        return round(dc, precision) == round(sum_rs, precision)
+        return self.__compare_dist_betw_centers_and_sum_rs(
+            other, lambda dc, sr: round(dc, precision) == round(sr, precision))

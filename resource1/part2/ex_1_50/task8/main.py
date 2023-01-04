@@ -57,6 +57,7 @@ def print_examples2() -> None:
         lambda c1, c2: "Do ciurcumferences of {0} and {1} intersect?".format(c1, c2),
         lambda c1, c2: str(c1.do_circumferences_intersect(c2)))
 
+
 def print_examples3() -> None:
     circles3: List[Tuple[Circle, Circle]] = [
         (Circle(Point(7, 6), 4), Circle(Point(9, 8), 1)),
@@ -70,6 +71,7 @@ def print_examples3() -> None:
         "\nCircles overlap examples.",
         lambda c1, c2: "Do circle {0} and {1} overlap?".format(c1, c2),
         lambda c1, c2: str(c1.does_it_overlap(c2)))
+
 
 def print_examples4() -> None:
     circles4: List[Tuple[Circle, Circle]] = [
