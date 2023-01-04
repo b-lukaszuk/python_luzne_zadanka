@@ -1,75 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-import math
-from typing import Callable, List, Tuple, Union
-
-
-Number = Union[int, float]
-
-
-class Point:
-    def __init__(self, x: Number, y: Number):
-        self.__x: Number = x
-        self.__y: Number = y
-
-    def __str__(self) -> str:
-        return "Point({0}, {1})".format(self.__x, self.__y)
-
-    def __repr__(self) -> str:
-        return self.__str__()
-
-    def get_x(self) -> Number:
-        return self.__x
-
-    def get_y(self) -> Number:
-        return self.__y
-
-    def get_xy(self) -> Tuple[Number, Number]:
-        return (self.get_x(), self.get_y())
-
-    def get_distance(self, other: 'Point') -> float:
-        x2: float = math.pow(self.get_x() - other.get_x(), 2)
-        y2: float = math.pow(self.get_y() - other.get_y(), 2)
-        return math.sqrt(x2 + y2)
-
-
-class Circle:
-    def __init__(self, center: Point, radius: Number, check_input = True):
-        if check_input and radius <= 0:
-            raise ValueError("Radius must be >= 0.")
-        self.__center: Point = center
-        self.__radius: Number = radius
-
-    def __str__(self) -> str:
-        return "Circle(c={0}, r={1})".format(self.__center, self.__radius)
-
-    def __repr__(self) -> str:
-        return self.__str__()
-
-    def get_center(self) -> Point:
-        return self.__center
-
-    def get_radius(self) -> Number:
-        return self.__radius
-
-    def get_dist_betw_centers(self, other: 'Circle') -> float:
-        return self.get_center().get_distance(other.get_center())
-
-    def is_other_circle_completely_in_me(self, other: 'Circle',
-                                         precision: int = 3) -> bool:
-        the_sum: float = self.get_dist_betw_centers(other) + other.get_radius()
-        return (round(the_sum, precision) <= round(self.get_radius(), precision))
-
-    def do_circumferences_intersect(self, other: 'Circle',
-                                    precision: int = 3) -> bool:
-        r1: float = self.get_radius()
-        r2: float = other.get_radius()
-        dc: float = self.get_dist_betw_centers(other)
-        if round(r1, precision) < round(r2, precision):
-            return round(dc+r1, precision) > round(r2, precision)
-        else:
-            return round(dc+r2, precision) > round(r1, precision)
+from Point import Point
+from Circle import Circle
+from typing import Callable, List, Tuple
 
 
 def print_program_description() -> None:
