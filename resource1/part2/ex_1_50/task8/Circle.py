@@ -41,3 +41,8 @@ class Circle:
             return round(dc+r1, precision) > round(r2, precision)
         else:
             return round(dc+r2, precision) > round(r1, precision)
+
+    def does_it_overlap(self, other: 'Circle', precision: int = 3) -> bool:
+        dc: float = self.get_dist_betw_centers(other)
+        sum_rs: float = self.get_radius() + other.get_radius()
+        return round(dc, precision) < round(sum_rs, precision)

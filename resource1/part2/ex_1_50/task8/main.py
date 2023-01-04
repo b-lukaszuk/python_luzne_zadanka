@@ -57,11 +57,26 @@ def print_examples2() -> None:
         lambda c1, c2: "Do ciurcumferences of {0} and {1} intersect?".format(c1, c2),
         lambda c1, c2: str(c1.do_circumferences_intersect(c2)))
 
+def print_examples3() -> None:
+    circles3: List[Tuple[Circle, Circle]] = [
+        (Circle(Point(7, 6), 4), Circle(Point(9, 8), 1)),
+        (Circle(Point(7, 6), 4), Circle(Point(3, 2), 1)),
+        (Circle(Point(7, 6), 4), Circle(Point(4, 10), 1)),
+        (Circle(Point(7, 6), 4), Circle(Point(5, 10), 1)),
+    ]
+    expected_answers3: List[bool] = [True, False, False, True]
+    print_examples(
+        circles3, expected_answers3,
+        "\nCircles overlap examples.",
+        lambda c1, c2: "Do circle {0} and {1} overlap?".format(c1, c2),
+        lambda c1, c2: str(c1.does_it_overlap(c2)))
+
 
 def main() -> None:
     print_program_description()
     print_examples1()
     print_examples2()
+    print_examples3()
     print("\nThat's all. Goodbye!")
 
 
