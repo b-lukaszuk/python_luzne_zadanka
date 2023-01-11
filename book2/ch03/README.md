@@ -4,7 +4,7 @@ Statistics refresher with classical "Practical Statistics for Medical Research" 
 
 For educational purposes I will go through the book (at least parts of it) with [Python](https://www.python.org/).
 
-Probably I will execute parts of the files in 'interactive-mode' in Emacs or VS Code and REPL.
+Probably I will solve it using [Jupyter Notebook](https://jupyter.org/).
 
 # Chapter 3. Describing Data
 
