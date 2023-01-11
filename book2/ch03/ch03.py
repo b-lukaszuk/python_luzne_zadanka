@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import matplotlib.pyplot as plt
+import numpy as np
 import pandas as pd
 import seaborn as sns
 from typing import List
@@ -20,4 +21,17 @@ plt.xlim((5, 25))
 plt.title("Fig. 3.15. Scatter diagram of PImax by age")
 plt.xlabel("Age [years]")
 plt.ylabel("PImax [cm $H_20$]")
+plt.show()
+
+
+# table 3.2
+igm: np.ndarray  = np.concatenate((np.arange(0.1, 1.9, 0.1), np.asarray([2.0, 2.1, 2.2, 2.5, 2.7, 4.5])))
+num_of_children: np.ndarray = np.asarray([3,7,19,27,32,35,38,38,22,16,16,6,7,9,6,2,3,3,3,2,1,1,1,1])
+tab32 = pd.DataFrame({"igm": igm, "num_of_children": num_of_children})
+
+# figure 3.3
+sns.histplot(data=tab32, x="igm", bins=np.arange(0.1, 4.6, 0.1), weights="num_of_children")
+plt.title("Fig. 3.7. (a) Concentration of IgM in\n298 children aged 6 months to 6 years")
+plt.xlabel("IgM [g/l]")
+plt.ylabel("Number of children")
 plt.show()
