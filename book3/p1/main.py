@@ -44,6 +44,27 @@ def get_user_input() -> int:
     return int(guess)
 
 
+def print_hint(guess: int, secret_num: int) -> None:
+    if is_bagles(guess, secret_num):
+        print("Bagles.")
+    if is_fermi(guess, secret_num):
+        print("Fermi.")
+    if is_pico(guess, secret_num):
+        print("Pico.")
+
+
+def print_game_description() -> None:
+    print("Welcome to the game of Bagles.")
+    print("In a moment I will think of a three digit integer.")
+    print("You got nine guesses to figure it out.")
+    print("After each guess You will get a hint.")
+    print("'Pico' when youg guess has a correct digit in the wrong place.")
+    print("'Fermi' when youg guess has a correct digit in the correct place.")
+    print("'Bagles' when youg guess has no correct digits.")
+    print("Ok, let's begin. What is my number?")
+    _ = input("Press Enter to continue.")
+
+
 def main() -> None:
     print("Project 1.")
     print("Status: Not finished.")
