@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+
 import random
 
 
@@ -53,21 +54,39 @@ def print_hint(guess: int, secret_num: int) -> None:
         print("Pico.")
 
 
+def run_game_loop() -> None:
+    secret_num: int = get_rand_3dig_num()
+    guess: int = 0
+    counter: int = 0
+    while (guess != secret_num) and (counter < 9):
+        print("\n---Guess {0} of 9---".format(counter+1))
+        guess = get_user_input()
+        print_hint(guess, secret_num)
+        counter += 1
+    print("\nGame Over!")
+    if guess != secret_num:
+        print("You lost.")
+    else:
+        print("You won.")
+    print("My secret number was {0}".format(secret_num))
+
+
 def print_game_description() -> None:
     print("Welcome to the game of Bagles.")
     print("In a moment I will think of a three digit integer.")
     print("You got nine guesses to figure it out.")
     print("After each guess You will get a hint.")
-    print("'Pico' when youg guess has a correct digit in the wrong place.")
-    print("'Fermi' when youg guess has a correct digit in the correct place.")
-    print("'Bagles' when youg guess has no correct digits.")
+    print("'Pico' when your guess has a correct digit in the wrong place.")
+    print("'Fermi' when your guess has a correct digit in the correct place.")
+    print("'Bagles' when your guess has no correct digits.")
     print("Ok, let's begin. What is my number?")
     _ = input("Press Enter to continue.")
 
 
 def main() -> None:
-    print("Project 1.")
-    print("Status: Not finished.")
+    print_game_description()
+    run_game_loop()
+    print("\nThat's all. Goodbye!")
 
 
 if __name__ == "__main__":
