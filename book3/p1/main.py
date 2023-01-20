@@ -2,6 +2,7 @@
 
 
 import random
+from typing import List
 
 
 def get_rand_3dig_num() -> int:
@@ -17,16 +18,16 @@ def get_except(text: str, ind: int) -> str:
     return "".join([c for (i, c) in enumerate(text) if i != ind])
 
 
-def is_pico(guess: int, secret_num: int) -> bool:
+def is_pico(guess: int, secret_num: int) -> List[bool]:
     g: str = str(guess)
     sn: str = str(secret_num)
-    return any([c in get_except(sn, i) for (i, c) in enumerate(g)])
+    return [c in get_except(sn, i) for (i, c) in enumerate(g)]
 
 
-def is_fermi(guess: int, secret_num: int) -> bool:
+def is_fermi(guess: int, secret_num: int) -> List[bool]:
     g: str = str(guess)
     sn: str = str(secret_num)
-    return any([g[i] == sn[i] for i in range(len(sn))])
+    return [g[i] == sn[i] for i in range(len(sn))]
 
 
 def is_num_ok(guess: str) -> bool:
@@ -46,12 +47,15 @@ def get_user_input() -> int:
 
 
 def print_hint(guess: int, secret_num: int) -> None:
-    if is_bagles(guess, secret_num):
+    bagles: bool = is_bagles(guess, secret_num)
+    fermis: List[bool] = is_fermi(guess, secret_num)
+    picos: List[bool] = is_pico(guess, secret_num)
+    if bagles:
         print("Bagles.")
-    if is_fermi(guess, secret_num):
-        print("Fermi.")
-    if is_pico(guess, secret_num):
-        print("Pico.")
+    if any(fermis):
+        print(["Fermi" for f in fermis if f])
+    if any(picos):
+        print(["Pico" for p in picos if p])
 
 
 def run_game_loop() -> None:
