@@ -1,4 +1,11 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+
+from Card import Card
+from Cards_Deck import Cards_Deck
+from typing import List
+
 
 def print_game_description() -> None:
     print("Welcome to the game of Blackjack")
@@ -18,7 +25,10 @@ def print_game_description() -> None:
 
 def main() -> None:
     print_game_description()
-    print("PROGRAM STATUS: TO BE FINISHED.")
+    print("\nPrinting all 52 cards")
+    cards: Cards_Deck = Cards_Deck()
+    print(cards)
+    print("\nPROGRAM STATUS: TO BE FINISHED.")
     print("\nThat's all. Goodbye!")
 
 
