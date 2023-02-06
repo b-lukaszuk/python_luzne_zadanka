@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 
-from typing import Dict
+from typing import Dict, Tuple
 
 
 class Card():
@@ -34,3 +34,11 @@ class Card():
 
     def __repr__(self) -> str:
         return self.__str__()
+
+    def get_value(self) -> Tuple[int, int]:
+        if self.__rank__ < 11:
+            return (self.__rank__, self.__rank__)
+        elif self.__rank__ < 14:
+            return (10, 10)
+        else:
+            return(1, 10)
