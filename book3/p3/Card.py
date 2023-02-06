@@ -41,4 +41,4 @@ class Card():
         elif self.__rank__ < 14:
             return (10, 10)
         else:
-            return(1, 10)
+            return(1, 11)

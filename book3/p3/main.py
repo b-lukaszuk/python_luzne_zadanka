@@ -4,6 +4,7 @@
 
 from Card import Card
 from Cards_Deck import Cards_Deck
+from Hand import Hand
 from typing import List
 
 
@@ -26,10 +27,16 @@ def print_game_description() -> None:
 def main() -> None:
     print_game_description()
     cards: Cards_Deck = Cards_Deck()
-    c1: Card = cards.get_rand_card()
-    c2: Card = cards.get_rand_card()
-    print(f"{c1}, value {c1.get_value()}")
-    print(f"{c2}, value {c2.get_value()}")
+    h1: Hand = Hand()
+    h2: Hand = Hand()
+    print(h1)
+    print(h2)
+    h1.add_card(cards.get_rand_card())
+    h1.add_card(cards.get_rand_card())
+    h2.add_card(cards.get_rand_card())
+    h2.add_card(cards.get_rand_card())
+    print(f"{h1}, value {h1.get_value()}")
+    print(f"{h2}, value {h2.get_value()}")
     print("\nPROGRAM STATUS: TO BE FINISHED.")
     print("\nThat's all. Goodbye!")
 
