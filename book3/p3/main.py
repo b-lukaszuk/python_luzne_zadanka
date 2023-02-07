@@ -5,7 +5,7 @@
 from Card import Card
 from Cards_Deck import Cards_Deck
 from Hand import Hand
-from typing import List
+from typing import List, Tuple
 
 
 def print_game_description() -> None:
@@ -24,24 +24,63 @@ def print_game_description() -> None:
     _ = input("Press Enter to continue.")
 
 
+def deal_cards(cards: Cards_Deck) -> Tuple[Hand, Hand]:
+    """deals hand of cards for dealer and player
+    modifies cards (removes some random cards from it)"""
+    dealer_hand, player_hand = Hand(), Hand()
+    dealer_hand.add_card(cards.get_rand_card(), cards.get_rand_card())
+    dealer_hand.cover_first_card()
+    player_hand.add_card(cards.get_rand_card(), cards.get_rand_card())
+    return dealer_hand, player_hand
+
+
+def get_player_decision() -> str:
+    decision: str = ""
+    while not (decision == "h" or decision == "s"):
+        print("What You want to do?")
+        print("Press h to Hit, i.e. take another card")
+        print("Press s to Stand, i.e. stop taking cards")
+        decision = input("Your decision: ")
+    return decision
+
+
+def print_result(dealer_hand: Hand, player_hand: Hand) -> None:
+    if dealer_hand.is_busted() and player_hand.is_busted():
+        print("Both dealer and player busted. Draw.")
+    elif dealer_hand.is_busted():
+        print("Dealer busted. Player wins.")
+    elif player_hand.is_busted():
+        print("Player busted. Dealer wins.")
+    elif dealer_hand.get_value() > player_hand.get_value():
+        print("Dealer wins.")
+    elif dealer_hand.get_value() < player_hand.get_value():
+        print("Player wins.")
+    else:
+        print("Draw.")
+
+
 def main() -> None:
     print_game_description()
     cards: Cards_Deck = Cards_Deck()
-    h1: Hand = Hand()
-    h2: Hand = Hand()
-    print(h1)
-    print(h2)
-    h1.add_card(cards.get_rand_card())
-    h1.add_card(cards.get_rand_card())
-    h2.add_card(cards.get_rand_card())
-    h2.add_card(cards.get_rand_card())
-    print(f"{h1}, value {h1.get_value()}")
-    print(f"{h2}, value {h2.get_value()}")
+    dealer_hand, player_hand = deal_cards(cards)
+    print("---")
+    print(f"Dealer cards: {dealer_hand}")
+    print(f"Player cards: {player_hand}")
+    print("---")
+    decision: str = get_player_decision()
+    if decision == "h":
+        player_hand.add_card(cards.get_rand_card())
+    print("---")
+    print("Gentelmen show cards")
+    dealer_hand.uncover_all_cards()
+    print(f"Dealer cards: {dealer_hand}, value: {dealer_hand.get_value()}")
+    print(f"Player cards: {player_hand}, value: {player_hand.get_value()}")
+    print("---")
+    print_result(dealer_hand, player_hand)
+    print("---")
     print("\nPROGRAM STATUS: TO BE FINISHED.")
     print("\nThat's all. Goodbye!")
 
 
 if __name__ == "__main__":
     main()
-    print("\nPROGRAM STATUS: TO BE FINISHED.")
-    print("\nThat's all. Goodbye!")
