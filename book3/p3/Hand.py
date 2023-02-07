@@ -16,8 +16,8 @@ class Hand:
         else:
             return "The hand is empty"
 
-    def add_card(self, card: Card) -> None:
-        self.__cards__.append(card)
+    def add_card(self, *cards: Card) -> None:
+        self.__cards__.extend(cards)
 
     def get_value(self) -> int:
         sum1, sum2 = (0, 0)
@@ -31,3 +31,12 @@ class Hand:
 
     def is_busted(self) -> bool:
         return self.get_value() > 21
+
+    def cover_first_card(self) -> None:
+        if self.__cards__[0].is_covered():
+            self.__cards__[0].toggle_covered()
+
+    def uncover_all_cards(self) -> None:
+        for card in self.__cards__:
+            if card.is_covered():
+                card.toggle_covered()

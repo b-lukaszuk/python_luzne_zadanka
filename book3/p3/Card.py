@@ -41,6 +41,9 @@ class Card():
     def toggle_covered(self) -> None:
         self.__covered__ = not self.__covered__
 
+    def is_covered(self) -> bool:
+        return self.__covered__
+
     def get_value(self) -> Tuple[int, int]:
         if self.__rank__ < 11:
             return (self.__rank__, self.__rank__)
