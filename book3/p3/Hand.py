@@ -33,7 +33,7 @@ class Hand:
         return self.get_value() > 21
 
     def cover_first_card(self) -> None:
-        if self.__cards__[0].is_covered():
+        if not self.__cards__[0].is_covered():
             self.__cards__[0].toggle_covered()
 
     def uncover_all_cards(self) -> None:
