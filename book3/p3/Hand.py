@@ -28,3 +28,6 @@ class Hand:
             return max(sum1, sum2)
         else:
             return min(sum1, sum2)
+
+    def is_busted(self) -> bool:
+        return self.get_value() > 21

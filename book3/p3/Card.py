@@ -15,6 +15,7 @@ class Card():
             raise ValueError("The suit must be in range(4)")
         self.__rank__: int = rank
         self.__suit__: int = suit
+        self.__covered__: bool = False
 
     def __get_rank_representation__(self) -> str:
         court_cards: Dict[int, str] = {11: "J", 12: "Q", 13: "K", 14: "A"}
@@ -28,12 +29,17 @@ class Card():
         return suits_symbols[self.__suit__]
 
     def __str__(self) -> str:
+        if self.__covered__:
+            return "??"
         return "{0}{1}".format(
             self.__get_rank_representation__(),
             self.__get_suit_representation__())
 
     def __repr__(self) -> str:
         return self.__str__()
+
+    def toggle_covered(self) -> None:
+        self.__covered__ = not self.__covered__
 
     def get_value(self) -> Tuple[int, int]:
         if self.__rank__ < 11:
