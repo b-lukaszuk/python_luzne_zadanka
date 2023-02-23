@@ -12,7 +12,7 @@ def get_rules_description() -> str:
     lines_of_text: List[str] = [
         "RULES OF THE CARD GAME",
         "----------------------",
-        "At the beginning dealer and player are dealt 2 cards each.",
+        "At the beginning the dealer and the player are dealt 2 cards each.",
         "One of the dealer cards is covered.",
         "The goal is to get as close to 21 without going over.",
         "Kings, Queens, and Jacks are worth 10 points.",
@@ -96,13 +96,17 @@ def print_result(dealer_hand: Hand, player_hand: Hand) -> None:
         print("Draw.")
 
 
+def print_competitors_cards(dealer_hand: Hand, player_hand: Hand, print_values: bool=False) -> None:
+    print(f"Dealer cards: {dealer_hand}" + (f", value: {dealer_hand.get_value()}" if print_values else ""))
+    print(f"Player cards: {player_hand}" + (f", value: {player_hand.get_value()}" if print_values else ""))
+
+
 def main() -> None:
     print_game_description()
     cards: Cards_Deck = Cards_Deck()
     dealer_hand, player_hand = deal_cards(cards)
     print("---")
-    print(f"Dealer cards: {dealer_hand}")
-    print(f"Player cards: {player_hand}")
+    print_competitors_cards(dealer_hand, player_hand)
     print("---")
     decision: str = get_player_decision()
     if decision == "h":
@@ -110,8 +114,7 @@ def main() -> None:
     print("---")
     print("Gentelmen show cards")
     dealer_hand.uncover_all_cards()
-    print(f"Dealer cards: {dealer_hand}, value: {dealer_hand.get_value()}")
-    print(f"Player cards: {player_hand}, value: {player_hand.get_value()}")
+    print_competitors_cards(dealer_hand, player_hand, True)
     print("---")
     print_result(dealer_hand, player_hand)
     print("---")
