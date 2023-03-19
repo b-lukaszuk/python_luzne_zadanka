@@ -44,7 +44,7 @@ def get_player_decision() -> str:
     return decision
 
 
-def print_result(dealer_hand: Hand, player_hand: Hand) -> None:
+def declare_winner(dealer_hand: Hand, player_hand: Hand) -> None:
     if dealer_hand.is_busted() and player_hand.is_busted():
         print("Both dealer and player busted. Draw.")
     elif dealer_hand.is_busted():
@@ -76,7 +76,7 @@ def main() -> None:
     print(f"Dealer cards: {dealer_hand}, value: {dealer_hand.get_value()}")
     print(f"Player cards: {player_hand}, value: {player_hand.get_value()}")
     print("---")
-    print_result(dealer_hand, player_hand)
+    declare_winner(dealer_hand, player_hand)
     print("---")
     print("\nPROGRAM STATUS: TO BE FINISHED.")
     print("\nThat's all. Goodbye!")
