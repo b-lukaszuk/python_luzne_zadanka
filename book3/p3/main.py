@@ -94,7 +94,7 @@ def declare_hands(dealer_hand: Hand, player_hand: Hand, print_hand_value: bool) 
 
 
 # it modifies player-hand if player chooses to hit
-def hit_loop(player_hand: Hand, cards: Cards_Deck) -> None:
+def run_player_hit_loop(player_hand: Hand, cards: Cards_Deck) -> None:
     """allows player to hit until he chooses stay or busts.
     if player chooses hit, it modifies player_hand and cards,
     it adds a card to hand"""
@@ -139,7 +139,7 @@ def main() -> None:
     cards: Cards_Deck = Cards_Deck()
     dealer_hand, player_hand = deal_cards(cards)
     declare_hands(dealer_hand, player_hand, False)
-    hit_loop(player_hand, cards)
+    run_player_hit_loop(player_hand, cards)
     print("---")
     print("Game Over.")
     dealer_hand.uncover_all_cards()
