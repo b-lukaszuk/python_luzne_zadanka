@@ -8,20 +8,57 @@ from Hand import Hand
 from typing import List, Tuple
 
 
+def get_rules_description() -> str:
+    lines_of_text: List[str] = [
+        "RULES OF THE CARD GAME",
+        "----------------------",
+        "At the beginning the dealer and the player are dealt 2 cards each.",
+        "One of the dealer cards is covered.",
+        "The goal is to get as close to 21 without going over.",
+        "Kings, Queens, and Jacks are worth 10 points.",
+        "Aces are worth 1 or 11 points.",
+        "Cards 2 through 10 are worth their face value.",
+        "----------------------------\n",
+    ]
+    return "\n".join(lines_of_text)
+
+
+def get_actions_description() -> str:
+    lines_of_text: List[str] = [
+        "ACTIONS",
+        "-------",
+        "The player goes first. The dealer second.",
+        "Options are:",
+        "(H)it to take another card.",
+        "(S)tand to stop taking cards.",
+        "On your first play, you can (D)ouble down to increase your bet",
+        "but must hit exactly one more time before standing.",
+        "The dealer stops hitting at 17.",
+        "----------------------------\n",
+    ]
+    return "\n".join(lines_of_text)
+
+
+def get_end_of_round_description() -> str:
+    lines_of_text: List[str] = [
+        "END OF ROUND",
+        "------------",
+        "The round ends: when both player and dealer stop hitting or one of them busts.",
+        "The player with a higher hand (but not greater than 21) wins.",
+        "In case of a tie, the bet is returned to the player.",
+        "----------------------------\n",
+    ]
+    return "\n".join(lines_of_text)
+
+
 def print_game_description() -> None:
-    print("Welcome to the game of Blackjack")
-    print("Rules")
-    print("Try to get as close to 21 without going over.")
-    print("Kings, Queens, and Jacks are worth 10 points.")
-    print("Aces are worth 1 or 11 points.")
-    print("Cards 2 through 10 are worth their face value.")
-    print("(H)it to take another card.")
-    print("(S)tand to stop taking cards.")
-    print("On your first play, you can (D)ouble down to increase your bet")
-    print("but must hit exactly one more time before standing.")
-    print("In case of a tie, the bet is returned to the player.")
-    print("The dealer stops hitting at 17.")
+    print("Welcome to the game of Blackjack\n")
+    print(get_rules_description())
+    print(get_actions_description())
+    print(get_end_of_round_description())
+    print("All Crear! Then let's begin!")
     _ = input("Press Enter to continue.")
+    print()
 
 
 def deal_cards(cards: Cards_Deck) -> Tuple[Hand, Hand]:
@@ -82,6 +119,19 @@ def declare_winner(dealer_hand: Hand, player_hand: Hand) -> None:
         print("Player wins.")
     else:
         print("Draw.")
+
+
+def print_competitors_cards(
+    dealer_hand: Hand, player_hand: Hand, print_values: bool = False
+) -> None:
+    print(
+        f"Dealer cards: {dealer_hand}"
+        + (f", value: {dealer_hand.get_value()}" if print_values else "")
+    )
+    print(
+        f"Player cards: {player_hand}"
+        + (f", value: {player_hand.get_value()}" if print_values else "")
+    )
 
 
 def main() -> None:
