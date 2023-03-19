@@ -106,6 +106,13 @@ def run_player_hit_loop(player_hand: Hand, cards: Cards_Deck) -> None:
             print(f"Player cards: {player_hand}, value: {player_hand.get_value()}")
 
 
+def run_dealer_hit_loop(dealer_hand: Hand, cards: Cards_Deck) -> None:
+    """allows dealer to hit until he reaches 17 or busts.
+    it modifies dealer_hand and cards, it adds a card to hand"""
+    while dealer_hand.get_value() < 17:
+        dealer_hand.add_card(cards.get_rand_card())
+
+
 def declare_winner(dealer_hand: Hand, player_hand: Hand) -> None:
     if dealer_hand.is_busted() and player_hand.is_busted():
         print("Both dealer and player busted. Draw.")
@@ -140,6 +147,7 @@ def main() -> None:
     dealer_hand, player_hand = deal_cards(cards)
     declare_hands(dealer_hand, player_hand, False)
     run_player_hit_loop(player_hand, cards)
+    run_dealer_hit_loop(dealer_hand, cards)
     print("---")
     print("Game Over.")
     dealer_hand.uncover_all_cards()
