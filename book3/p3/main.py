@@ -36,8 +36,8 @@ def deal_cards(cards: Cards_Deck) -> Tuple[Hand, Hand]:
 
 def get_player_decision() -> str:
     decision: str = ""
-    while not (decision == "h" or decision == "s"):
-        print("What You want to do?")
+    while decision not in ["h", "s"]:
+        print("\nWhat You want to do?")
         print("Press h to Hit, i.e. take another card")
         print("Press s to Stand, i.e. stop taking cards")
         decision = input("Your decision: ")
@@ -54,6 +54,19 @@ def declare_hands(dealer_hand: Hand, player_hand: Hand, print_hand_value: bool) 
     print("---")
     print(msg1, msg2, sep="\n")
     print("---")
+
+
+# it modifies player-hand if player chooses to hit
+def hit_loop(player_hand: Hand, cards: Cards_Deck) -> None:
+    """allows player to hit until he chooses stay or busts.
+    if player chooses hit, it modifies player_hand and cards,
+    it adds a card to hand"""
+    decision: str = "h"
+    while (not player_hand.is_busted()) and decision == "h":
+        decision = get_player_decision()
+        if decision == "h":
+            player_hand.add_card(cards.get_rand_card())
+            print(f"Player cards: {player_hand}, value: {player_hand.get_value()}")
 
 
 def declare_winner(dealer_hand: Hand, player_hand: Hand) -> None:
@@ -76,11 +89,9 @@ def main() -> None:
     cards: Cards_Deck = Cards_Deck()
     dealer_hand, player_hand = deal_cards(cards)
     declare_hands(dealer_hand, player_hand, False)
-    decision: str = get_player_decision()
-    if decision == "h":
-        player_hand.add_card(cards.get_rand_card())
+    hit_loop(player_hand, cards)
     print("---")
-    print("Gentelmen show cards")
+    print("Game Over.")
     dealer_hand.uncover_all_cards()
     declare_hands(dealer_hand, player_hand, True)
     declare_winner(dealer_hand, player_hand)
