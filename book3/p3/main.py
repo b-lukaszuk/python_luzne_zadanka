@@ -74,7 +74,7 @@ def deal_cards(cards: Cards_Deck) -> Tuple[Hand, Hand]:
 def get_player_decision() -> str:
     decision: str = ""
     while decision not in ["h", "s"]:
-        print("\nWhat You want to do?")
+        print("What You want to do?")
         print("Press h to Hit, i.e. take another card")
         print("Press s to Stand, i.e. stop taking cards")
         decision = input("Your decision: ")
@@ -90,7 +90,7 @@ def declare_hands(dealer_hand: Hand, player_hand: Hand, print_hand_value: bool) 
     )
     print("---")
     print(msg1, msg2, sep="\n")
-    print("---")
+    print("---\n")
 
 
 # it modifies player-hand if player chooses to hit
@@ -98,19 +98,25 @@ def run_player_hit_loop(player_hand: Hand, cards: Cards_Deck) -> None:
     """allows player to hit until he chooses stay or busts.
     if player chooses hit, it modifies player_hand and cards,
     it adds a card to hand"""
+    print("--ON MOVE: PLAYER--")
     decision: str = "h"
     while (not player_hand.is_busted()) and decision == "h":
+        print(f"\nPlayer cards: {player_hand}, value: {player_hand.get_value()}")
         decision = get_player_decision()
         if decision == "h":
             player_hand.add_card(cards.get_rand_card())
-            print(f"Player cards: {player_hand}, value: {player_hand.get_value()}")
+    print("--PLAYER'S MOVE FINISHED--")
 
 
 def run_dealer_hit_loop(dealer_hand: Hand, cards: Cards_Deck) -> None:
     """allows dealer to hit until he reaches 17 or busts.
     it modifies dealer_hand and cards, it adds a card to hand"""
+    print("\n--ON MOVE: DEALER--")
     while dealer_hand.get_value() < 17:
         dealer_hand.add_card(cards.get_rand_card())
+    dealer_hand.uncover_all_cards()
+    print(f"Dealer cards: {dealer_hand}, value: {dealer_hand.get_value()}")
+    print("--DEALER'S MOVE FINISHED--\n")
 
 
 def declare_winner(dealer_hand: Hand, player_hand: Hand) -> None:
@@ -147,10 +153,13 @@ def main() -> None:
     dealer_hand, player_hand = deal_cards(cards)
     declare_hands(dealer_hand, player_hand, False)
     run_player_hit_loop(player_hand, cards)
-    run_dealer_hit_loop(dealer_hand, cards)
+    if player_hand.is_busted():
+        dealer_hand.uncover_all_cards()
+    else:
+        run_dealer_hit_loop(dealer_hand, cards)
+
     print("---")
     print("Game Over.")
-    dealer_hand.uncover_all_cards()
     declare_hands(dealer_hand, player_hand, True)
     declare_winner(dealer_hand, player_hand)
     print("---")
