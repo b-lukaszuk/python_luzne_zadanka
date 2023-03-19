@@ -44,6 +44,18 @@ def get_player_decision() -> str:
     return decision
 
 
+def declare_hands(dealer_hand: Hand, player_hand: Hand, print_hand_value: bool) -> None:
+    msg1: str = f"Dealer cards: {dealer_hand}" + (
+        f" , value: {dealer_hand.get_value()}" if print_hand_value else ""
+    )
+    msg2: str = f"Player cards: {player_hand}" + (
+        f" , value: {player_hand.get_value()}" if print_hand_value else ""
+    )
+    print("---")
+    print(msg1, msg2, sep="\n")
+    print("---")
+
+
 def declare_winner(dealer_hand: Hand, player_hand: Hand) -> None:
     if dealer_hand.is_busted() and player_hand.is_busted():
         print("Both dealer and player busted. Draw.")
@@ -63,19 +75,14 @@ def main() -> None:
     print_game_description()
     cards: Cards_Deck = Cards_Deck()
     dealer_hand, player_hand = deal_cards(cards)
-    print("---")
-    print(f"Dealer cards: {dealer_hand}")
-    print(f"Player cards: {player_hand}")
-    print("---")
+    declare_hands(dealer_hand, player_hand, False)
     decision: str = get_player_decision()
     if decision == "h":
         player_hand.add_card(cards.get_rand_card())
     print("---")
     print("Gentelmen show cards")
     dealer_hand.uncover_all_cards()
-    print(f"Dealer cards: {dealer_hand}, value: {dealer_hand.get_value()}")
-    print(f"Player cards: {player_hand}, value: {player_hand.get_value()}")
-    print("---")
+    declare_hands(dealer_hand, player_hand, True)
     declare_winner(dealer_hand, player_hand)
     print("---")
     print("\nPROGRAM STATUS: TO BE FINISHED.")
